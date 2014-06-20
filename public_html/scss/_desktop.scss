@@ -1,0 +1,73 @@
+#desktop {
+    cursor: default;
+    display: table;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+#win-desktop {
+    background: url(../img/Bliss-Wallpaper.jpg) scroll center center no-repeat transparent;
+    background-size: cover;
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+#win-program-bar {
+    display: table-footer-group;
+    
+    
+}
+
+#win-program-bar-wrap {
+    display: table;
+    height: 30px;
+    table-layout: auto;
+    width: 100%;
+    
+background: #3168d5; /* Old browsers */
+background: -moz-linear-gradient(top,  #3168d5 0%, #3888e9 6%, #245ddb 16%, #245ddb 95%, #1c44a2 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3168d5), color-stop(6%,#3888e9), color-stop(16%,#245ddb), color-stop(95%,#245ddb), color-stop(100%,#1c44a2)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #3168d5 0%,#3888e9 6%,#245ddb 16%,#245ddb 95%,#1c44a2 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #3168d5 0%,#3888e9 6%,#245ddb 16%,#245ddb 95%,#1c44a2 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #3168d5 0%,#3888e9 6%,#245ddb 16%,#245ddb 95%,#1c44a2 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #3168d5 0%,#3888e9 6%,#245ddb 16%,#245ddb 95%,#1c44a2 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3168d5', endColorstr='#1c44a2',GradientType=0 ); /* IE6-9 */
+    
+    > * {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+#win-start-btn {
+    background: url(../img/win-start.png) scroll 0 0 no-repeat transparent;
+    border: none;
+    color: transparent;
+    height: 30px;
+    outline: none;
+    width: 97px;
+    
+    &:active {
+        background: url(../img/win-start-pressed.png) scroll 0 0 no-repeat transparent;
+    }
+}
+#win-programs {
+    width: 100%;
+}
+#win-sys-tray {
+    border-left: 1px solid #0b3051;
+background: #3168d5; /* Old browsers */
+background: -moz-linear-gradient(top,  #3168d5 0%, #19b9f3 6%, #1499ed 16%, #1499ed 95%, #1586dc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3168d5), color-stop(6%,#19b9f3), color-stop(16%,#1499ed), color-stop(95%,#1499ed), color-stop(100%,#1586dc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #3168d5 0%,#19b9f3 6%,#1499ed 16%,#1499ed 95%,#1586dc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #3168d5 0%,#19b9f3 6%,#1499ed 16%,#1499ed 95%,#1586dc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #3168d5 0%,#19b9f3 6%,#1499ed 16%,#1499ed 95%,#1586dc 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #3168d5 0%,#19b9f3 6%,#1499ed 16%,#1499ed 95%,#1586dc 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3168d5', endColorstr='#1586dc',GradientType=0 ); /* IE6-9 */
+    width: 1px;
+    
+    padding: 0 18px 0 8px;
+
+}

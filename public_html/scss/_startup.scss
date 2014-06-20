@@ -1,0 +1,164 @@
+#startup {
+    cursor: none;
+    display: table;
+    height: 100%;
+    width:100%;
+    overflow:hidden;
+    -webkit-animation: startFade 2s linear;
+    animation: startFade 2s linear;
+    
+    header {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+    
+    footer {
+        display: table-footer-group;
+        
+        #stup-bottom {
+            display: table;
+            width:100%;
+            
+            > * {
+                display: table-cell;
+                padding: 21px;
+                vertical-align: bottom;
+            }
+        }
+    }
+}
+
+@-webkit-keyframes startFade {
+    from {opacity:0;}
+    to   {opacity:1;}
+}
+@keyframes startFade {
+    from {opacity:0;}
+    to   {opacity:1;}
+}
+
+
+#win-fl {
+    text-indent: -23px;
+}
+
+.mcsft-head {
+    display: inline-block;
+    font-size: 20px;
+    
+    sup {
+        font-size: 8px;
+        vertical-align: top;
+    }
+}
+
+.flag-tm {
+    display: inline-block;
+    font-size: 10px;
+    margin: 0 0 0 -26px;
+    text-indent: 0;
+}
+
+#win-lg {
+    display: inline-block;
+    font-size: 3.1em;
+    font-weight: lighter;
+    
+    sup {
+        font-size: 10px;
+        line-height: 36px;
+        vertical-align: top;
+    }
+    
+    span {
+        color: #eb651c;
+        font-size: 38px;
+        vertical-align: top;
+        position: relative;
+        top: -5px;
+    }
+}
+
+#win-ed {
+    font-size: 1.95em;
+    font-weight: lighter;
+    margin-bottom: 55px;
+    text-indent: -70px;
+}
+
+#stup-loader {
+    border:1px solid #FFF;
+    border-radius: 5px;
+    height: 15px;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 130px;
+}
+#stup-loader-bar {
+    display: block;
+    background: url(../img/wxp-startup-progress.png);
+    height: 11px;
+    margin: 1px;
+    margin-left: -20%;
+    width: 26px;
+    -webkit-animation: loading 2s linear infinite;
+    animation: loading 2s infinite;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+}
+
+@-webkit-keyframes loading {
+    0%   {margin-left: -10%}
+    9%   {margin-left: -10%}
+    10%  {margin-left: 0%}
+    19%  {margin-left: 0%}
+    20%  {margin-left: 20%}
+    29%  {margin-left: 20%}
+    30%  {margin-left: 30%}
+    39%  {margin-left: 30%}
+    40%  {margin-left: 40%}
+    49%  {margin-left: 40%}
+    50%  {margin-left: 50%}
+    59%  {margin-left: 50%}
+    60%  {margin-left: 60%}
+    69%  {margin-left: 60%}
+    70%  {margin-left: 70%}
+    79%  {margin-left: 70%}
+    80%  {margin-left: 80%}
+    89%  {margin-left: 80%}
+    90%  {margin-left: 90%}
+    99%  {margin-left: 90%}
+    100% {margin-left: 100%}
+}
+@keyframes loading {
+    0%   {margin-left: 0%}
+    9%   {margin-left: 0%}
+    10%  {margin-left: 10%}
+    19%  {margin-left: 10%}
+    20%  {margin-left: 20%}
+    29%  {margin-left: 20%}
+    30%  {margin-left: 30%}
+    39%  {margin-left: 30%}
+    40%  {margin-left: 40%}
+    49%  {margin-left: 40%}
+    50%  {margin-left: 50%}
+    59%  {margin-left: 50%}
+    60%  {margin-left: 60%}
+    69%  {margin-left: 60%}
+    70%  {margin-left: 70%}
+    79%  {margin-left: 70%}
+    80%  {margin-left: 80%}
+    89%  {margin-left: 80%}
+    90%  {margin-left: 90%}
+    99%  {margin-left: 90%}
+    100% {margin-left: 100%}
+}
+
+
+#stup-left {
+    text-align: left;
+}
+#stup-right {
+    text-align: right;
+}
