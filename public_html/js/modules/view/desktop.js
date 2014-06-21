@@ -1,8 +1,9 @@
 define(['backbone',
         'handlebars',
         'text!../tpl/desktop.html',
+        'modules/view/startmenu',
         'modules/view/clock'],
-        function(Backbone,Handlebars,deskTpl,Clock){
+        function(Backbone,Handlebars,deskTpl,Startmenu,Clock){
     
     var Desktop = Backbone.View.extend({
         
@@ -16,10 +17,30 @@ define(['backbone',
         render: function() {
             
             this.$el.html( this.template() );
-            setTimeout(function(){
-                var clock = new Clock();
+            var clock = new Clock();
+            var startmenu = new Startmenu();
+            
+            $('.desk-window').draggable();
+            
+            //Window resize methods
+            $('.win-cmd-resize').on('click', function(e){
+                $(this).parents('.desk-window').toggleClass('magnified');
+            });
+            $('.desk-window-title').on('dblclick', function(e){
+                var windowObj = $(this).parents('.desk-window');
                 
-            },2000)
+                if ( windowObj.hasClass('resizable') ) {
+                    windowObj.toggleClass('magnified');
+                };                        
+            });
+            
+            //Program Close methods
+            $('.win-cmd-close').on('click', function(e){
+                $(this).parents('.desk-window').remove();
+            });
+            $('.program-icon').on('dblclick', function(e){
+                $(this).parents('.desk-window').remove();
+            });
             
         }
         

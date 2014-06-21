@@ -1,11 +1,14 @@
-<article id="win-el" class="desk-window">
+<article id="win-el" class="desk-window resizable">
     <header class="desk-window-top">
-        <p>win-title</p>
-        <div>
-            <button type="button">a</button>
-            <button type="button">b</button>
-            <button type="button">c</button>
-            <button type="button">x</button>
+        <div class="desk-window-title">
+            <p><span class="program-icon">i</span><span class="window-title">win-title</span></p>
+        </div>
+        
+        <div class="desk-window-commands">
+            <p><button type="button" class="el-reset win-btn btn-blue win-cmd-help">?</button></p>
+            <p><button type="button" class="el-reset win-btn btn-blue win-cmd-min">_</button></p>
+            <p><button type="button" class="el-reset win-btn btn-blue win-cmd-resize">&boxbox;</button></p>
+            <p><button type="button" class="el-reset win-btn btn-red win-cmd-close">&Cross;</button></p>
         </div>
     </header>
     <div class="desk-window-content">

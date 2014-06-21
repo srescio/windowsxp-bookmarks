@@ -1,9 +1,9 @@
 define(['backbone',
         'handlebars',
-        'text!../tpl/window.html'],
+        'text!../tpl/startmenu.html'],
         function(Backbone,Handlebars,Template){
     
-    var Clock = Backbone.View.extend({
+    var Startmenu = Backbone.View.extend({
         
         el : '#win-desktop',
         template: Handlebars.compile(Template),
@@ -13,10 +13,10 @@ define(['backbone',
         },
         
         render: function() {
-            this.$el.append( this.template() );
+            this.$el.prepend( this.template() );
         }
         
     });
 
-    return Clock;
+    return Startmenu;
 });

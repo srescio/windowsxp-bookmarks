@@ -1,0 +1,84 @@
+.desk-window {
+    border: 3px solid #0855de;
+    border-radius: 6px 6px 0 0;
+    display: table;
+    min-height: 300px;
+    min-width: 300px;
+    
+    &.magnified {
+        border-width: 1px;
+        border-radius: 0 0 0 0;
+        position: absolute !Important;
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+        left: 0 !important;
+        top: 0 !important;
+    }
+    
+    .desk-window-top {
+        background: #0059ef; /* Old browsers */
+        background: -moz-linear-gradient(top,  #0059ef 0%, #3996ff 1%, #0055e7 14%, #0069ff 41%, #0045d6 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0059ef), color-stop(1%,#3996ff), color-stop(14%,#0055e7), color-stop(41%,#0069ff), color-stop(100%,#0045d6)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #0059ef 0%,#3996ff 1%,#0055e7 14%,#0069ff 41%,#0045d6 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #0059ef 0%,#3996ff 1%,#0055e7 14%,#0069ff 41%,#0045d6 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #0059ef 0%,#3996ff 1%,#0055e7 14%,#0069ff 41%,#0045d6 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #0059ef 0%,#3996ff 1%,#0055e7 14%,#0069ff 41%,#0045d6 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0059ef', endColorstr='#0045d6',GradientType=0 ); /* IE6-9 */
+
+        display: table;
+        height: 20px;
+        table-layout: auto;
+        width:100%;
+        
+        > * {
+            display: table-cell;
+        }
+        
+        .desk-window-title {
+            font-size: 12px;
+            position: relative;
+            text-shadow: 1px 1px 0 #081884;
+            
+            p {
+                height: 100%;
+                line-height: 1.9em;
+                overflow: hidden;
+                position: absolute;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 100%;
+                
+                .program-icon {
+                    display: inline-block;
+                    height: 100%;
+                    width: 18px;
+                }
+                
+                .window-title {
+                    padding: 0 0 0 4px;
+                }
+            }
+        }
+        
+        .desk-window-commands {
+            width: 1px;
+            
+            > * {
+                display: table-cell;
+            }
+        }
+    }
+    
+    .desk-window-content {
+        background: #efebde;
+        display: table-column;
+    }
+}
+
+.desk-window-commands {
+    button {
+        height: 18px;
+        width: 18px;
+    }
+}

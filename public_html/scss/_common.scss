@@ -11,6 +11,14 @@ body {
     box-sizing: border-box;
 }
 
+.inlineFix {
+    font-size: 0;
+    
+    > * {
+        font-size: 12px;
+    }
+}
+
 .mcsft-logo {
     font-style: italic;
     font-weight: bolder;
@@ -30,4 +38,69 @@ body {
    -webkit-appearance: value;
    -moz-appearance:    value;
    appearance:         value;
+}
+
+.win-btn {
+    border: 1px solid #FFF;
+    border-radius: 3px;
+    color: #FFF;
+    outline: none;
+    margin: 0 2px;
+}
+
+.btn-red {
+    background: rgb(242,176,160); /* Old browsers */
+    background: -moz-radial-gradient(left top, ellipse cover,  rgba(242,176,160,1) 0%, rgba(231,67,11,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, left top, 0px, center center, 100%, color-stop(0%,rgba(242,176,160,1)), color-stop(100%,rgba(231,67,11,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(left top, ellipse cover,  rgba(242,176,160,1) 0%,rgba(231,67,11,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(left top, ellipse cover,  rgba(242,176,160,1) 0%,rgba(231,67,11,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(left top, ellipse cover,  rgba(242,176,160,1) 0%,rgba(231,67,11,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at left top,  rgba(242,176,160,1) 0%,rgba(231,67,11,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2b0a0', endColorstr='#e7430b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    -webkit-box-shadow:inset -1px -1px 1px 1px #a8371b;
+    box-shadow:inset -1px -1px 1px 1px #a8371b;
+    
+    &:active {
+        -webkit-box-shadow:inset -1px -1px 1px 14px #a8371b;
+        box-shadow:inset -1px -1px 1px 14px #a8371b;        
+    }
+}
+
+.btn-blue {
+    background: rgb(148,182,255); /* Old browsers */
+    background: -moz-radial-gradient(left top, ellipse cover,  rgba(148,182,255,1) 0%, rgba(16,109,247,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, left top, 0px, center center, 100%, color-stop(0%,rgba(148,182,255,1)), color-stop(100%,rgba(16,109,247,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(left top, ellipse cover,  rgba(148,182,255,1) 0%,rgba(16,109,247,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(left top, ellipse cover,  rgba(148,182,255,1) 0%,rgba(16,109,247,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(left top, ellipse cover,  rgba(148,182,255,1) 0%,rgba(16,109,247,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at left top,  rgba(148,182,255,1) 0%,rgba(16,109,247,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94b6ff', endColorstr='#106df7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    -webkit-box-shadow:inset -1px -1px 1px 1px #003cbd;
+    box-shadow:inset -1px -1px 1px 1px #003cbd;
+    
+    &:active {
+        -webkit-box-shadow:inset -1px -1px 1px 14px #003cbd;
+        box-shadow:inset -1px -1px 1px 14px #003cbd;
+    }
+}
+
+.btn-yellow {
+    background: rgb(238,206,160); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(238,206,160,1) 0%, rgba(227,175,15,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(238,206,160,1)), color-stop(100%,rgba(227,175,15,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(238,206,160,1) 0%,rgba(227,175,15,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(238,206,160,1) 0%,rgba(227,175,15,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(238,206,160,1) 0%,rgba(227,175,15,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  rgba(238,206,160,1) 0%,rgba(227,175,15,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eecea0', endColorstr='#e3af0f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    -webkit-box-shadow:inset -1px -1px 1px 1px #a56a09;
+    box-shadow:inset -1px -1px 1px 1px #a56a09;
+    
+    &:active {
+        -webkit-box-shadow:inset -1px -1px 1px 14px #a56a09;
+        box-shadow:inset -1px -1px 1px 14px #a56a09;
+    }
 }
