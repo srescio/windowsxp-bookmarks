@@ -1,19 +1,24 @@
-define(['backbone',
-        'handlebars',
-        'text!../tpl/window.html'],
-        function(Backbone,Handlebars,Template){
+define(['backbone'],
+        function(Backbone){
     
     var Clock = Backbone.View.extend({
         
-        el : '#win-desktop',
-        template: Handlebars.compile(Template),
+        el : '#win-clock-tray',
         
         initialize: function() {
+            var _this = this;
             this.render();
+            setInterval(function(){
+                _this.render();
+            },60000);
         },
         
         render: function() {
-            this.$el.append( this.template() );
+            var date = new Date();
+            var h = date.getHours();
+            var m = (date.getMinutes()<10?'0':'') + date.getMinutes();
+            
+            this.$el.text( h+':'+m );
         }
         
     });

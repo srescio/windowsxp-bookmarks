@@ -12,13 +12,21 @@ define(['backbone',
         
         initialize: function() {
             this.render();
+            this.bind();
         },
         
         render: function() {
-            
             this.$el.html( this.template() );
+            var startmenu = new Startmenu();            
             var clock = new Clock();
-            var startmenu = new Startmenu();
+        },
+        
+        bind: function() {
+            $('.rel-window').on('click',function(e){
+                e.preventDefault();
+                
+            });
+            
             
             $('.desk-window').draggable();
             
@@ -40,9 +48,8 @@ define(['backbone',
             });
             $('.program-icon').on('dblclick', function(e){
                 $(this).parents('.desk-window').remove();
-            });
-            
-        }
+            });            
+        },
         
     });
 

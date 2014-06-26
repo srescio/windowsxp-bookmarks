@@ -1,19 +1,66 @@
 
 <nav id="startmenu">
     <div id="stm-top">
+        {{#user}}
         <figure>
-            <img id="stm-user-logo" src="http://1.gravatar.com/avatar/5c355fca7ea345a83e30cdc129df4aae?s=48&amp;d=retro&amp;r=G">
+            <img id="stm-user-logo" src="{{avatar}}">
         </figure>
         <div>
-            <h1 id="stm-user-name">Simone Rescio</h1>
+            <h1 id="stm-user-name">{{username}}</h1>
         </div>
-        
+        {{/user}}
         <div id="tp-gradient"></div>
     </div>
     
-    <div id="stm-middle" class="inlineFix">
-        <div id="stm-left" class="col">L</div>
-        <div id="stm-right" class="col">R</div>
+    <div id="stm-middle">
+        
+        <div id="stm-left" class="col">
+            <ul id="stm-fav-programs">
+                <li>
+                    <a href="http://simonerescio.it" target="_blank">
+                        <figure>
+                            <img src="img/simonerescio.ico" />
+                        </figure>
+                        <p>
+                            <span class="stm-prg-name">Internet</span>
+                            <span class="stm-prg-desc">simonerescio.it</span>
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:info@simonerescio.it">
+                        <figure>
+                            <img src="img/outlook.png" />
+                        </figure>
+                        <p>
+                            <span class="stm-prg-name">E-mail</span>
+                            <span class="stm-prg-desc">info@simonerescio.it</span>
+                        </p>
+                    </a>
+                </li>
+            </ul>
+            <ul id="all-programs">
+                <li>All <u>P</u>rograms</li>
+            </ul>
+        </div>
+        
+        <div id="stm-right" class="col">
+            <ul class="stm-my-links">
+                {{#right}}
+                <li>
+                    <a href="{{href}}" class="window-rel">
+                        <figure>
+                            <img src="{{src}}" />
+                        </figure>
+                        <p>
+                            <span class="stm-prg-name">{{name}}</span>
+                        </p>
+                    </a>
+                </li>
+                {{/right}}
+            </ul>
+            
+        </div>
     </div>
     
     <div id="stm-bottom">

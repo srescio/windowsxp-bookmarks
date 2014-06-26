@@ -50,6 +50,7 @@
     outline: none;
     width: 97px;
     
+    .show-startmenu &,
     &:active {
         background: url(../img/win-start-pressed.png) scroll 0 0 no-repeat transparent;
     }
@@ -67,7 +68,7 @@
     background: -ms-linear-gradient(top,  #3168d5 0%,#19b9f3 6%,#1499ed 16%,#1499ed 95%,#1586dc 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #3168d5 0%,#19b9f3 6%,#1499ed 16%,#1499ed 95%,#1586dc 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3168d5', endColorstr='#1586dc',GradientType=0 ); /* IE6-9 */
-    width: 1px;    
+    font-size: 12px;
     padding: 0 18px 0 8px;
-
+    width: 1px;    
 }
