@@ -103,7 +103,8 @@
             width: 100%;
             text-decoration: none;
             
-            &:hover {
+            &:hover,
+            &:hover .stm-prg-desc {
                 background: #3069c7;
                 color: #FFF;
             }
@@ -199,8 +200,17 @@
     
     p {
         display: inline-block;
-        margin: 8px;
+        margin: 5px;
+        padding: 3px;
         white-space: nowrap;
+        
+        &:hover {
+            background: #316ac5;
+        }
+        
+        button {
+            margin: 0 4px 0 0;
+        }
     }
     
     .win-btn {

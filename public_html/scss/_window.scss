@@ -2,10 +2,11 @@
     background: #efebde;
     border: 3px solid;
     border-color: #758cdd;
+    border-top-width: 1px;
     border-radius: 6px 6px 0 0;
     display: table;
-    min-height: 100px;
-    min-width: 180px;
+    min-height: 200px;
+    min-width: 300px;
     max-height: 100%;
     max-width: 100%;
     /* default position */
@@ -13,7 +14,7 @@
     top: 20px;
     /* Override jquery drag position */
     position: absolute !important;
-    
+        
     &.current,
     &.current.magnified {
         border-color: #0855de;
@@ -72,7 +73,7 @@
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#638ae1', endColorstr='#7a93df',GradientType=0 );
 
         display: table;
-        height: 35px;
+        height: 30px;
         table-layout: auto;
         width:100%;
         
@@ -136,8 +137,8 @@
 
 .desk-window-commands {
     button {
-        height: 18px;
-        width: 18px;
+        height: 21px;
+        width: 21px;
     }
 }
 

@@ -98,9 +98,10 @@ body {
     border-radius: 3px;
     color: #FFF;
     outline: none;
-    margin: 0 2px;
+    margin: 0 1px;
 }
 
+$buttonsShadowSize : -1px -1px 1px 0px;
 .btn-red {
     background: rgb(242,176,160); /* Old browsers */
     background: -moz-radial-gradient(left top, ellipse cover,  rgba(242,176,160,1) 0%, rgba(231,67,11,1) 100%); /* FF3.6+ */
@@ -111,13 +112,25 @@ body {
     background: radial-gradient(ellipse at left top,  rgba(242,176,160,1) 0%,rgba(231,67,11,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2b0a0', endColorstr='#e7430b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-    -webkit-box-shadow:inset -1px -1px 1px 1px #a8371b;
-    box-shadow:inset -1px -1px 1px 1px #a8371b;
+    -webkit-box-shadow:inset $buttonsShadowSize #a8371b;
+    box-shadow:inset $buttonsShadowSize #a8371b;
     
+    #stm-bottom p:hover &,
     &:hover {
-        
+        background: #ffb7af;
+        background: -moz-radial-gradient(left top, ellipse cover,  #ffb7af 0%, #ff765b 50%, #ff845c 100%);
+        background: -webkit-gradient(radial, left top, 0px, center center, 100%, color-stop(0%,#ffb7af), color-stop(50%,#ff765b), color-stop(100%,#ff845c));
+        background: -webkit-radial-gradient(left top, ellipse cover,  #ffb7af 0%,#ff765b 50%,#ff845c 100%);
+        background: -o-radial-gradient(left top, ellipse cover,  #ffb7af 0%,#ff765b 50%,#ff845c 100%);
+        background: -ms-radial-gradient(left top, ellipse cover,  #ffb7af 0%,#ff765b 50%,#ff845c 100%);
+        background: radial-gradient(ellipse at left top,  #ffb7af 0%,#ff765b 50%,#ff845c 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb7af', endColorstr='#ff845c',GradientType=1 );
+
+        -webkit-box-shadow:inset $buttonsShadowSize #ff513c;
+        box-shadow:inset $buttonsShadowSize #ff513c;
     }
     
+    #stm-bottom p:active &,
     &:active {
         -webkit-box-shadow:inset -1px -1px 1px 14px #a8371b;
         box-shadow:inset -1px -1px 1px 14px #a8371b;        
@@ -125,17 +138,31 @@ body {
 }
 
 .btn-blue {
-    background: rgb(148,182,255); /* Old browsers */
-    background: -moz-radial-gradient(left top, ellipse cover,  rgba(148,182,255,1) 0%, rgba(16,109,247,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, left top, 0px, center center, 100%, color-stop(0%,rgba(148,182,255,1)), color-stop(100%,rgba(16,109,247,1))); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(left top, ellipse cover,  rgba(148,182,255,1) 0%,rgba(16,109,247,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(left top, ellipse cover,  rgba(148,182,255,1) 0%,rgba(16,109,247,1) 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(left top, ellipse cover,  rgba(148,182,255,1) 0%,rgba(16,109,247,1) 100%); /* IE10+ */
-    background: radial-gradient(ellipse at left top,  rgba(148,182,255,1) 0%,rgba(16,109,247,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94b6ff', endColorstr='#106df7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: #98b7fa;
+    background: -moz-radial-gradient(left top, ellipse cover,  #98b7fa 0%, #2a68f5 46%, #0761f5 100%);
+    background: -webkit-gradient(radial, left top, 0px, center center, 100%, color-stop(0%,#98b7fa), color-stop(46%,#2a68f5), color-stop(100%,#0761f5));
+    background: -webkit-radial-gradient(left top, ellipse cover,  #98b7fa 0%,#2a68f5 46%,#0761f5 100%);
+    background: -o-radial-gradient(left top, ellipse cover,  #98b7fa 0%,#2a68f5 46%,#0761f5 100%);
+    background: -ms-radial-gradient(left top, ellipse cover,  #98b7fa 0%,#2a68f5 46%,#0761f5 100%);
+    background: radial-gradient(ellipse at left top,  #98b7fa 0%,#2a68f5 46%,#0761f5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#98b7fa', endColorstr='#0761f5',GradientType=1 );
 
-    -webkit-box-shadow:inset -1px -1px 1px 1px #003cbd;
-    box-shadow:inset -1px -1px 1px 1px #003cbd;
+    -webkit-box-shadow:inset $buttonsShadowSize #003cbd;
+    box-shadow:inset $buttonsShadowSize #003cbd;
+    
+    &:hover {
+        background: #a2c0ff;
+        background: -moz-radial-gradient(left top, ellipse cover,  #a2c0ff 0%, #317aff 46%, #36afff 100%);
+        background: -webkit-gradient(radial, left top, 0px, center center, 100%, color-stop(0%,#a2c0ff), color-stop(46%,#317aff), color-stop(100%,#36afff));
+        background: -webkit-radial-gradient(left top, ellipse cover,  #a2c0ff 0%,#317aff 46%,#36afff 100%);
+        background: -o-radial-gradient(left top, ellipse cover,  #a2c0ff 0%,#317aff 46%,#36afff 100%);
+        background: -ms-radial-gradient(left top, ellipse cover,  #a2c0ff 0%,#317aff 46%,#36afff 100%);
+        background: radial-gradient(ellipse at left top,  #a2c0ff 0%,#317aff 46%,#36afff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a2c0ff', endColorstr='#36afff',GradientType=1 );
+
+        -webkit-box-shadow:inset $buttonsShadowSize #518aff;
+        box-shadow:inset $buttonsShadowSize #518aff;
+    }
     
     &:active {
         -webkit-box-shadow:inset -1px -1px 1px 14px #003cbd;
@@ -144,18 +171,34 @@ body {
 }
 
 .btn-yellow {
-    background: rgb(238,206,160); /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  rgba(238,206,160,1) 0%, rgba(227,175,15,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(238,206,160,1)), color-stop(100%,rgba(227,175,15,1))); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  rgba(238,206,160,1) 0%,rgba(227,175,15,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  rgba(238,206,160,1) 0%,rgba(227,175,15,1) 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  rgba(238,206,160,1) 0%,rgba(227,175,15,1) 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center,  rgba(238,206,160,1) 0%,rgba(227,175,15,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eecea0', endColorstr='#e3af0f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: #eecea0;
+    background: -moz-radial-gradient(left top, ellipse cover,  #eecea0 0%, #e0a54b 46%, #e4b215 100%);
+    background: -webkit-gradient(radial, left top, 0px, center center, 100%, color-stop(0%,#eecea0), color-stop(46%,#e0a54b), color-stop(100%,#e4b215));
+    background: -webkit-radial-gradient(left top, ellipse cover,  #eecea0 0%,#e0a54b 46%,#e4b215 100%);
+    background: -o-radial-gradient(left top, ellipse cover,  #eecea0 0%,#e0a54b 46%,#e4b215 100%);
+    background: -ms-radial-gradient(left top, ellipse cover,  #eecea0 0%,#e0a54b 46%,#e4b215 100%);
+    background: radial-gradient(ellipse at left top,  #eecea0 0%,#e0a54b 46%,#e4b215 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eecea0', endColorstr='#e4b215',GradientType=1 );
 
-    -webkit-box-shadow:inset -1px -1px 1px 1px #a56a09;
-    box-shadow:inset -1px -1px 1px 1px #a56a09;
+    -webkit-box-shadow:inset $buttonsShadowSize #a56a09;
+    box-shadow:inset $buttonsShadowSize #a56a09;
     
+    #stm-bottom p:hover &,
+    &:hover {
+        background: #ffdaa4;
+        background: -moz-radial-gradient(left top, ellipse cover,  #ffdaa4 0%, #ffbd4f 46%, #ffe41e 100%);
+        background: -webkit-gradient(radial, left top, 0px, center center, 100%, color-stop(0%,#ffdaa4), color-stop(46%,#ffbd4f), color-stop(100%,#ffe41e));
+        background: -webkit-radial-gradient(left top, ellipse cover,  #ffdaa4 0%,#ffbd4f 46%,#ffe41e 100%);
+        background: -o-radial-gradient(left top, ellipse cover,  #ffdaa4 0%,#ffbd4f 46%,#ffe41e 100%);
+        background: -ms-radial-gradient(left top, ellipse cover,  #ffdaa4 0%,#ffbd4f 46%,#ffe41e 100%);
+        background: radial-gradient(ellipse at left top,  #ffdaa4 0%,#ffbd4f 46%,#ffe41e 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdaa4', endColorstr='#ffe41e',GradientType=1 );
+
+        -webkit-box-shadow:inset $buttonsShadowSize #c28112;
+        box-shadow:inset $buttonsShadowSize #c28112;
+    }
+    
+    #stm-bottom p:active &,
     &:active {
         -webkit-box-shadow:inset -1px -1px 1px 14px #a56a09;
         box-shadow:inset -1px -1px 1px 14px #a56a09;
