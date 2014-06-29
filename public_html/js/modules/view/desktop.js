@@ -3,13 +3,14 @@ define(['backbone',
         'text!../tpl/desktop.html',
         'modules/view/startmenu',
         'modules/view/clock',
+        'modules/view/icons',
         'modules/view/program'],
-        function(Backbone,Handlebars,deskTpl,Startmenu,Clock,Program){
+        function(Backbone,Handlebars,deskTpl,Startmenu,Clock,Icons,Program){
     
     var Desktop = Backbone.View.extend({
         
         el : '#system',
-        template: Handlebars.compile(deskTpl),
+        deskTpl: Handlebars.compile(deskTpl),
         
         initialize: function() {
             this.render();
@@ -17,9 +18,12 @@ define(['backbone',
         },
         
         render: function() {
-            this.$el.html( this.template() );
-            var startmenu = new Startmenu();            
+            this.$el.html( this.deskTpl() );
+            var startmenu = new Startmenu();
             var clock = new Clock();
+            
+            var desktopIcons = new Icons({id:'u3d5tgcANe'});
+                        
             var pippo = new Program({
                 icon : 'img/mydocs.png',
                 name : 'Ansa',

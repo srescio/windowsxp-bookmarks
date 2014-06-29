@@ -58,6 +58,13 @@ define(['backbone',
             this.program = $('[data-program-id="'+prgID+'"]');
             this.window  = $('article[data-program-id="'+prgID+'"]');
             this.traybar = $('li[data-program-id="'+prgID+'"]');
+            
+            var windowsNumber = $('article[data-program-id]').length;
+            
+            this.window.css({
+                left:(20*windowsNumber)+'px',
+                top:(20*windowsNumber)+'px'
+            });
         },
         
         bind: function() {
@@ -137,6 +144,7 @@ define(['backbone',
             
             this.window.find('iframe').iframeTracker({
                 blurCallback: function(){
+                    $('html').removeClass('show-startmenu');
                     _this.setCurrent();
                 }
             });
