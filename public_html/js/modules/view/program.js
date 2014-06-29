@@ -137,8 +137,6 @@ define(['backbone',
             
             this.window.find('iframe').iframeTracker({
                 blurCallback: function(){
-                    // Do something when iframe is clicked (like firing an XHR request)
-                    console.log('clicked iframe',_this.window);
                     _this.setCurrent();
                 }
             });
