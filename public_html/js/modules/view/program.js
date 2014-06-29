@@ -33,10 +33,10 @@ define(['backbone',
             this.$el.find('.desk-window,.win-bar-program').removeClass('current');
             
             // Render new program as current
-            var prgIcon = this.options.icon;
             var prgName = this.options.name;
             var prgUrl  = this.options.url;
             var prgID   = this.programID();
+            var prgIcon = this.favIcon(prgUrl);
             
             windows.append(
                 this.windowTpl({
@@ -140,6 +140,11 @@ define(['backbone',
                     _this.setCurrent();
                 }
             });
+        },
+        
+        favIcon: function(url) {
+            var faviconURL = url.replace(/^(http:\/\/[^\/]+).*$/, '$1') + '/favicon.ico';            
+            return faviconURL;
         }
         
     });

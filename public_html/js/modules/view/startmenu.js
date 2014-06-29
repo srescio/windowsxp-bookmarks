@@ -16,8 +16,6 @@ define(['backbone',
         },
         
         render: function() {
-            console.log( this.model.toJSON() );
-            
             this.$el.prepend( this.template( this.model.toJSON() ) );
         },
         

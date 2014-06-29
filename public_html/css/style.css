@@ -228,6 +228,7 @@ body {
 .win-prg-icon {
   display: inline-block;
   height: 100%;
+  margin: 0 0 0 2px;
   width: 16px;
   position: relative; }
   .win-prg-icon .icon-img {
