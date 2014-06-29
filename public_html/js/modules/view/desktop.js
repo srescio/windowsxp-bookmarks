@@ -41,10 +41,6 @@ define(['backbone',
                 if( !$(e.target).parents('.desk-window,.win-bar-program').length )
                     $('.desk-window,.win-bar-program').removeClass('current');
             });
-            $(window).blur( function(e){
-                console.warn(e);
-                console.info('Clicked out of the window or on the iframe');
-            });
         }
         
     });

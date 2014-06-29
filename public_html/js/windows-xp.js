@@ -3,6 +3,7 @@ require.config({
         jquery        : 'libs/jquery/jquery.min',
         jqueryui      : 'libs/jqueryui/jquery-ui.min',
         jqueryhotkeys : 'libs/jquery.hotkeys',
+        jqueryiframetracker : 'libs/jquery.iframetracker',
         underscore    : 'libs/underscore.js/underscore-min',
         backbone      : 'libs/backbone.js/backbone-min',
         handlebars    : 'libs/handlebars.js/handlebars.min',
@@ -21,12 +22,16 @@ require.config({
           deps:["jquery"],
           exports: 'jqueryhotkeys'
         },
+        jqueryiframetracker : {
+          deps:["jquery"],
+          exports: 'jqueryiframetracker'
+        },
         underscore: {
           deps:["jquery"],
           exports: '_'
         },
         backbone: {
-          deps:["jquery","jqueryui","jqueryhotkeys","underscore"],
+          deps:["jquery","jqueryui","jqueryhotkeys","jqueryiframetracker","underscore"],
           exports: 'Backbone'
         },
         handlebars: {

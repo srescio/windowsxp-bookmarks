@@ -107,6 +107,8 @@ define(['backbone',
             this.window.find('.win-prg-icon').on('dblclick', function(e){
                 _this.closeProgram();
             });
+            
+            this.trackIframe();
         },
         
         minimizeWindow : function() {
@@ -128,6 +130,18 @@ define(['backbone',
         
         closeProgram: function() {
             this.program.remove();
+        },
+        
+        trackIframe : function() {
+            var _this = this;
+            
+            this.window.find('iframe').iframeTracker({
+                blurCallback: function(){
+                    // Do something when iframe is clicked (like firing an XHR request)
+                    console.log('clicked iframe',_this.window);
+                    _this.setCurrent();
+                }
+            });
         }
         
     });
