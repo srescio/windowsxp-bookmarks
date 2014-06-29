@@ -11,11 +11,64 @@ body {
     box-sizing: border-box;
 }
 
+/* Allow inline-block elements to stay on same line without ghost-space from anonymous inline space */
 .inlineFix {
     font-size: 0;
     
     > * {
         font-size: 12px;
+    }
+}
+
+/* Allows content of a table-cell element to be positioned relative to the cell */
+/* First child of the table-cell must be the following, and all contents goes inside of it */
+.tbcRelative {
+    display: table;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    
+    #win-desktop > & {
+        display: block;
+        position: absolute;
+    }
+    
+    &:after {
+        clear: both;
+        content: '.';
+        display: block;
+        opacity: 0;
+    }
+}
+
+/* Content on single line without affecting parent and sibilings sizes */
+/* Html structure must follow the selectors nesting */
+.oneLineFlex {
+    display: table;
+    width: 100%;
+    
+    .oneLineContainer {
+        display: table-cell;
+        width: inherit;
+        
+        .oneLineContent {
+            display: block;
+            overflow: hidden;
+            position: absolute;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: inherit;
+            
+            .oneLineText {
+                display: inline-block;
+                overflow: hidden;
+                position: absolute;
+                text-overflow: ellipsis;
+                top: 50%;
+                margin: -0.5em 0 0 0;
+                width: 100%;
+        }
+        }
     }
 }
 
@@ -61,6 +114,10 @@ body {
     -webkit-box-shadow:inset -1px -1px 1px 1px #a8371b;
     box-shadow:inset -1px -1px 1px 1px #a8371b;
     
+    &:hover {
+        
+    }
+    
     &:active {
         -webkit-box-shadow:inset -1px -1px 1px 14px #a8371b;
         box-shadow:inset -1px -1px 1px 14px #a8371b;        
@@ -102,5 +159,26 @@ body {
     &:active {
         -webkit-box-shadow:inset -1px -1px 1px 14px #a56a09;
         box-shadow:inset -1px -1px 1px 14px #a56a09;
+    }
+}
+
+
+$winIconWidth : 16px;
+
+.win-prg-icon {
+    display: inline-block;
+    height: 100%;
+    width: $winIconWidth;
+    position:relative;
+    
+    .icon-img {
+        background-attachment: scroll;
+        background-color: transparent;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 100%;
+        position: absolute;
+        width: 100%;
     }
 }

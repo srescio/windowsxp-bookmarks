@@ -1,17 +1,26 @@
-<article id="win-el" class="desk-window resizable">
+<article class="desk-window resizable current" data-program-id="{{ID}}">
     <header class="desk-window-top">
         <div class="desk-window-title">
-            <p><span class="program-icon">i</span><span class="window-title">win-title</span></p>
+            <div class="tbcRelative">
+                <div class="oneLineFlex">
+                    <div class="oneLineContainer">
+                        <p class="oneLineContent"><span class="win-prg-icon"><i class="icon-img" style="background-image:url({{icon}});"></i></span><span class="window-title oneLineText">{{name}}</span></p>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div class="desk-window-commands">
-            <p><button type="button" class="el-reset win-btn btn-blue win-cmd-help">?</button></p>
             <p><button type="button" class="el-reset win-btn btn-blue win-cmd-min">_</button></p>
             <p><button type="button" class="el-reset win-btn btn-blue win-cmd-resize">&boxbox;</button></p>
             <p><button type="button" class="el-reset win-btn btn-red win-cmd-close">&Cross;</button></p>
         </div>
     </header>
     <div class="desk-window-content">
-        
+        <div>
+            {{#url}}
+            <iframe src="{{.}}"></iframe>
+            {{/url}}
+        </div>
     </div>
 </article>

@@ -15,7 +15,7 @@ define(['backbone'],
         
         render: function() {
             var date = new Date();
-            var h = date.getHours();
+            var h = (date.getHours()<10?'0':'') + date.getHours();
             var m = (date.getMinutes()<10?'0':'') + date.getMinutes();
             
             this.$el.text( h+':'+m );

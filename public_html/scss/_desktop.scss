@@ -3,7 +3,7 @@
     display: table;
     height: 100%;
     overflow: hidden;
-    width: 100%;
+    width: 100%;   
 }
 
 #win-desktop {
@@ -13,14 +13,39 @@
     height: 100%;
     position: relative;
     width: 100%;
+    
+    /* Avoid vertical collapse without contents */
+    &:after {
+        clear: both;
+        color: transparent;
+        content: '.';
+        display: block;
+    }
+}
+
+#win-start-btn {
+    background: url(../img/win-start.png) scroll 0 0 no-repeat transparent;
+    background-size: contain;
+    border: none;
+    color: transparent;
+    height: 30px;
+    outline: none;
+    width: 97px;
+
+    &:hover {
+        background-image: url(../img/win-start-hover.png);
+    }    
+    
+    .show-startmenu &,
+    &:active {
+        background-image: url(../img/win-start-pressed.png);
+    }
 }
 
 #win-program-bar {
     display: table-footer-group;
-    
-    
+    height: 1px;
 }
-
 #win-program-bar-wrap {
     display: table;
     height: 30px;
@@ -41,22 +66,62 @@
         vertical-align: middle;
     }
 }
-
-#win-start-btn {
-    background: url(../img/win-start.png) scroll 0 0 no-repeat transparent;
-    border: none;
-    color: transparent;
-    height: 30px;
-    outline: none;
-    width: 97px;
-    
-    .show-startmenu &,
-    &:active {
-        background: url(../img/win-start-pressed.png) scroll 0 0 no-repeat transparent;
-    }
-}
 #win-programs {
     width: 100%;
+    
+    #wpl {
+        display:table;
+        height: 100%;
+        padding: 4px;
+        table-layout: auto;
+        width:100%;
+        
+        /* Phantom elastic cell to allow width as max-width */
+        &:after {
+            content: '';
+            display: table-cell;
+            height: 100%;
+        }
+        
+        .win-bar-program {
+            display: table-cell;
+            height: 100%;
+            width: 200px; /*Act as max-width*/
+            vertical-align: middle;
+            
+            p {
+                background: #3d7ef6;
+                border-radius: 2px;
+                -webkit-box-shadow:inset 1px 1px 2px 1px #659aff;
+                box-shadow:inset 1px 1px 2px 1px #659aff;
+                margin: 0 1px;
+                padding: 2px 6px 0 4px;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: auto;
+                
+                &:hover{
+                    background: #55a0ff;
+                    -webkit-box-shadow:inset 1px 1px 2px 1px #95c5ff;
+                    box-shadow:inset 1px 1px 2px 1px #95c5ff;                    
+                }
+            }
+            
+            &.current {
+                p {
+                    background: #1a50b8;
+                    border: 1px solid #092c74;
+                    -webkit-box-shadow:inset 0px 0px 1px 0px #092c74;
+                    box-shadow:inset 0px 0px 1px 0px #092c74;
+                    
+                    &:hover{
+                        background: #326ee9;
+                    }
+                }
+            }
+        }        
+    }
 }
 #win-sys-tray {
     border-left: 1px solid #0b3051;

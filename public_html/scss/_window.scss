@@ -1,78 +1,136 @@
 .desk-window {
-    border: 3px solid #0855de;
+    background: #efebde;
+    border: 3px solid;
+    border-color: #758cdd;
     border-radius: 6px 6px 0 0;
     display: table;
-    min-height: 300px;
-    min-width: 300px;
+    min-height: 100px;
+    min-width: 180px;
+    max-height: 100%;
+    max-width: 100%;
+    /* default position */
+    left: 20px;
+    top: 20px;
+    /* Override jquery drag position */
+    position: absolute !important;
+    
+    &.current,
+    &.current.magnified {
+        border-color: #0855de;
+        z-index:20;
+        
+        .desk-window-top {
+            background: #0059ef; /* Old browsers */
+            background: -moz-linear-gradient(top,  #0059ef 0%, #3996ff 1%, #0055e7 14%, #0069ff 41%, #0045d6 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0059ef), color-stop(1%,#3996ff), color-stop(14%,#0055e7), color-stop(41%,#0069ff), color-stop(100%,#0045d6)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  #0059ef 0%,#3996ff 1%,#0055e7 14%,#0069ff 41%,#0045d6 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  #0059ef 0%,#3996ff 1%,#0055e7 14%,#0069ff 41%,#0045d6 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  #0059ef 0%,#3996ff 1%,#0055e7 14%,#0069ff 41%,#0045d6 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  #0059ef 0%,#3996ff 1%,#0055e7 14%,#0069ff 41%,#0045d6 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0059ef', endColorstr='#0045d6',GradientType=0 ); /* IE6-9 */
+            
+            .window-title {
+                opacity: 1;
+            }
+
+            .desk-window-commands {
+                > * {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    
+    &.minimized {
+        visibility: hidden;
+        pointer-events: none;
+    }
     
     &.magnified {
-        border-width: 1px;
+        border-width: 0px;
         border-radius: 0 0 0 0;
         position: absolute !Important;
-        height: 100%;
-        width: 100%;
+        height: 100% !important;
+        width: 100% !important;
         z-index: 10;
         left: 0 !important;
         top: 0 !important;
+        
+        .ui-resizable-handle {
+            display: none;
+        }
     }
     
     .desk-window-top {
-        background: #0059ef; /* Old browsers */
-        background: -moz-linear-gradient(top,  #0059ef 0%, #3996ff 1%, #0055e7 14%, #0069ff 41%, #0045d6 100%); /* FF3.6+ */
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0059ef), color-stop(1%,#3996ff), color-stop(14%,#0055e7), color-stop(41%,#0069ff), color-stop(100%,#0045d6)); /* Chrome,Safari4+ */
-        background: -webkit-linear-gradient(top,  #0059ef 0%,#3996ff 1%,#0055e7 14%,#0069ff 41%,#0045d6 100%); /* Chrome10+,Safari5.1+ */
-        background: -o-linear-gradient(top,  #0059ef 0%,#3996ff 1%,#0055e7 14%,#0069ff 41%,#0045d6 100%); /* Opera 11.10+ */
-        background: -ms-linear-gradient(top,  #0059ef 0%,#3996ff 1%,#0055e7 14%,#0069ff 41%,#0045d6 100%); /* IE10+ */
-        background: linear-gradient(to bottom,  #0059ef 0%,#3996ff 1%,#0055e7 14%,#0069ff 41%,#0045d6 100%); /* W3C */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0059ef', endColorstr='#0045d6',GradientType=0 ); /* IE6-9 */
+        background: #638ae1;
+        background: -moz-linear-gradient(top,  #638ae1 0%, #98b3e8 1%, #7a96df 14%, #81a7e8 41%, #7a93df 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#638ae1), color-stop(1%,#98b3e8), color-stop(14%,#7a96df), color-stop(41%,#81a7e8), color-stop(100%,#7a93df));
+        background: -webkit-linear-gradient(top,  #638ae1 0%,#98b3e8 1%,#7a96df 14%,#81a7e8 41%,#7a93df 100%);
+        background: -o-linear-gradient(top,  #638ae1 0%,#98b3e8 1%,#7a96df 14%,#81a7e8 41%,#7a93df 100%);
+        background: -ms-linear-gradient(top,  #638ae1 0%,#98b3e8 1%,#7a96df 14%,#81a7e8 41%,#7a93df 100%);
+        background: linear-gradient(to bottom,  #638ae1 0%,#98b3e8 1%,#7a96df 14%,#81a7e8 41%,#7a93df 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#638ae1', endColorstr='#7a93df',GradientType=0 );
 
         display: table;
-        height: 20px;
+        height: 35px;
         table-layout: auto;
         width:100%;
         
         > * {
             display: table-cell;
+            vertical-align: middle;
         }
-        
-        .desk-window-title {
-            font-size: 12px;
-            position: relative;
-            text-shadow: 1px 1px 0 #081884;
-            
-            p {
-                height: 100%;
-                line-height: 1.9em;
-                overflow: hidden;
-                position: absolute;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                width: 100%;
                 
-                .program-icon {
-                    display: inline-block;
-                    height: 100%;
-                    width: 18px;
-                }
-                
-                .window-title {
-                    padding: 0 0 0 4px;
-                }
-            }
-        }
-        
         .desk-window-commands {
             width: 1px;
             
             > * {
+                
+                opacity: 0.6;
                 display: table-cell;
+                
+                &:hover {
+                    opacity: 1;
+                }
             }
         }
     }
     
     .desk-window-content {
-        background: #efebde;
-        display: table-column;
+        background: #FFF;
+        display: table-row;
+        width: 100%;
+        height: 100%;
+        
+        div {
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+        }
+        
+        iframe {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .window-title {
+        opacity: 0.6;
+    }
+}
+.desk-window-title {
+    font-size: 12px;
+    position: relative;
+    text-shadow: 1px 1px 0 #081884;
+
+    p {
+        height: 100%;
+        line-height: 1em;
+        padding: 0 6px 0 0;
+
+        .window-title {
+            padding: 0 ($winIconWidth * 2) 0 4px;
+        }
     }
 }
 
@@ -81,4 +139,8 @@
         height: 18px;
         width: 18px;
     }
+}
+
+.ui-icon-gripsmall-diagonal-se {
+    opacity: 0;
 }

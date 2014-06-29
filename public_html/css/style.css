@@ -83,10 +83,51 @@ body {
 * {
   box-sizing: border-box; }
 
+/* Allow inline-block elements to stay on same line without ghost-space from anonymous inline space */
 .inlineFix {
   font-size: 0; }
   .inlineFix > * {
     font-size: 12px; }
+
+/* Allows content of a table-cell element to be positioned relative to the cell */
+/* First child of the table-cell must be the following, and all contents goes inside of it */
+.tbcRelative {
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%; }
+  #win-desktop > .tbcRelative {
+    display: block;
+    position: absolute; }
+  .tbcRelative:after {
+    clear: both;
+    content: '.';
+    display: block;
+    opacity: 0; }
+
+/* Content on single line without affecting parent and sibilings sizes */
+/* Html structure must follow the selectors nesting */
+.oneLineFlex {
+  display: table;
+  width: 100%; }
+  .oneLineFlex .oneLineContainer {
+    display: table-cell;
+    width: inherit; }
+    .oneLineFlex .oneLineContainer .oneLineContent {
+      display: block;
+      overflow: hidden;
+      position: absolute;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: inherit; }
+      .oneLineFlex .oneLineContainer .oneLineContent .oneLineText {
+        display: inline-block;
+        overflow: hidden;
+        position: absolute;
+        text-overflow: ellipsis;
+        top: 50%;
+        margin: -0.5em 0 0 0;
+        width: 100%; }
 
 .mcsft-logo {
   font-style: italic;
@@ -183,6 +224,21 @@ body {
   .btn-yellow:active {
     -webkit-box-shadow: inset -1px -1px 1px 14px #a56a09;
     box-shadow: inset -1px -1px 1px 14px #a56a09; }
+
+.win-prg-icon {
+  display: inline-block;
+  height: 100%;
+  width: 16px;
+  position: relative; }
+  .win-prg-icon .icon-img {
+    background-attachment: scroll;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    position: absolute;
+    width: 100%; }
 
 #startup {
   cursor: none;
@@ -517,10 +573,30 @@ body {
   display: table;
   height: 100%;
   position: relative;
-  width: 100%; }
+  width: 100%;
+  /* Avoid vertical collapse without contents */ }
+  #win-desktop:after {
+    clear: both;
+    color: transparent;
+    content: '.';
+    display: block; }
+
+#win-start-btn {
+  background: url(../img/win-start.png) scroll 0 0 no-repeat transparent;
+  background-size: contain;
+  border: none;
+  color: transparent;
+  height: 30px;
+  outline: none;
+  width: 97px; }
+  #win-start-btn:hover {
+    background-image: url(../img/win-start-hover.png); }
+  .show-startmenu #win-start-btn, #win-start-btn:active {
+    background-image: url(../img/win-start-pressed.png); }
 
 #win-program-bar {
-  display: table-footer-group; }
+  display: table-footer-group;
+  height: 1px; }
 
 #win-program-bar-wrap {
   display: table;
@@ -547,18 +623,47 @@ body {
     display: table-cell;
     vertical-align: middle; }
 
-#win-start-btn {
-  background: url(../img/win-start.png) scroll 0 0 no-repeat transparent;
-  border: none;
-  color: transparent;
-  height: 30px;
-  outline: none;
-  width: 97px; }
-  .show-startmenu #win-start-btn, #win-start-btn:active {
-    background: url(../img/win-start-pressed.png) scroll 0 0 no-repeat transparent; }
-
 #win-programs {
   width: 100%; }
+  #win-programs #wpl {
+    display: table;
+    height: 100%;
+    padding: 4px;
+    table-layout: auto;
+    width: 100%;
+    /* Phantom elastic cell to allow width as max-width */ }
+    #win-programs #wpl:after {
+      content: '';
+      display: table-cell;
+      height: 100%; }
+    #win-programs #wpl .win-bar-program {
+      display: table-cell;
+      height: 100%;
+      width: 200px;
+      /*Act as max-width*/
+      vertical-align: middle; }
+      #win-programs #wpl .win-bar-program p {
+        background: #3d7ef6;
+        border-radius: 2px;
+        -webkit-box-shadow: inset 1px 1px 2px 1px #659aff;
+        box-shadow: inset 1px 1px 2px 1px #659aff;
+        margin: 0 1px;
+        padding: 2px 6px 0 4px;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: auto; }
+        #win-programs #wpl .win-bar-program p:hover {
+          background: #55a0ff;
+          -webkit-box-shadow: inset 1px 1px 2px 1px #95c5ff;
+          box-shadow: inset 1px 1px 2px 1px #95c5ff; }
+      #win-programs #wpl .win-bar-program.current p {
+        background: #1a50b8;
+        border: 1px solid #092c74;
+        -webkit-box-shadow: inset 0px 0px 1px 0px #092c74;
+        box-shadow: inset 0px 0px 1px 0px #092c74; }
+        #win-programs #wpl .win-bar-program.current p:hover {
+          background: #326ee9; }
 
 #win-sys-tray {
   border-left: 1px solid #0b3051;
@@ -586,10 +691,12 @@ body {
   border: 2px solid #225cc5;
   border-radius: 6px 6px 0 0;
   bottom: 0;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.6);
   display: none;
   left: 0;
   position: absolute;
-  width: 380px; }
+  width: 380px;
+  z-index: 999; }
   .show-startmenu #startmenu {
     display: block; }
 
@@ -767,69 +874,111 @@ body {
     width: 24px; }
 
 .desk-window {
-  border: 3px solid #0855de;
+  background: #efebde;
+  border: 3px solid;
+  border-color: #758cdd;
   border-radius: 6px 6px 0 0;
   display: table;
-  min-height: 300px;
-  min-width: 300px; }
+  min-height: 100px;
+  min-width: 180px;
+  max-height: 100%;
+  max-width: 100%;
+  /* default position */
+  left: 20px;
+  top: 20px;
+  /* Override jquery drag position */
+  position: absolute !important; }
+  .desk-window.current, .desk-window.current.magnified {
+    border-color: #0855de;
+    z-index: 20; }
+    .desk-window.current .desk-window-top, .desk-window.current.magnified .desk-window-top {
+      background: #0059ef;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #0059ef 0%, #3996ff 1%, #0055e7 14%, #0069ff 41%, #0045d6 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0059ef), color-stop(1%, #3996ff), color-stop(14%, #0055e7), color-stop(41%, #0069ff), color-stop(100%, #0045d6));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #0059ef 0%, #3996ff 1%, #0055e7 14%, #0069ff 41%, #0045d6 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #0059ef 0%, #3996ff 1%, #0055e7 14%, #0069ff 41%, #0045d6 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, #0059ef 0%, #3996ff 1%, #0055e7 14%, #0069ff 41%, #0045d6 100%);
+      /* IE10+ */
+      background: linear-gradient(to bottom, #0059ef 0%, #3996ff 1%, #0055e7 14%, #0069ff 41%, #0045d6 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0059ef', endColorstr='#0045d6',GradientType=0 );
+      /* IE6-9 */ }
+      .desk-window.current .desk-window-top .window-title, .desk-window.current.magnified .desk-window-top .window-title {
+        opacity: 1; }
+      .desk-window.current .desk-window-top .desk-window-commands > *, .desk-window.current.magnified .desk-window-top .desk-window-commands > * {
+        opacity: 1; }
+  .desk-window.minimized {
+    visibility: hidden;
+    pointer-events: none; }
   .desk-window.magnified {
-    border-width: 1px;
+    border-width: 0px;
     border-radius: 0 0 0 0;
     position: absolute !Important;
-    height: 100%;
-    width: 100%;
+    height: 100% !important;
+    width: 100% !important;
     z-index: 10;
     left: 0 !important;
     top: 0 !important; }
+    .desk-window.magnified .ui-resizable-handle {
+      display: none; }
   .desk-window .desk-window-top {
-    background: #0059ef;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #0059ef 0%, #3996ff 1%, #0055e7 14%, #0069ff 41%, #0045d6 100%);
-    /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0059ef), color-stop(1%, #3996ff), color-stop(14%, #0055e7), color-stop(41%, #0069ff), color-stop(100%, #0045d6));
-    /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #0059ef 0%, #3996ff 1%, #0055e7 14%, #0069ff 41%, #0045d6 100%);
-    /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #0059ef 0%, #3996ff 1%, #0055e7 14%, #0069ff 41%, #0045d6 100%);
-    /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #0059ef 0%, #3996ff 1%, #0055e7 14%, #0069ff 41%, #0045d6 100%);
-    /* IE10+ */
-    background: linear-gradient(to bottom, #0059ef 0%, #3996ff 1%, #0055e7 14%, #0069ff 41%, #0045d6 100%);
-    /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0059ef', endColorstr='#0045d6',GradientType=0 );
-    /* IE6-9 */
+    background: #638ae1;
+    background: -moz-linear-gradient(top, #638ae1 0%, #98b3e8 1%, #7a96df 14%, #81a7e8 41%, #7a93df 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #638ae1), color-stop(1%, #98b3e8), color-stop(14%, #7a96df), color-stop(41%, #81a7e8), color-stop(100%, #7a93df));
+    background: -webkit-linear-gradient(top, #638ae1 0%, #98b3e8 1%, #7a96df 14%, #81a7e8 41%, #7a93df 100%);
+    background: -o-linear-gradient(top, #638ae1 0%, #98b3e8 1%, #7a96df 14%, #81a7e8 41%, #7a93df 100%);
+    background: -ms-linear-gradient(top, #638ae1 0%, #98b3e8 1%, #7a96df 14%, #81a7e8 41%, #7a93df 100%);
+    background: linear-gradient(to bottom, #638ae1 0%, #98b3e8 1%, #7a96df 14%, #81a7e8 41%, #7a93df 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#638ae1', endColorstr='#7a93df',GradientType=0 );
     display: table;
-    height: 20px;
+    height: 35px;
     table-layout: auto;
     width: 100%; }
     .desk-window .desk-window-top > * {
-      display: table-cell; }
-    .desk-window .desk-window-top .desk-window-title {
-      font-size: 12px;
-      position: relative;
-      text-shadow: 1px 1px 0 #081884; }
-      .desk-window .desk-window-top .desk-window-title p {
-        height: 100%;
-        line-height: 1.9em;
-        overflow: hidden;
-        position: absolute;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 100%; }
-        .desk-window .desk-window-top .desk-window-title p .program-icon {
-          display: inline-block;
-          height: 100%;
-          width: 18px; }
-        .desk-window .desk-window-top .desk-window-title p .window-title {
-          padding: 0 0 0 4px; }
+      display: table-cell;
+      vertical-align: middle; }
     .desk-window .desk-window-top .desk-window-commands {
       width: 1px; }
       .desk-window .desk-window-top .desk-window-commands > * {
+        opacity: 0.6;
         display: table-cell; }
+        .desk-window .desk-window-top .desk-window-commands > *:hover {
+          opacity: 1; }
   .desk-window .desk-window-content {
-    background: #efebde;
-    display: table-column; }
+    background: #FFF;
+    display: table-row;
+    width: 100%;
+    height: 100%; }
+    .desk-window .desk-window-content div {
+      display: inline-block;
+      height: 100%;
+      width: 100%; }
+    .desk-window .desk-window-content iframe {
+      display: block;
+      height: 100%;
+      width: 100%; }
+  .desk-window .window-title {
+    opacity: 0.6; }
+
+.desk-window-title {
+  font-size: 12px;
+  position: relative;
+  text-shadow: 1px 1px 0 #081884; }
+  .desk-window-title p {
+    height: 100%;
+    line-height: 1em;
+    padding: 0 6px 0 0; }
+    .desk-window-title p .window-title {
+      padding: 0 32px 0 4px; }
 
 .desk-window-commands button {
   height: 18px;
   width: 18px; }
+
+.ui-icon-gripsmall-diagonal-se {
+  opacity: 0; }
