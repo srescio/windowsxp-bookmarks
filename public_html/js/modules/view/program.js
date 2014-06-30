@@ -20,11 +20,6 @@ define(['backbone',
             this.bind();
         },
         
-        programID : function() {
-            var string = Math.random().toString(36).substring(2);
-            return string;
-        },
-        
         render: function() {
             var windows = this.$el.find('#win-desktop>.tbcRelative');
             var bar = this.$el.find('#wpl');
@@ -35,7 +30,7 @@ define(['backbone',
             // Render new program as current
             var prgName = this.options.name;
             var prgUrl  = this.options.url;
-            var prgID   = this.programID();
+            var prgID   = this.options.id;
             var prgIcon = this.favIcon(prgUrl);
             
             windows.append(
@@ -55,9 +50,9 @@ define(['backbone',
             );
             
             this.id = prgID;
-            this.program = $('[data-program-id="'+prgID+'"]');
-            this.window  = $('article[data-program-id="'+prgID+'"]');
-            this.traybar = $('li[data-program-id="'+prgID+'"]');
+            this.window  = $('.desk-window[data-program-id="'+prgID+'"]');
+            this.traybar = $('.win-bar-program[data-program-id="'+prgID+'"]');
+            this.program = $('.desk-window[data-program-id="'+prgID+'"],.win-bar-program[data-program-id="'+prgID+'"]');
             
             var windowsNumber = $('article[data-program-id]').length;
             

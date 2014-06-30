@@ -14,7 +14,8 @@
     top: 20px;
     /* Override jquery drag position */
     position: absolute !important;
-        
+    z-index:2;
+    
     &.current,
     &.current.magnified {
         border-color: #0855de;

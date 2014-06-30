@@ -1,11 +1,8 @@
-<ul>
-    <li class="desk-window-title win-bar-program current" data-program-id="{{ID}}" title="{{name}}">
-        <div class="tbcRelative">
-            <div class="oneLineFlex">
-                <div class="oneLineContainer">
-                    <p class="oneLineContent"><span class="win-prg-icon"><i class="icon-img" style="background-image:url({{icon}});"></i></span><span class="window-title oneLineText">{{name}}</span></p>
-                </div>
-            </div>
-        </div>
-    </li>
+<ul class="win-icons">
+{{#icons}}
+<li class="win-icon" title="{{desc}}">
+    <a href="{{url}}" data-program-id="{{id}}" target="_blank"><span class="win-icon-image" style="background-image:url({{icon}}});"></span><span class="win-icon-name">{{name}}</span></a>
+</li>
+{{/icons}}
+
 </ul>

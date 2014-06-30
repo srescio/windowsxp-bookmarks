@@ -66,9 +66,9 @@ define([],function(){
         };
 
 
-        Widget.render = function(data) {               
+        Widget.render = function(data) {       
             var widget = Widget.find(data["share_id"]);
-            widget.iconsObj.logIcons(data.data.nodes);            
+            widget.iconsObj.render(data.data.nodes);            
         };
 
 

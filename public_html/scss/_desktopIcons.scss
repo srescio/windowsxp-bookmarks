@@ -1,0 +1,66 @@
+.win-icons {
+    list-style: none;
+    position: relative;
+    text-align: left;
+    z-index:1;
+    
+    .win-icon {
+        display: block;
+        float: left;
+        padding: 21px 8px;
+        
+        a {
+            color: #FFF;
+            cursor: default;
+            display: inline-block;
+            font-size: 12px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            text-shadow: 1px 1px 3px #222;
+            width: 75px;
+            
+            &.selected {
+                
+                .win-icon-image {
+                    $colorize : sepia(1) hue-rotate(160deg);
+                    -webkit-filter: $colorize;
+                    filter: $colorize;
+                }
+                
+                .win-icon-name {
+                    background: #316ac5;
+                    border: 1px dotted #ce953a;
+                    text-overflow: initial;
+                    text-shadow: none;
+                    white-space: normal;
+                    word-break:break-all;
+                }
+            }
+        }
+        
+        .win-icon-image {
+            display: block;
+            height: 36px;
+            margin: 0 auto;
+            width: 36px;
+            background-attachment: scroll;
+            background-color: transparent;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        
+        .win-icon-name {
+            border: 1px dotted transparent;
+            display: inline-block;
+            left: 0;
+            margin: 4px 0 0 0;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 100%;
+        }        
+    }
+}

@@ -8,12 +8,9 @@ define(['backbone'],function(Backbone){
         },
         
         initialize: function(){
-            this.on('change',this.hasIcons);
-        },
-        
-        hasIcons:function() {
-            console.info('hasIcons called');
+            //
         }
+        
     });
     
     return IconsModel;
