@@ -98,6 +98,7 @@ body {
   width: 100%; }
   #win-desktop > .tbcRelative {
     display: block;
+    overflow: hidden;
     position: absolute; }
   .tbcRelative:after {
     clear: both;
@@ -908,12 +909,17 @@ body {
   min-width: 300px;
   max-height: 100%;
   max-width: 100%;
+  height: 60%;
+  width: 70%;
   /* default position */
   left: 20px;
   top: 20px;
   /* Override jquery drag position */
   position: absolute !important;
-  z-index: 2; }
+  z-index: 2;
+  /* Safari doesnt calculate correctly the height of the table-row with border-box */
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
   .desk-window.current, .desk-window.current.magnified {
     border-color: #0855de;
     z-index: 20; }
@@ -941,6 +947,9 @@ body {
   .desk-window.minimized {
     visibility: hidden;
     pointer-events: none; }
+    .desk-window.minimized iframe {
+      /* Safari will not hide iframes of parents with visibility hidden! */
+      display: none !important; }
   .desk-window.magnified {
     border-width: 0px;
     border-radius: 0 0 0 0;
@@ -1011,6 +1020,7 @@ body {
 
 .win-icons {
   list-style: none;
+  height: 100%;
   position: relative;
   text-align: left;
   z-index: 1; }
@@ -1028,16 +1038,16 @@ body {
       text-decoration: none;
       text-shadow: 1px 1px 3px #222;
       width: 75px; }
-      .win-icons .win-icon a.selected .win-icon-image {
-        -webkit-filter: sepia(1) hue-rotate(160deg);
-        filter: sepia(1) hue-rotate(160deg); }
-      .win-icons .win-icon a.selected .win-icon-name {
-        background: #316ac5;
-        border: 1px dotted #ce953a;
-        text-overflow: initial;
-        text-shadow: none;
-        white-space: normal;
-        word-break: break-all; }
+    .win-icons .win-icon a.selected .win-icon-image, .win-icons .win-icon.ui-selected .win-icon-image, .win-icons .win-icon.ui-selecting .win-icon-image {
+      -webkit-filter: sepia(1) hue-rotate(160deg);
+      filter: sepia(1) hue-rotate(160deg); }
+    .win-icons .win-icon a.selected .win-icon-name, .win-icons .win-icon.ui-selected .win-icon-name, .win-icons .win-icon.ui-selecting .win-icon-name {
+      background: #316ac5;
+      border: 1px dotted #ce953a;
+      text-overflow: initial;
+      text-shadow: none;
+      white-space: normal;
+      word-break: break-all; }
     .win-icons .win-icon .win-icon-image {
       display: block;
       height: 36px;
@@ -1058,3 +1068,6 @@ body {
       white-space: nowrap;
       text-overflow: ellipsis;
       width: 100%; }
+
+[data-has-icon="false"] {
+  background-image: url(../img/program.png) !important; }

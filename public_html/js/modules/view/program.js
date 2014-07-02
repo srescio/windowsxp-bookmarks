@@ -31,21 +31,24 @@ define(['backbone',
             var prgName = this.options.name;
             var prgUrl  = this.options.url;
             var prgID   = this.options.id;
+            var hasIcon = this.options.hasIcon;
             var prgIcon = this.favIcon(prgUrl);
             
             windows.append(
                 this.windowTpl({
-                    ID  : prgID,
-                    icon: prgIcon,
-                    name: prgName,
-                    url : prgUrl
+                    ID      : prgID,
+                    icon    : prgIcon,
+                    name    : prgName,
+                    url     : prgUrl,
+                    hasIcon : hasIcon
                 })
             );
             bar.append(
                 this.barTpl({
-                    ID  : prgID,
-                    icon: prgIcon,
-                    name: prgName
+                    ID      : prgID,
+                    icon    : prgIcon,
+                    name    : prgName,
+                    hasIcon : hasIcon
                 })
             );
             

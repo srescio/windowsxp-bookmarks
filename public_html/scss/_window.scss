@@ -9,12 +9,17 @@
     min-width: 300px;
     max-height: 100%;
     max-width: 100%;
+    height: 60%;
+    width: 70%;
     /* default position */
     left: 20px;
     top: 20px;
     /* Override jquery drag position */
     position: absolute !important;
     z-index:2;
+    /* Safari doesnt calculate correctly the height of the table-row with border-box */
+    -webkit-box-sizing:content-box;
+    box-sizing:content-box;
     
     &.current,
     &.current.magnified {
@@ -46,6 +51,11 @@
     &.minimized {
         visibility: hidden;
         pointer-events: none;
+        
+        iframe {
+            /* Safari will not hide iframes of parents with visibility hidden! */
+            display: none !important;
+        }
     }
     
     &.magnified {

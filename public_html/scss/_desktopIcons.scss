@@ -1,5 +1,6 @@
 .win-icons {
     list-style: none;
+    height: 100%;
     position: relative;
     text-align: left;
     z-index:1;
@@ -18,24 +19,25 @@
             text-align: center;
             text-decoration: none;
             text-shadow: 1px 1px 3px #222;
-            width: 75px;
-            
-            &.selected {
-                
-                .win-icon-image {
-                    $colorize : sepia(1) hue-rotate(160deg);
-                    -webkit-filter: $colorize;
-                    filter: $colorize;
-                }
-                
-                .win-icon-name {
-                    background: #316ac5;
-                    border: 1px dotted #ce953a;
-                    text-overflow: initial;
-                    text-shadow: none;
-                    white-space: normal;
-                    word-break:break-all;
-                }
+            width: 75px;            
+        }
+        a.selected,
+        &.ui-selected,
+        &.ui-selecting {
+
+            .win-icon-image {
+                $colorize : sepia(1) hue-rotate(160deg);
+                -webkit-filter: $colorize;
+                filter: $colorize;
+            }
+
+            .win-icon-name {
+                background: #316ac5;
+                border: 1px dotted #ce953a;
+                text-overflow: initial;
+                text-shadow: none;
+                white-space: normal;
+                word-break:break-all;
             }
         }
         
@@ -63,4 +65,8 @@
             width: 100%;
         }        
     }
+}
+
+[data-has-icon="false"] {
+    background-image: url(../img/program.png) !important;
 }
