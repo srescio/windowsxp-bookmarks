@@ -89,47 +89,6 @@ body {
   .inlineFix > * {
     font-size: 12px; }
 
-/* Allows content of a table-cell element to be positioned relative to the cell */
-/* First child of the table-cell must be the following, and all contents goes inside of it */
-.tbcRelative {
-  display: table;
-  height: 100%;
-  position: relative;
-  width: 100%; }
-  #win-desktop > .tbcRelative {
-    display: block;
-    overflow: hidden;
-    position: absolute; }
-  .tbcRelative:after {
-    clear: both;
-    content: '.';
-    display: block;
-    opacity: 0; }
-
-/* Content on single line without affecting parent and sibilings sizes */
-/* Html structure must follow the selectors nesting */
-.oneLineFlex {
-  display: table;
-  width: 100%; }
-  .oneLineFlex .oneLineContainer {
-    display: table-cell;
-    width: inherit; }
-    .oneLineFlex .oneLineContainer .oneLineContent {
-      display: block;
-      overflow: hidden;
-      position: absolute;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      width: inherit; }
-      .oneLineFlex .oneLineContainer .oneLineContent .oneLineText {
-        display: inline-block;
-        overflow: hidden;
-        position: absolute;
-        text-overflow: ellipsis;
-        top: 50%;
-        margin: -0.5em 0 0 0;
-        width: 100%; }
-
 .mcsft-logo {
   font-style: italic;
   font-weight: bolder; }
@@ -258,6 +217,71 @@ body {
     height: 100%;
     position: absolute;
     width: 100%; }
+
+/* 
+    Collection of classes structures to achieve flexible layouts
+    with CSS table algorytm
+
+    Author  : Simone Rescio
+    eMail   : simone.rescio@gmail.com
+    website : http://simonerescio.it
+*/
+/* Allows content of a table-cell element to be positioned relative to the cell */
+/* First child of the table-cell must be the following, and all contents goes inside of it */
+.tbcRelative {
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%; }
+  #win-desktop > .tbcRelative {
+    display: block;
+    overflow: hidden;
+    position: absolute; }
+  .tbcRelative:after {
+    clear: both;
+    content: '.';
+    display: block;
+    opacity: 0; }
+
+/* Content on single line without affecting parent and sibilings sizes */
+/* Html structure must follow the selectors nesting */
+.oneLineFlex {
+  display: table;
+  width: 100%; }
+  .oneLineFlex .oneLineContainer {
+    display: table-cell;
+    width: inherit; }
+    .oneLineFlex .oneLineContainer .oneLineContent {
+      display: block;
+      overflow: hidden;
+      position: absolute;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: inherit; }
+      .oneLineFlex .oneLineContainer .oneLineContent .oneLineText {
+        display: inline-block;
+        overflow: hidden;
+        position: absolute;
+        text-overflow: ellipsis;
+        top: 50%;
+        margin: -0.5em 0 0 0;
+        width: 100%; }
+
+/* Allow vertical content to expand with fixed sibiling on top and bottom */
+.tbFill {
+  display: table;
+  height: 100%;
+  width: 100%;
+  position: relative; }
+  .tbFill .tbHeader {
+    display: table-header-group;
+    height: 1px; }
+  .tbFill .tbRow {
+    display: table-row;
+    height: 100%; }
+  .tbFill .tbFooter {
+    display: table-footer-group;
+    height: 1px; }
 
 #startup {
   cursor: none;
@@ -775,13 +799,20 @@ body {
 
 #stm-user-name {
   display: inline-block;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: lighter;
   text-shadow: 0 2px 2px #1559b0; }
 
 #stm-middle .col {
   display: table-cell;
+  height: 100%;
+  /* Makes child content with percentage height honor the property */
   width: 45%; }
+  @media (-webkit-min-device-pixel-ratio: 0) {
+    #stm-middle .col {
+      /* Same as above, webkit specific, doesn't actually restric the element height' */ }
+      #stm-middle .col {
+        height: 1px; } }
 
 #stm-left {
   background: #FFF;
@@ -828,8 +859,10 @@ body {
 #stm-fav-programs .stm-prg-desc,
 .stm-my-links .stm-prg-desc {
   color: #808080; }
+
 #stm-fav-programs:after,
-.stm-my-links:after {
+.stm-my-links:after,
+#all-programs:before {
   background: white;
   background: -moz-linear-gradient(left, white 0%, #d3d3c8 50%, white 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, white), color-stop(50%, #d3d3c8), color-stop(100%, white));
