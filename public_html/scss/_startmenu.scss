@@ -111,7 +111,7 @@
             
             &:hover,
             &:hover .stm-prg-desc {
-                background: #3069c7;
+                background: $stmHoverColor;
                 color: #FFF;
             }
         }
@@ -163,17 +163,33 @@
 }
 #all-programs {
     display: table;
-    margin: 10px 0;
+    padding: 5px 10px;
     width:100%;
     
     > li {
-        background: url(../img/allprog.png) scroll right center no-repeat transparent;
+        /*background: url(../img/allprog.png) scroll right center no-repeat transparent;*/
         display: inherit;
+        font-size: 12px;
         font-weight: bold;
         margin: 0 auto;
         text-align: center;
-        padding: 10px 28px 10px 0;
+        padding: 2px 28px 2px 13px;
+        text-align: center;
+        text-indent: 20px;
         vertical-align: middle;
+        width: 100%;
+        
+        & > * {
+            display: table-cell;
+            height: 100%;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+        
+        &:hover {
+            background-color: $stmHoverColor;
+            color: #FFF;
+        }
     }
 }
 

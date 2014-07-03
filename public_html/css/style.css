@@ -83,6 +83,9 @@ body {
 * {
   box-sizing: border-box; }
 
+a {
+  cursor: default; }
+
 /* Allow inline-block elements to stay on same line without ghost-space from anonymous inline space */
 .inlineFix {
   font-size: 0; }
@@ -223,7 +226,7 @@ body {
     with CSS table algorytm
 
     Author  : Simone Rescio
-    eMail   : simone.rescio@gmail.com
+    eMail   : info@simonerescio.it
     website : http://simonerescio.it
 */
 /* Allows content of a table-cell element to be positioned relative to the cell */
@@ -877,16 +880,28 @@ body {
 
 #all-programs {
   display: table;
-  margin: 10px 0;
+  padding: 5px 10px;
   width: 100%; }
   #all-programs > li {
-    background: url(../img/allprog.png) scroll right center no-repeat transparent;
+    /*background: url(../img/allprog.png) scroll right center no-repeat transparent;*/
     display: inherit;
+    font-size: 12px;
     font-weight: bold;
     margin: 0 auto;
     text-align: center;
-    padding: 10px 28px 10px 0;
-    vertical-align: middle; }
+    padding: 2px 28px 2px 13px;
+    text-align: center;
+    text-indent: 20px;
+    vertical-align: middle;
+    width: 100%; }
+    #all-programs > li > * {
+      display: table-cell;
+      height: 100%;
+      white-space: nowrap;
+      vertical-align: middle; }
+    #all-programs > li:hover {
+      background-color: #3069c7;
+      color: #FFF; }
 
 #stm-right {
   background: #d3e5fa;
@@ -1077,6 +1092,7 @@ body {
     .win-icons .win-icon a.selected .win-icon-name, .win-icons .win-icon.ui-selected .win-icon-name, .win-icons .win-icon.ui-selecting .win-icon-name {
       background: #316ac5;
       border: 1px dotted #ce953a;
+      padding: 0 0 3px 0;
       text-overflow: initial;
       text-shadow: none;
       white-space: normal;

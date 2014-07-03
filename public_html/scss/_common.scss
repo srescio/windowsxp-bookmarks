@@ -11,6 +11,10 @@ body {
     box-sizing: border-box;
 }
 
+a {
+    cursor: default;
+}
+
 /* Allow inline-block elements to stay on same line without ghost-space from anonymous inline space */
 .inlineFix {
     font-size: 0;
@@ -48,6 +52,8 @@ body {
     outline: none;
     margin: 0 1px;
 }
+
+$stmHoverColor: #3069c7;
 
 $buttonsShadowSize : -1px -1px 1px 0px;
 .btn-red {

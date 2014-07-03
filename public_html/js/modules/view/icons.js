@@ -88,7 +88,9 @@ define(['backbone',
                 });
             });
             
-            setTimeout(function(){_this.markNoIcons()},2000);
+            //Wait to have error callbacks populate the array
+            this.interval = setInterval(function(){_this.markNoIcons()},500);
+            this.stopInterval = setTimeout(function(){clearInterval(_this.interval)},3000);
             
             $('#win-desktop .win-icons').selectable({cancel:'a',distance: 5});
         },
