@@ -167,7 +167,6 @@
     width:100%;
     
     > li {
-        /*background: url(../img/allprog.png) scroll right center no-repeat transparent;*/
         display: inherit;
         font-size: 12px;
         font-weight: bold;
@@ -241,3 +240,70 @@
         width: 24px;
     }
 }
+
+
+//Program Menu
+$stmAnimation: opacity .3s linear;
+#all-programs .win-icons.list-icons {
+    background: #FFF;
+    border: 1px solid #3382e8;
+    border-left-width: 6px;
+    box-shadow: 2px 4px 4px rgba(0,0,0,.5);
+    bottom: 5px;
+    height: auto;
+    margin: 0 0 0 30px;
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    transition: $stmAnimation;
+    -wbkit-transition: $stmAnimation;
+    
+    li {
+        
+        padding: 6px;
+        max-width: 300px;
+        text-align: left;
+        
+        &:hover {
+            background: $stmHoverColor;
+            
+            a {color: #FFF;}
+        }
+        
+        a {
+            color: #000;
+            display: inherit;
+            font-weight: lighter;
+            width: 100%;
+            overflow: hidden;
+            text-decoration: none; 
+            text-overflow: ellipsis;
+        }
+        
+    }
+    .win-icon-image {
+        background-attachment: scroll;
+        background-color: transparent;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        float: left;
+        height: 16px;
+        margin: 0 -10px 0 0;
+        width: 16px;
+    }
+    .win-icon-name {
+        
+    }
+}
+
+#all-programs:hover {
+
+    .win-icons {
+        display: inline-block;
+        opacity: 1;
+        pointer-events:initial;
+    }
+}
+        

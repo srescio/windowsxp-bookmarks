@@ -5,25 +5,31 @@
         <group>
             <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/view/startmenu.js</file>
             <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/view/desktop.js</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/_table.scss</file>
             <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/tpl/clock.html</file>
             <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/tpl/desktop.html</file>
-            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/_startmenu.scss</file>
-            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/_welcome.scss</file>
-            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/_startup.scss</file>
-            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/model/startmenu.js</file>
-            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/index.html</file>
-            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/windows-xp.js</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/tpl/bar.html</file>
             <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/_desktop.scss</file>
-            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/collections/startmenu.js</file>
-            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/_common.scss</file>
-            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/view/welcome.js</file>
-            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/view/clock.js</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/_desktopIcons.scss</file>
             <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/view/startup.js</file>
-            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/_window.scss</file>
-            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/style.scss</file>
-            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/json/startright.json</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/view/icons.js</file>
             <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/tpl/startmenu.html</file>
             <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/tpl/window.html</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/_startmenu.scss</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/_startup.scss</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/_welcome.scss</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/model/startmenu.js</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/windows-xp.js</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/index.html</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/model/icons.js</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/tpl/icons.html</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/view/program.js</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/_common.scss</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/view/xmarks.js</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/view/welcome.js</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/js/modules/view/clock.js</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/style.scss</file>
+            <file>file:/Users/simonerescio/NetBeansProjects/windowsxp/public_html/scss/_window.scss</file>
         </group>
     </open-files>
 </project-private>

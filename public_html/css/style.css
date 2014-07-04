@@ -883,7 +883,6 @@ a {
   padding: 5px 10px;
   width: 100%; }
   #all-programs > li {
-    /*background: url(../img/allprog.png) scroll right center no-repeat transparent;*/
     display: inherit;
     font-size: 12px;
     font-weight: bold;
@@ -945,6 +944,52 @@ a {
   #stm-bottom .win-btn {
     height: 24px;
     width: 24px; }
+
+#all-programs .win-icons.list-icons {
+  background: #FFF;
+  border: 1px solid #3382e8;
+  border-left-width: 6px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+  bottom: 5px;
+  height: auto;
+  margin: 0 0 0 30px;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  transition: opacity 0.3s linear;
+  -wbkit-transition: opacity 0.3s linear; }
+  #all-programs .win-icons.list-icons li {
+    padding: 6px;
+    max-width: 300px;
+    text-align: left; }
+    #all-programs .win-icons.list-icons li:hover {
+      background: #3069c7; }
+      #all-programs .win-icons.list-icons li:hover a {
+        color: #FFF; }
+    #all-programs .win-icons.list-icons li a {
+      color: #000;
+      display: inherit;
+      font-weight: lighter;
+      width: 100%;
+      overflow: hidden;
+      text-decoration: none;
+      text-overflow: ellipsis; }
+  #all-programs .win-icons.list-icons .win-icon-image {
+    background-attachment: scroll;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    float: left;
+    height: 16px;
+    margin: 0 -10px 0 0;
+    width: 16px; }
+
+#all-programs:hover .win-icons {
+  display: inline-block;
+  opacity: 1;
+  pointer-events: initial; }
 
 .desk-window {
   background: #efebde;
@@ -1066,17 +1111,17 @@ a {
 .ui-icon-gripsmall-diagonal-se {
   opacity: 0; }
 
-.win-icons {
+.win-icons.grid-icons {
   list-style: none;
   height: 100%;
   position: relative;
   text-align: left;
   z-index: 1; }
-  .win-icons .win-icon {
+  .win-icons.grid-icons .win-icon {
     display: block;
     float: left;
     padding: 21px 8px; }
-    .win-icons .win-icon a {
+    .win-icons.grid-icons .win-icon a {
       color: #FFF;
       cursor: default;
       display: inline-block;
@@ -1086,10 +1131,10 @@ a {
       text-decoration: none;
       text-shadow: 1px 1px 3px #222;
       width: 75px; }
-    .win-icons .win-icon a.selected .win-icon-image, .win-icons .win-icon.ui-selected .win-icon-image, .win-icons .win-icon.ui-selecting .win-icon-image {
+    .win-icons.grid-icons .win-icon a.selected .win-icon-image, .win-icons.grid-icons .win-icon.ui-selected .win-icon-image, .win-icons.grid-icons .win-icon.ui-selecting .win-icon-image {
       -webkit-filter: sepia(1) hue-rotate(160deg);
       filter: sepia(1) hue-rotate(160deg); }
-    .win-icons .win-icon a.selected .win-icon-name, .win-icons .win-icon.ui-selected .win-icon-name, .win-icons .win-icon.ui-selecting .win-icon-name {
+    .win-icons.grid-icons .win-icon a.selected .win-icon-name, .win-icons.grid-icons .win-icon.ui-selected .win-icon-name, .win-icons.grid-icons .win-icon.ui-selecting .win-icon-name {
       background: #316ac5;
       border: 1px dotted #ce953a;
       padding: 0 0 3px 0;
@@ -1097,7 +1142,7 @@ a {
       text-shadow: none;
       white-space: normal;
       word-break: break-all; }
-    .win-icons .win-icon .win-icon-image {
+    .win-icons.grid-icons .win-icon .win-icon-image {
       display: block;
       height: 36px;
       margin: 0 auto;
@@ -1107,7 +1152,7 @@ a {
       background-position: center center;
       background-repeat: no-repeat;
       background-size: contain; }
-    .win-icons .win-icon .win-icon-name {
+    .win-icons.grid-icons .win-icon .win-icon-name {
       border: 1px dotted transparent;
       display: inline-block;
       left: 0;

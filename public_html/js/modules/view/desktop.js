@@ -19,21 +19,14 @@ define(['backbone',
         
         render: function() {
             this.$el.html( this.deskTpl() );
-            var startmenu = new Startmenu();
-            var clock = new Clock();
+            new Startmenu();
+            new Clock();
             
-            var desktopIcons = new Icons({id:'u3d5tgcANe'});
-            
-//            var pippo = new Program({
-//                icon : 'img/mydocs.png',
-//                name : 'Ansa',
-//                url  : 'http://ansa.it'
-//            });
-//            var sr = new Program({
-//                icon : 'img/mydocs.png',
-//                name : 'SimoneRescio.it',
-//                url  : 'http://simonerescio.it'
-//            });
+            new Icons({
+                el:'#win-desktop > .tbcRelative',
+                xid:'u3d5tgcANe',
+                class:'grid-icons'
+            });
         },
         
         bind: function() {
@@ -43,31 +36,30 @@ define(['backbone',
                     $('html').removeClass('show-startmenu');
                 }
                 if( !$(e.target).parents('.win-icon').length ) {
-                    
                     $('.win-icon a').removeClass('selected');
                     $('.win-icon').removeClass('ui-selected');
                 }
                 if( !$(e.target).parents('.desk-window,.win-bar-program').length ) {
                     $('.desk-window,.win-bar-program').removeClass('current');
                 }
-            }).on('keypress',function(e){
+            }).on('keydown',function(e){
+                console.log(e)
+                
                 if(e.keyCode===13) {
                     $('.win-icon.ui-selected').each(function(){
-                        console.log('executed LI each')
                         new Program({
                             id   : $(this).find('a').data('program-id'),
                             name : $(this).find('.win-icon-name').text(),
                             url  : $(this).find('a').attr('href')
                         });
-                    })
+                    });
                     $('.win-icon a.selected').each(function(){
-                        console.log('executed A each')
                         new Program({
                             id   : $(this).data('program-id'),
                             name : $(this).find('.win-icon-name').text(),
                             url  : $(this).attr('href')
                         });
-                    })
+                    });
                 }
             });
         }

@@ -8,19 +8,23 @@ define(['backbone',
     
     var Icons = Backbone.View.extend({
         
-        el : '#win-desktop > .tbcRelative',
+        el : '',
         model: new IconsModel(),
         iconsTpl: Handlebars.compile(IconsTpl),
         missing: [],
         
         initialize: function(args) {            
             this.options = args;
-            this.id = this.options.id;
+            this.xid = this.options.xid;
+            this.el = this.options.el;
+            this.class = this.options.class;
             
-            var xmarks = new xMarks();
+            console.log(this.$el[0]);
+            
+            new xMarks();
                         
-            var icons = Xmarks.Widget.create({
-                "id":this.id,
+            Xmarks.Widget.create({
+                "id":this.xid,
                 "v":1,
                 "limit":900,
                 "truncate":100,
@@ -59,7 +63,7 @@ define(['backbone',
                 }
             };
             
-            this.model.set({icons:iconsArray});
+            this.model.set({icons:iconsArray,class:this.class});
             
             this.$el.append( this.iconsTpl( this.model.toJSON() ) );
             
@@ -90,9 +94,9 @@ define(['backbone',
             
             //Wait to have error callbacks populate the array
             this.interval = setInterval(function(){_this.markNoIcons()},500);
-            this.stopInterval = setTimeout(function(){clearInterval(_this.interval)},3000);
+            this.stopInterval = setTimeout(function(){clearInterval(_this.interval)},15000);
             
-            $('#win-desktop .win-icons').selectable({cancel:'a',distance: 5});
+            this.$el.find('.win-icons').selectable({cancel:'a',distance: 5});
         },
 
         favIcon: function(url) {
@@ -116,7 +120,7 @@ define(['backbone',
             var _this = this;
             for (var id in _this.missing) {
 
-                $('.win-icons [data-program-id="'+_this.missing[id]+'"] .win-icon-image')
+                this.$el.find('.win-icons [data-program-id="'+_this.missing[id]+'"] .win-icon-image')
                         .attr('data-has-icon','false');
             }                
         },
