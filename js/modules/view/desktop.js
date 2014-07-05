@@ -25,7 +25,7 @@ define(['backbone',
             new Icons({
                 el:'#win-desktop > .tbcRelative',
                 xid:'u3d5tgcANe',
-                class:'grid-icons'
+                isGrid: true
             });
         },
         

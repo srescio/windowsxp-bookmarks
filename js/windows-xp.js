@@ -45,6 +45,8 @@ require(['modules/view/startup',
          'modules/view/desktop'],
           function(Startup,Welcome,Desktop){
 
+          window.xp = _.extend({}, Backbone.Events);
+
 //    var startup = new Startup();
 //    
 //    setTimeout(function(){
@@ -56,5 +58,5 @@ require(['modules/view/startup',
 //        
 //    },10000);
     
-    var desktop = new Desktop();
+    new Desktop();
 });

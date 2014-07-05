@@ -15,6 +15,8 @@ define(['backbone',
         initialize: function() {
             this.render();
             this.bind();
+            
+            window.xp.on('startmenuClose',this.close);
         },
         
         render: function() {
@@ -23,7 +25,7 @@ define(['backbone',
             new Icons({
                 el:'#all-programs > li',
                 xid:'WfpW8xgTAh',
-                class:'list-icons'
+                isGrid: false
             });
         },
         
@@ -31,6 +33,10 @@ define(['backbone',
             $('#win-start-btn').on('click',function(){
                 $('html').toggleClass('show-startmenu');
             });
+        },
+        
+        close: function() {
+            $('html').removeClass('show-startmenu');
         }
         
     });
