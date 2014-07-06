@@ -1,16 +1,15 @@
 define(['backbone',
         'handlebars',
-        'modules/model/icons',
+        'modules/model/icon',
         'modules/view/xmarks',
-        'text!../tpl/icons.html',
+        'text!../tpl/icon.html',
         'modules/view/program'],
-        function(Backbone,Handlebars,IconsModel,xMarks,IconsTpl,Program){
+        function(Backbone,Handlebars,IconModel,xMarks,IconTpl,Program){
     
     var Icons = Backbone.View.extend({
         
         el : '',
-        model: new IconsModel(),
-        iconsTpl: Handlebars.compile(IconsTpl),
+        template: Handlebars.compile(IconTpl),
         missing: [],
         isGrid: null,
         
@@ -19,7 +18,6 @@ define(['backbone',
             this.xid = this.options.xid;
             this.el = this.options.el;
             this.isGrid = this.options.isGrid;
-            this.class = (this.isGrid)?'grid-icons':'list-icons';
                         
             new xMarks();
                         
@@ -40,51 +38,89 @@ define(['backbone',
             return string;
         },
 
-        render: function(icons) {
-            var _this = this;
-            var iconsArray = [];
-            
-            for(var property in icons) {   
-                var url = icons[property].url;
-                if(typeof url!=='undefined') {
-                    
-                    var programID = this.programID();
-                    
-                    _this.checkImg( _this.favIcon(url) , programID );
-                    
-                    var icon = {
-                        id   : programID,
-                        name : _this.programName(url),
-                        icon : _this.favIcon(url),
-                        desc : icons[property].name,
-                        url  : icons[property].url
-                    };
-                    iconsArray.push(icon);
+        render: function(bookmarks) {            
+            for(var fav in bookmarks) {   
+                if(typeof bookmarks[fav].url!=='undefined') {
+                    //Url is defined, check if can be loaded in iFrame
+                    this.testIframe(bookmarks[fav].url,bookmarks[fav].name);
                 }
+            };                                    
+        },
+        
+        bind: function(programID) {
+            var iconEl = (this.isGrid)?
+                         this.$el.find('[data-program-id="'+programID+'"]'):
+                         this.$el.find('[data-program-id="'+programID+'"]').parent();
+            (this.isGrid)?this.gridEvents(iconEl):this.listEvents(iconEl);
+        },
+
+        favIcon: function(url) {
+            var faviconURL = url.replace(/^(http:\/\/[^\/]+).*$/, '$1') + '/favicon.ico';
+            return faviconURL;
+        },
+        
+        checkImg: function(url,id) {            
+            var _this = this;
+            
+            var img = new Image();
+
+            img.onerror = function() {
+                _this.missing.push(id);
+                
+                var missingEl = _this.$el.find('[data-program-id="'+id+'"] .win-icon-image')
+                missingEl.attr('data-has-icon','false');
             };
-            
-            this.model.set({icons:iconsArray,class:this.class});
-            
-            this.$el.append( this.iconsTpl( this.model.toJSON() ) );
-            
-            //Wait to have error callbacks populate the array
-            this.interval = setInterval(function(){_this.markNoIcons()},500);
-            this.stopInterval = setTimeout(function(){clearInterval(_this.interval)},15000);
-            
-            this.bind();
+
+            img.src = url;
         },
         
-        bind: function() {            
-            this.theIcons = this.$el.find('.win-icon a');
-            (this.isGrid)?this.gridEvents():this.listEvents();
+        testIframe: function(siteUrl,favName) {
+            var _this = this;
+            
+            $.ajax({
+                url: 'http://localhost/windowsxp/checkIframe.php',
+                type: 'GET',
+                data: { url: siteUrl} ,
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    var response = JSON.parse(data);
+                    console.info(response,typeof response['error']);
+                    
+                    if(response['error']===false) {
+                        _this.renderIcon(siteUrl,favName);
+                    } else {
+                        console.error('Url cannot be included in frame due to Cross Domain settings',response.url)
+                    }
+                }
+            }); 
         },
         
-        gridEvents: function() {
+        renderIcon: function(siteUrl,favName) {
+            var programID = this.programID();
+
+            var icon = {
+                id   : programID,
+                name : this.programName(siteUrl),
+                icon : this.favIcon(siteUrl),
+                desc : favName,
+                url  : siteUrl
+            };
+
+            var model = new IconModel({icon:icon});
+
+            this.$el.append( this.template( model.toJSON() ) );
+
+            this.checkImg( this.favIcon(siteUrl) , programID );
+            
+            this.bind(programID);
+        },
+        
+        gridEvents: function(iconEl) {
             var _this = this;
             
             this.theIcons = this.$el.find('.win-icon a');
             
-            this.theIcons.on('click',function(e){
+            iconEl.on('click',function(e){
                 e.preventDefault();
                 _this.theIcons.removeClass('selected');
                 _this.$el.find('.win-icon').removeClass('ui-selected');
@@ -93,56 +129,30 @@ define(['backbone',
                 _this.newProgram(this);
             });
             
-            this.$el.find('.win-icons').selectable({cancel:'a',distance: 5});
+            this.$el.selectable({cancel:'a',distance: 5});
         },
         
-        listEvents: function() {
+        listEvents: function(iconEl) {
             var _this = this;
             
             this.theIcons = this.$el.find('.win-icon');
             
-            this.$el.find('.win-icon a').on('click',function(e){
+            iconEl.on('click',function(e){
                 e.preventDefault();
             });
             
-            this.theIcons.on('click',function(){
+            iconEl.on('click',function(){
                 var link = $(this).find('a');
                 
                 window.xp.trigger('startmenuClose');
                 _this.newProgram(link);
             });
         },
-
-        favIcon: function(url) {
-            var faviconURL = url.replace(/^(http:\/\/[^\/]+).*$/, '$1') + '/favicon.ico';
-            return faviconURL;
-        },
-        
-        checkImg: function(url,id) {
-            var _this = this;
-            
-            var img = new Image();
-
-            img.onerror = function() {
-                _this.missing.push(id);
-            };
-
-            img.src = url;
-        },
-        
-        markNoIcons:function(){
-            var _this = this;
-            for (var id in _this.missing) {
-
-                this.$el.find('.win-icons [data-program-id="'+_this.missing[id]+'"] .win-icon-image')
-                        .attr('data-has-icon','false');
-            }                
-        },
         
         programName: function(url) {
             var    a      = document.createElement('a');
                    a.href = url;
-            return a.hostname;
+            return a.hostname.replace('www.','');
         },
 
         newProgram: function(scope){
@@ -157,25 +167,7 @@ define(['backbone',
                 name    : $(scope).find('.win-icon-name').text(),
                 url     : url,
                 hasIcon : hasIcon
-            });
-            
-            this.testIframe(url);
-        },
-        
-        testIframe: function(siteUrl) {
-            $.ajax({
-                url: 'http://localhost/sresc.io/winxptest/checkIframe.php',
-                type: 'GET',
-                data: { url: siteUrl} ,
-                contentType: 'application/json; charset=utf-8',
-                success: function (response) {
-                    console.info('success',response);
-                },
-                error: function (e) {
-                    console.error('error',e);
-                }
-            }); 
-            
+            });            
         }
         
     });

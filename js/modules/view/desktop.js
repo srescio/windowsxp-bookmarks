@@ -8,7 +8,6 @@ define(['backbone',
         function(Backbone,Handlebars,deskTpl,Startmenu,Clock,Icons,Program){
     
     var Desktop = Backbone.View.extend({
-        
         el : '#system',
         deskTpl: Handlebars.compile(deskTpl),
         
@@ -23,7 +22,7 @@ define(['backbone',
             new Clock();
             
             new Icons({
-                el:'#win-desktop > .tbcRelative',
+                el:'#win-desktop-icons',
                 xid:'u3d5tgcANe',
                 isGrid: true
             });
@@ -39,11 +38,11 @@ define(['backbone',
                     $('.win-icon a').removeClass('selected');
                     $('.win-icon').removeClass('ui-selected');
                 }
-                if( !$(e.target).parents('.desk-window,.win-bar-program').length ) {
+                if( !$(e.target).parents('.desk-window,.win-bar-program,.win-icons').length ) {
+                    console.warn('removing current programs')
                     $('.desk-window,.win-bar-program').removeClass('current');
                 }
             }).on('keydown',function(e){
-                console.log(e)
                 
                 if(e.keyCode===13) {
                     $('.win-icon.ui-selected').each(function(){

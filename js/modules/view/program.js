@@ -67,10 +67,6 @@ define(['backbone',
         
         bind: function() {
             var _this = this;
-//            $('.rel-window').on('click',function(e){
-//                e.preventDefault();
-//                
-//            });
             
             this.window.draggable().resizable();
             
@@ -127,6 +123,7 @@ define(['backbone',
         },
         
         setCurrent : function() {
+            console.info('setting current',this.program);
             $('[data-program-id]').removeClass('current');
             this.program
                     .removeClass('minimized')

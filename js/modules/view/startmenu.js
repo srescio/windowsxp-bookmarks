@@ -23,7 +23,7 @@ define(['backbone',
             this.$el.prepend( this.template( this.model.toJSON() ) );
             
             new Icons({
-                el:'#all-programs > li',
+                el:'#stm-programs-list',
                 xid:'WfpW8xgTAh',
                 isGrid: false
             });
