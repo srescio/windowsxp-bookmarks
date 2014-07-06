@@ -123,7 +123,6 @@ define(['backbone',
         },
         
         setCurrent : function() {
-            console.info('setting current',this.program);
             $('[data-program-id]').removeClass('current');
             this.program
                     .removeClass('minimized')

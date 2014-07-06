@@ -39,7 +39,6 @@ define(['backbone',
                     $('.win-icon').removeClass('ui-selected');
                 }
                 if( !$(e.target).parents('.desk-window,.win-bar-program,.win-icons').length ) {
-                    console.warn('removing current programs')
                     $('.desk-window,.win-bar-program').removeClass('current');
                 }
             }).on('keydown',function(e){
