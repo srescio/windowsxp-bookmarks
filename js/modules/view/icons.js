@@ -84,12 +84,11 @@ define(['backbone',
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
                     var response = JSON.parse(data);
-                    console.info(response,typeof response['error']);
                     
                     if(response['error']===false) {
                         _this.renderIcon(siteUrl,favName);
                     } else {
-                        console.error('Url cannot be included in frame due to Cross Domain settings',response.url)
+                        console.error('Url cannot be included in frame due to Cross Domain settings',response.url);
                     }
                 }
             }); 
