@@ -29,6 +29,7 @@ define(['backbone',
         },
         
         bind: function() {
+            var _this = this;
             // Deselect program and/or hide startmenu
             $('body').on('click', function(e){
                 if( !$(e.target).parents('#startmenu').length && e.target.id!=="win-start-btn" ) {
@@ -44,23 +45,54 @@ define(['backbone',
             }).on('keydown',function(e){
                 
                 if(e.keyCode===13) {
+                    
                     $('.win-icon.ui-selected').each(function(){
-                        new Program({
-                            id   : $(this).find('a').data('program-id'),
-                            name : $(this).find('.win-icon-name').text(),
-                            url  : $(this).find('a').attr('href')
-                        });
+                        var prgID = $(this).find('a').data('program-id');
+                        
+                        if( _this.programIsOpen(prgID) ) {
+                            window.xp.trigger('selectProgram',prgID);
+                        } else {
+                            new Program({
+                                id   : prgID,
+                                name : $(this).find('.win-icon-name').text(),
+                                url  : $(this).find('a').attr('href')
+                            });
+                        }
+
                     });
                     $('.win-icon a.selected').each(function(){
-                        new Program({
-                            id   : $(this).data('program-id'),
-                            name : $(this).find('.win-icon-name').text(),
-                            url  : $(this).attr('href')
-                        });
+                        var prgID = $(this).data('program-id');
+                        
+                        if( _this.programIsOpen(prgID) ) {
+                            window.xp.trigger('selectProgram',prgID);
+                        } else {
+                            new Program({
+                                id   : prgID,
+                                name : $(this).find('.win-icon-name').text(),
+                                url  : $(this).attr('href')
+                            });
+                        }
                     });
                 }
             });
-        }
+        },
+        
+        newProgram: function(id,name,url) {
+            new Program({
+                id   : id,
+                name : name,
+                url  : url
+            });            
+        },
+
+        programIsOpen: function(prgID){
+            var prgID   = prgID;
+            var program = $('.desk-window[data-program-id="'+prgID+'"],.win-bar-program[data-program-id="'+prgID+'"]');
+            
+            console.info('isOpen called, bool is', program.length);
+            
+            return program.length;
+        }        
         
     });
 

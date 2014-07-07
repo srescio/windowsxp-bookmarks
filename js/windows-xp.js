@@ -45,15 +45,15 @@ require(['modules/view/startup',
          'modules/view/desktop'],
           function(Startup,Welcome,Desktop){
 
-          window.xp = _.extend({}, Backbone.Events);
+    window.xp = _.extend({}, Backbone.Events);
 
-//    var startup = new Startup();
+//    new Startup();
 //    
 //    setTimeout(function(){
-//        var welcome = new Welcome();
+//        new Welcome();
 //        
 //        setTimeout(function(){
-//            var desktop = new Desktop();
+//            new Desktop();
 //        },6000);
 //        
 //    },10000);

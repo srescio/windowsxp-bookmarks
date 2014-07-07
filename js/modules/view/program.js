@@ -15,9 +15,12 @@ define(['backbone',
         traybar : {},
         
         initialize: function(args) {
+            var _this = this;
             this.options = args;
             this.render();
             this.bind();
+            
+            window.xp.on('selectProgram',function(id){_this.checkCurrent(id)});
         },
         
         render: function() {
@@ -120,6 +123,10 @@ define(['backbone',
         
         resizeWindow : function() {
             this.window.toggleClass('magnified');
+        },
+        
+        checkCurrent: function(id) {
+            if(this.id===id) this.setCurrent();
         },
         
         setCurrent : function() {

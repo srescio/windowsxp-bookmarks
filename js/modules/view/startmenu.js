@@ -33,6 +33,21 @@ define(['backbone',
             $('#win-start-btn').on('click',function(){
                 $('html').toggleClass('show-startmenu');
             });
+            
+            this.$el.find('#stm-right a').on('click',function(e){
+                e.preventDefault();
+                var prgID = 'lkjhkljljkjl';
+                var hasIcon = 'true';
+
+                var url = $(this).attr('href');
+
+                new Program({
+                    id      : prgID,
+                    name    : $(this).find('.stm-prg-name').text(),
+                    url     : url,
+                    hasIcon : hasIcon
+                });  
+            });
         },
         
         close: function() {

@@ -1132,17 +1132,19 @@ a {
       text-decoration: none;
       text-shadow: 1px 1px 3px #222;
       width: 75px; }
-    .win-icons.grid-icons .win-icon a.selected .win-icon-image, .win-icons.grid-icons .win-icon.ui-selected .win-icon-image, .win-icons.grid-icons .win-icon.ui-selecting .win-icon-image {
-      -webkit-filter: sepia(1) hue-rotate(160deg);
-      filter: sepia(1) hue-rotate(160deg); }
-    .win-icons.grid-icons .win-icon a.selected .win-icon-name, .win-icons.grid-icons .win-icon.ui-selected .win-icon-name, .win-icons.grid-icons .win-icon.ui-selecting .win-icon-name {
-      background: #316ac5;
-      border: 1px dotted #ce953a;
-      padding: 0 0 3px 0;
-      text-overflow: initial;
-      text-shadow: none;
-      white-space: normal;
-      word-break: break-all; }
+    .win-icons.grid-icons .win-icon a.selected, .win-icons.grid-icons .win-icon.ui-selected, .win-icons.grid-icons .win-icon.ui-selecting {
+      z-index: 1; }
+      .win-icons.grid-icons .win-icon a.selected .win-icon-image, .win-icons.grid-icons .win-icon.ui-selected .win-icon-image, .win-icons.grid-icons .win-icon.ui-selecting .win-icon-image {
+        -webkit-filter: sepia(1) hue-rotate(160deg);
+        filter: sepia(1) hue-rotate(160deg); }
+      .win-icons.grid-icons .win-icon a.selected .win-icon-name, .win-icons.grid-icons .win-icon.ui-selected .win-icon-name, .win-icons.grid-icons .win-icon.ui-selecting .win-icon-name {
+        background: #316ac5;
+        border: 1px dotted #ce953a;
+        padding: 0 0 3px 0;
+        text-overflow: initial;
+        text-shadow: none;
+        white-space: normal;
+        word-break: break-all; }
     .win-icons.grid-icons .win-icon .win-icon-image {
       display: block;
       height: 36px;

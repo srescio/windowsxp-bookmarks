@@ -24,6 +24,8 @@
         a.selected,
         &.ui-selected,
         &.ui-selecting {
+            
+            z-index:1;
 
             .win-icon-image {
                 $colorize : sepia(1) hue-rotate(160deg);

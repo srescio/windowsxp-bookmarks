@@ -12,17 +12,17 @@ define(['backbone'],function(Backbone){
                         name :'My Documents'
                     },
                     {
-                        href :'mailto:info@simonerescio.it',
+                        href :'http://simonerescio.it',
                         src  :'img/mypics.png',
                         name :'My Pictures'
                     },
                     {
-                        href :'mailto:info@simonerescio.it',
+                        href :'http://simonerescio.it',
                         src  :'img/mymusic.png',
                         name :'My Music'
                     },
                     {
-                        href :'mailto:info@simonerescio.it',
+                        href :'http://simonerescio.it',
                         src  :'img/mynet.png',
                         name :'My Network Places'
                     }

@@ -29,7 +29,7 @@ define(['backbone',
                 "hide_description" : true,
                 "iconsObj":this
             });
-            
+                        
             //Render will be called by the xMarks callback and call bind
         },
         
@@ -125,7 +125,13 @@ define(['backbone',
                 _this.$el.find('.win-icon').removeClass('ui-selected');
                 $(this).addClass('selected');
             }).on('dblclick', function(){
-                _this.newProgram(this);
+                var prgID = $(this).data('program-id');
+                
+                if( _this.programIsOpen(prgID) ) {
+                    window.xp.trigger('selectProgram',prgID);
+                } else {
+                    _this.newProgram(this);
+                }
             });
             
             this.$el.selectable({cancel:'a',distance: 5});
@@ -143,8 +149,15 @@ define(['backbone',
             iconEl.on('click',function(){
                 var link = $(this).find('a');
                 
-                window.xp.trigger('startmenuClose');
-                _this.newProgram(link);
+                var prgID = link.data('program-id');
+                
+                if( _this.programIsOpen(prgID) ) {
+                    window.xp.trigger('selectProgram',prgID);
+                    window.xp.trigger('startmenuClose');
+                } else {
+                    window.xp.trigger('startmenuClose');
+                    _this.newProgram(link);
+                }
             });
         },
         
@@ -167,6 +180,13 @@ define(['backbone',
                 url     : url,
                 hasIcon : hasIcon
             });            
+        },
+        
+        programIsOpen: function(prgID){
+            var prgID   = prgID;
+            var program = $('.desk-window[data-program-id="'+prgID+'"],.win-bar-program[data-program-id="'+prgID+'"]');
+                        
+            return program.length;
         }
         
     });
