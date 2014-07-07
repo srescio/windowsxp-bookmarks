@@ -611,6 +611,7 @@ a {
   cursor: default;
   display: table;
   height: 100%;
+  min-width: 300px;
   overflow: hidden;
   width: 100%; }
 
@@ -1150,11 +1151,20 @@ a {
       height: 36px;
       margin: 0 auto;
       width: 36px;
+      position: relative;
       background-attachment: scroll;
       background-color: transparent;
       background-position: center center;
       background-repeat: no-repeat;
       background-size: contain; }
+      .win-icons.grid-icons .win-icon .win-icon-image:before {
+        background: url(../img/program-link.gif) scroll center center no-repeat transparent;
+        display: block;
+        content: '';
+        padding: 11px 11px 0 0;
+        position: absolute;
+        bottom: 0;
+        left: 0; }
     .win-icons.grid-icons .win-icon .win-icon-name {
       border: 1px dotted transparent;
       display: inline-block;

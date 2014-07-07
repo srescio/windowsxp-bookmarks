@@ -49,11 +49,22 @@
             height: 36px;
             margin: 0 auto;
             width: 36px;
+            position: relative;
             background-attachment: scroll;
             background-color: transparent;
             background-position: center center;
             background-repeat: no-repeat;
             background-size: contain;
+            
+            &:before {
+                background: url(../img/program-link.gif) scroll center center no-repeat transparent;
+                display: block;
+                content: '';
+                padding: 11px 11px 0 0;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
         }
         
         .win-icon-name {

@@ -88,9 +88,7 @@ define(['backbone',
         programIsOpen: function(prgID){
             var prgID   = prgID;
             var program = $('.desk-window[data-program-id="'+prgID+'"],.win-bar-program[data-program-id="'+prgID+'"]');
-            
-            console.info('isOpen called, bool is', program.length);
-            
+                        
             return program.length;
         }        
         
