@@ -20,7 +20,7 @@ define(['backbone',
             this.render();
             this.bind();
             
-            window.xp.on('selectProgram',function(id){_this.checkCurrent(id)});
+            window.xp.on('selectProgram',function(id){_this.checkCurrent(id);});
         },
         
         render: function() {
@@ -36,7 +36,7 @@ define(['backbone',
             var prgID   = this.options.id;
             var hasIcon = this.options.hasIcon;
             var prgIcon = this.favIcon(prgUrl);
-            
+                        
             windows.append(
                 this.windowTpl({
                     ID      : prgID,

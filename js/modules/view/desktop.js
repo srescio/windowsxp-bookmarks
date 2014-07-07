@@ -53,9 +53,10 @@ define(['backbone',
                             window.xp.trigger('selectProgram',prgID);
                         } else {
                             new Program({
-                                id   : prgID,
-                                name : $(this).find('.win-icon-name').text(),
-                                url  : $(this).find('a').attr('href')
+                                id      : prgID,
+                                name    : $(this).find('.win-icon-name').text(),
+                                url     : $(this).find('a').attr('href'),
+                                hasIcon : _this.hasIcon(this)
                             });
                         }
 
@@ -67,14 +68,21 @@ define(['backbone',
                             window.xp.trigger('selectProgram',prgID);
                         } else {
                             new Program({
-                                id   : prgID,
-                                name : $(this).find('.win-icon-name').text(),
-                                url  : $(this).attr('href')
+                                id      : prgID,
+                                name    : $(this).find('.win-icon-name').text(),
+                                url     : $(this).attr('href'),
+                                hasIcon : _this.hasIcon(this)
                             });
                         }
                     });
                 }
             });
+        },
+        
+        hasIcon : function(scope) {
+            var hasIcon = $(scope).find('.win-icon-image').data('has-icon');
+            hasIcon = (hasIcon)?'true':'false';
+            return hasIcon;
         },
         
         newProgram: function(id,name,url) {

@@ -856,7 +856,7 @@ a {
   #stm-fav-programs figure img,
   .stm-my-links figure img {
     height: 32px;
-    margin: 0 4px 0 0;
+    margin: 1px 4px 0 1px;
     width: 32px; }
 #stm-fav-programs .stm-prg-name,
 .stm-my-links .stm-prg-name {
