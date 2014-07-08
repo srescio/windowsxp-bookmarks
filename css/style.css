@@ -72,6 +72,15 @@ hr {
 input, select {
   vertical-align: middle; }
 
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 9-lug-2014, 0.48.51
+    Author     : simonerescio
+*/
 html,
 body {
   background: #000;
@@ -825,43 +834,53 @@ a {
   color: #373738;
   font-size: 14px; }
 
+#stm-recent-programs li,
 #stm-fav-programs li,
 .stm-my-links li {
   display: table;
   height: 45px;
   padding: 4px;
   width: 100%; }
+  #stm-recent-programs li a,
   #stm-fav-programs li a,
   .stm-my-links li a {
     color: #373738;
     display: inline-block;
     width: 100%;
     text-decoration: none; }
-    #stm-fav-programs li a:hover, #stm-fav-programs li a:hover .stm-prg-desc,
+    #stm-recent-programs li a:hover, #stm-recent-programs li a:hover .stm-prg-desc,
+    #stm-fav-programs li a:hover,
+    #stm-fav-programs li a:hover .stm-prg-desc,
     .stm-my-links li a:hover,
     .stm-my-links li a:hover .stm-prg-desc {
       background: #3069c7;
       color: #FFF; }
+  #stm-recent-programs li a > *,
   #stm-fav-programs li a > *,
   .stm-my-links li a > * {
     display: table-cell;
     vertical-align: middle; }
+  #stm-recent-programs li span,
   #stm-fav-programs li span,
   .stm-my-links li span {
     display: block; }
+#stm-recent-programs figure,
 #stm-fav-programs figure,
 .stm-my-links figure {
   height: 26px;
   text-align: center;
   width: 36px; }
+  #stm-recent-programs figure img,
   #stm-fav-programs figure img,
   .stm-my-links figure img {
     height: 32px;
     margin: 1px 4px 0 1px;
     width: 32px; }
+#stm-recent-programs .stm-prg-name,
 #stm-fav-programs .stm-prg-name,
 .stm-my-links .stm-prg-name {
   font-weight: bold; }
+#stm-recent-programs .stm-prg-desc,
 #stm-fav-programs .stm-prg-desc,
 .stm-my-links .stm-prg-desc {
   color: #808080; }
@@ -1094,7 +1113,8 @@ a {
     .desk-window .desk-window-content div {
       display: inline-block;
       height: 100%;
-      width: 100%; }
+      width: 100%;
+      overflow: auto; }
     .desk-window .desk-window-content iframe {
       display: block;
       height: 100%;
@@ -1210,5 +1230,11 @@ a {
       text-overflow: ellipsis;
       width: 100%; }
 
+/* Change icons text color when inside of window */
+.desk-window .win-icons.grid-icons .win-icon a {
+  color: #000;
+  text-shadow: none; }
+
+/* Set fallback image for bookmarks without favicon */
 [data-has-icon="false"] {
   background-image: url(../img/program.png) !important; }

@@ -22,9 +22,9 @@ define(['backbone',
             new Clock();
             
             new Icons({
-                el:'#win-desktop-icons',
-                xid:'u3d5tgcANe',
-                isGrid: true
+                el     :'#win-desktop-icons',
+                xid    :'u3d5tgcANe',
+                isGrid : true
             });
         },
         

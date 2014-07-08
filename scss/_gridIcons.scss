@@ -81,6 +81,19 @@
     }
 }
 
+/* Change icons text color when inside of window */
+.desk-window .win-icons.grid-icons {
+
+    .win-icon {
+        
+        a {
+            color: #000;
+            text-shadow: none;
+        }
+    }
+}
+
+/* Set fallback image for bookmarks without favicon */
 [data-has-icon="false"] {
     background-image: url(../img/program.png) !important;
 }

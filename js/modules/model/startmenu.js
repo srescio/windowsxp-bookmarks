@@ -5,9 +5,57 @@ define(['backbone'],function(Backbone){
                     avatar :'http://1.gravatar.com/avatar/5c355fca7ea345a83e30cdc129df4aae?s=48&amp;d=retro&amp;r=G',
                     username:'Simone Rescio'
                 },
-                right: [
+                left: [
                     {
                         href :'http://simonerescio.it',
+                        src  :'img/simonerescio.ico',
+                        name :'Internet',
+                        desc :'simonerescio.it',
+                        target : '_blank'
+                    },
+                    {
+                        href :'mailto:info@simonerescio.it',
+                        src  :'img/outlook.png',
+                        name :'E-mail',
+                        desc :'info@simonerescio.it',
+                        target : '_self'
+                    }
+                ],
+                
+                recent : [
+                    {
+                        href :'https://github.com/srescio',
+                        src  :'img/github.png',
+                        name :'Source',
+                        desc :'github.com/srescio/',
+                        target : '_blank'
+                    },
+                    {
+                        href :'http://codepen.io/srescio/',
+                        src  :'img/codepen.png',
+                        name :'Demos',
+                        desc :'codepen.io/srescio/',
+                        target : '_blank'
+                    },
+                    {
+                        href :'https://twitter.com/srescio',
+                        src  :'img/twitter.png',
+                        name :'Tweets',
+                        desc :'twitter.com/srescio',
+                        target : '_blank'
+                    },
+                    {
+                        href :'http://it.linkedin.com/pub/simone-rescio/30/732/929/',
+                        src  :'img/linkedin.png',
+                        name :'Curriculum Vitae',
+                        desc :'linkedin.com',
+                        target : '_blank'
+                    }                    
+                ],
+                
+                right: [
+                    {
+                        //href :'http://simonerescio.it',
                         src  :'img/mydocs.png',
                         name :'My Documents'
                     },

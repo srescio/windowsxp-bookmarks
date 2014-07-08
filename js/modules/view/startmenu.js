@@ -11,6 +11,7 @@ define(['backbone',
         el : '#win-desktop',
         model : new StartmenuModel(),
         template: Handlebars.compile(Template),
+        rightlinks : {},
         
         initialize: function() {
             this.render();
@@ -20,7 +21,13 @@ define(['backbone',
         },
         
         render: function() {
+            var _this = this;
+            
             this.$el.prepend( this.template( this.model.toJSON() ) );
+            this.rightlinks = this.$el.find('#stm-right a');
+            this.rightlinks.each(function(e){
+                $(this).attr('data-program-id',_this.programID() );
+            });
             
             new Icons({
                 el:'#stm-programs-list',
@@ -30,28 +37,53 @@ define(['backbone',
         },
         
         bind: function() {
+            var _this = this;
+            
             $('#win-start-btn').on('click',function(){
                 $('html').toggleClass('show-startmenu');
             });
             
-            this.$el.find('#stm-right a').on('click',function(e){
+            this.rightlinks.on('click',function(e){
                 e.preventDefault();
-                var prgID = 'lkjhkljljkjl';
-                var hasIcon = 'true';
-
-                var url = $(this).attr('href');
-
-                new Program({
-                    id      : prgID,
-                    name    : $(this).find('.stm-prg-name').text(),
-                    url     : url,
-                    hasIcon : hasIcon
-                });  
+                var programID = $(this).data('program-id')
+                
+                if( _this.programIsOpen(programID) ) {
+                    _this.selectProgramAndHideMenu(programID);
+                } else {
+                    new Program({
+                        id      : programID,
+                        name    : $(this).find('.stm-prg-name').text(),
+                        url     : $(this).attr('href') || null,
+                        hasIcon : 'true',
+                        icon    : $(this).find('img').attr('src')
+                    });
+                    _this.selectProgramAndHideMenu(programID);
+                }                
+                
             });
         },
         
         close: function() {
             $('html').removeClass('show-startmenu');
+        },
+        
+        programID : function() {
+            var string = Math.random().toString(36).substring(2);
+            return string;
+        },
+
+        programIsOpen: function(prgID){
+            var prgID   = prgID;
+            var program = $('.desk-window[data-program-id="'+prgID+'"],.win-bar-program[data-program-id="'+prgID+'"]');
+                        
+            return program.length;
+        },
+        
+        selectProgramAndHideMenu: function(programID) {
+            window.xp.trigger('startmenuClose');
+            setTimeout(function(){
+                window.xp.trigger('selectProgram',programID);
+            },5);  
         }
         
     });

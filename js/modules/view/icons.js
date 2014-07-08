@@ -144,9 +144,7 @@ define(['backbone',
             
             iconEl.on('click',function(e){
                 e.preventDefault();
-            });
-            
-            iconEl.on('click',function(){
+
                 var link = $(this).find('a');
                 
                 var prgID = link.data('program-id');

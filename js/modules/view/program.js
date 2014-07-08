@@ -32,10 +32,10 @@ define(['backbone',
             
             // Render new program as current
             var prgName = this.options.name;
-            var prgUrl  = this.options.url;
+            var prgUrl  = this.options.url || null;
             var prgID   = this.options.id;
             var hasIcon = this.options.hasIcon;
-            var prgIcon = this.favIcon(prgUrl);
+            var prgIcon = this.options.icon || this.favIcon(prgUrl);
                         
             windows.append(
                 this.windowTpl({
@@ -71,7 +71,7 @@ define(['backbone',
         bind: function() {
             var _this = this;
             
-            this.window.draggable().resizable();
+            this.window.draggable({cancel:'.desk-window-content'}).resizable();
             
             //Set the current program on click
             this.window.on('mousedown', function(e){                
