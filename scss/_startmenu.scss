@@ -305,4 +305,10 @@ $stmAnimation: opacity .3s linear;
         pointer-events:initial;
     }
 }
-        
+
+#logoff:before {
+    background-image: url(../img/logkey.png);
+}
+#poweroff:before {
+    background-image: url(../img/powerkey.png);
+}

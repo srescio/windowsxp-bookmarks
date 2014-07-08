@@ -156,3 +156,35 @@
 .ui-icon-gripsmall-diagonal-se {
     opacity: 0;
 }
+
+.win-btn {
+    position:relative;
+    
+    &:before {
+        background-attachment: scroll;
+        background-color: transparent;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        top: 0;
+        width: 100%;
+        position: absolute;
+    }
+}
+.win-cmd-min:before {
+    background-image: url(../img/win-minimize.gif);
+}
+.win-cmd-resize:before {
+    background-image: url(../img/win-magnify.png);
+    
+    .magnified & {
+        background-image: url(../img/win-minify.png);
+    }
+}
+.win-cmd-close:before {
+    background-image: url(../img/win-close.png);
+}

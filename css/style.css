@@ -264,11 +264,12 @@ a {
       width: inherit; }
       .oneLineFlex .oneLineContainer .oneLineContent .oneLineText {
         display: inline-block;
+        height: 1.5em;
+        margin: -0.5em 0 0 0;
         overflow: hidden;
         position: absolute;
         text-overflow: ellipsis;
         top: 50%;
-        margin: -0.5em 0 0 0;
         width: 100%; }
 
 /* Allow vertical content to expand with fixed sibiling on top and bottom */
@@ -993,6 +994,12 @@ a {
   opacity: 1;
   pointer-events: initial; }
 
+#logoff:before {
+  background-image: url(../img/logkey.png); }
+
+#poweroff:before {
+  background-image: url(../img/powerkey.png); }
+
 .desk-window {
   background: #efebde;
   border: 3px solid;
@@ -1112,6 +1119,33 @@ a {
 
 .ui-icon-gripsmall-diagonal-se {
   opacity: 0; }
+
+.win-btn {
+  position: relative; }
+  .win-btn:before {
+    background-attachment: scroll;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: absolute; }
+
+.win-cmd-min:before {
+  background-image: url(../img/win-minimize.gif); }
+
+.win-cmd-resize:before {
+  background-image: url(../img/win-magnify.png); }
+  .magnified .win-cmd-resize:before {
+    background-image: url(../img/win-minify.png); }
+
+.win-cmd-close:before {
+  background-image: url(../img/win-close.png); }
 
 .win-icons.grid-icons {
   list-style: none;
