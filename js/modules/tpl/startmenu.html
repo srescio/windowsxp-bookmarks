@@ -1,85 +1,87 @@
 
 <nav id="startmenu">
-    <div id="stm-top">
-        {{#user}}
-        <figure>
-            <img id="stm-user-logo" src="{{avatar}}">
-        </figure>
-        <div>
-            <h1 id="stm-user-name">{{username}}</h1>
+    <div id="stm">
+        <div id="stm-top">
+            {{#user}}
+            <figure>
+                <img id="stm-user-logo" src="{{avatar}}">
+            </figure>
+            <div>
+                <h1 id="stm-user-name">{{username}}</h1>
+            </div>
+            {{/user}}
+            <div id="tp-gradient"></div>
         </div>
-        {{/user}}
-        <div id="tp-gradient"></div>
-    </div>
-    
-    <div id="stm-middle">
-        
-        <div id="stm-left" class="col">
-            <div class="tbFill">
-                <ul id="stm-fav-programs" class="tbRow stm-my-links">
-                    {{#left}}
+
+        <div id="stm-middle">
+
+            <div id="stm-left" class="col">
+                <div class="tbFill">
+                    <ul id="stm-fav-programs" class="tbRow stm-my-links">
+                        {{#left}}
+                        <li>
+                            <a href="{{href}}" target="{{target}}">
+                                <figure>
+                                    <img src="{{src}}" />
+                                </figure>
+                                <p>
+                                    <span class="stm-prg-name">{{name}}</span>
+                                    <span class="stm-prg-desc">{{desc}}</span>
+                                </p>
+                            </a>
+                        </li>
+                        {{/left}}
+                    </ul>
+
+                    <ul id="stm-recent-programs" class="tbRow stm-my-links">
+                        {{#recent}}
+                        <li>
+                            <a href="{{href}}" target="{{target}}">
+                                <figure>
+                                    <img src="{{src}}" />
+                                </figure>
+                                <p>
+                                    <span class="stm-prg-name">{{name}}</span>
+                                    <span class="stm-prg-desc">{{desc}}</span>
+                                </p>
+                            </a>
+                        </li>
+                        {{/recent}}
+                    </ul>                
+
+                    <ul id="all-programs" class="tbFooter">
+                        <li>
+                            <span>All <u>P</u>rograms</span><img src="img/allprog.png"/>
+
+                            <ul id="stm-programs-list" class="win-icons list-icons">
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="stm-right" class="col">
+                <ul class="stm-my-links">
+                    {{#right}}
                     <li>
-                        <a href="{{href}}" target="{{target}}">
+                        <a href="{{href}}" class="window-rel">
                             <figure>
                                 <img src="{{src}}" />
                             </figure>
                             <p>
                                 <span class="stm-prg-name">{{name}}</span>
-                                <span class="stm-prg-desc">{{desc}}</span>
                             </p>
                         </a>
                     </li>
-                    {{/left}}
+                    {{/right}}
                 </ul>
-                
-                <ul id="stm-recent-programs" class="tbRow stm-my-links">
-                    {{#recent}}
-                    <li>
-                        <a href="{{href}}" target="{{target}}">
-                            <figure>
-                                <img src="{{src}}" />
-                            </figure>
-                            <p>
-                                <span class="stm-prg-name">{{name}}</span>
-                                <span class="stm-prg-desc">{{desc}}</span>
-                            </p>
-                        </a>
-                    </li>
-                    {{/recent}}
-                </ul>                
-                
-                <ul id="all-programs" class="tbFooter">
-                    <li>
-                        <span>All <u>P</u>rograms</span><img src="img/allprog.png"/>
-                        
-                        <ul id="stm-programs-list" class="win-icons list-icons">
-                        </ul>
-                    </li>
-                </ul>
+
             </div>
         </div>
-        
-        <div id="stm-right" class="col">
-            <ul class="stm-my-links">
-                {{#right}}
-                <li>
-                    <a href="{{href}}" class="window-rel">
-                        <figure>
-                            <img src="{{src}}" />
-                        </figure>
-                        <p>
-                            <span class="stm-prg-name">{{name}}</span>
-                        </p>
-                    </a>
-                </li>
-                {{/right}}
-            </ul>
-            
+
+        <div id="stm-bottom">
+            <p><button id="logoff" type="button" class="el-reset win-btn btn-yellow"></button><u>L</u>og Off</p>
+            <p><button id="poweroff" type="button" class="el-reset win-btn btn-red"></button>T<u>u</u>rn Off Computer</p>
         </div>
-    </div>
-    
-    <div id="stm-bottom">
-        <p><button id="logoff" type="button" class="el-reset win-btn btn-yellow"></button><u>L</u>og Off</p>
-        <p><button id="poweroff" type="button" class="el-reset win-btn btn-red"></button>T<u>u</u>rn Off Computer</p>
     </div>
 </nav>

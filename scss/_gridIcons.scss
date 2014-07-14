@@ -18,7 +18,7 @@
             position: relative;
             text-align: center;
             text-decoration: none;
-            text-shadow: 1px 1px 3px #222;
+            text-shadow: 1px 1px 1px #222;
             width: 75px;            
         }
         a.selected,
@@ -73,6 +73,7 @@
             left: 0;
             margin: 4px 0 0 0;
             overflow: hidden;
+            padding: 0 0 5px 0;
             position: absolute;
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -89,6 +90,15 @@
         a {
             color: #000;
             text-shadow: none;
+        }
+        a.selected,
+        &.ui-selected a,
+        &.ui-selecting a {
+            color: #FFF;
+            
+            .win-icon-name {
+                word-break:normal;
+            }
         }
     }
 }

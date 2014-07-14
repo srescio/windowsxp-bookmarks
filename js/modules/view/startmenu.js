@@ -31,7 +31,7 @@ define(['backbone',
             
             new Icons({
                 el:'#stm-programs-list',
-                xid:'WfpW8xgTAh',
+                xid:'u3d5tgcANe',
                 isGrid: false
             });
         },
@@ -45,19 +45,35 @@ define(['backbone',
             
             this.rightlinks.on('click',function(e){
                 e.preventDefault();
-                var programID = $(this).data('program-id')
+                var programID = $(this).data('program-id');
                 
                 if( _this.programIsOpen(programID) ) {
                     _this.selectProgramAndHideMenu(programID);
                 } else {
+                    
                     new Program({
                         id      : programID,
                         name    : $(this).find('.stm-prg-name').text(),
-                        url     : $(this).attr('href') || null,
+                        url     : $(this).attr('href'),
                         hasIcon : 'true',
                         icon    : $(this).find('img').attr('src')
                     });
                     _this.selectProgramAndHideMenu(programID);
+                    
+                    if( $(this).attr('href')==='' ) {
+                        var window = $('.desk-window.current .desk-window-content > div');
+                        window.html('<ul class="win-icons grid-icons"></ul>');
+
+                        new Icons({
+                            el:'.desk-window[data-program-id="'+programID+'"] .win-icons',
+                            xid:'JKgHG6drYg',
+                            isGrid: true,
+                            isDoc: true
+                        });                    
+                        
+                    }
+                    
+                    
                 }                
                 
             });

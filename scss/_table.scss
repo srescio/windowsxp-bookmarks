@@ -17,6 +17,7 @@
     
     #win-desktop > & {
         display: block;
+        left: 0;
         overflow: hidden;
         position: absolute;
     }
@@ -67,7 +68,6 @@
     display: table;
     height: 100%;
     width: 100%;
-    position: relative;
     
     .tbHeader {
         display: table-header-group;

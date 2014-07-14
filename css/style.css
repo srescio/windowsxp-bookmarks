@@ -238,6 +238,7 @@ a {
   width: 100%; }
   #win-desktop > .tbcRelative {
     display: block;
+    left: 0;
     overflow: hidden;
     position: absolute; }
   .tbcRelative:after {
@@ -276,8 +277,7 @@ a {
 .tbFill {
   display: table;
   height: 100%;
-  width: 100%;
-  position: relative; }
+  width: 100%; }
   .tbFill .tbHeader {
     display: table-header-group;
     height: 1px; }
@@ -617,7 +617,7 @@ a {
   width: 100%; }
 
 #win-desktop {
-  background: url(../img/Bliss-Wallpaper.jpg) scroll center center no-repeat transparent;
+  background: url(../img/Bliss-Wallpaper.jpg) scroll center center no-repeat #004e98;
   background-size: cover;
   display: table;
   height: 100%;
@@ -737,17 +737,21 @@ a {
   width: 1px; }
 
 #startmenu {
-  border: 2px solid #225cc5;
-  border-radius: 6px 6px 0 0;
   bottom: 0;
-  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.6);
   display: none;
   left: 0;
-  position: absolute;
+  position: static;
+  vertical-align: bottom;
   width: 380px;
   z-index: 999; }
   .show-startmenu #startmenu {
-    display: block; }
+    display: table-cell;
+    position: relative; }
+
+#stm {
+  border: 2px solid #225cc5;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.6); }
 
 #stm-top {
   height: 65px;
@@ -837,6 +841,7 @@ a {
   .stm-my-links li a {
     color: #373738;
     display: inline-block;
+    font-size: 11px;
     width: 100%;
     text-decoration: none; }
     #stm-recent-programs li a:hover, #stm-recent-programs li a:hover .stm-prg-desc,
@@ -877,7 +882,6 @@ a {
   color: #808080; }
 
 #stm-fav-programs:after,
-.stm-my-links:after,
 #all-programs:before {
   background: white;
   background: -moz-linear-gradient(left, white 0%, #d3d3c8 50%, white 100%);
@@ -897,7 +901,7 @@ a {
   width: 100%; }
   #all-programs > li {
     display: inherit;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     margin: 0 auto;
     text-align: center;
@@ -965,12 +969,16 @@ a {
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
   bottom: 5px;
   height: auto;
-  margin: 0 0 0 30px;
+  left: 140px;
+  margin: 0 0 10% 30px;
+  max-height: 90%;
   opacity: 0;
+  overflow: auto;
   position: absolute;
   pointer-events: none;
   transition: opacity 0.3s linear;
-  -wbkit-transition: opacity 0.3s linear; }
+  -wbkit-transition: opacity 0.3s linear;
+  z-index: 1; }
   #all-programs .win-icons.list-icons li {
     padding: 6px;
     max-width: 300px;
@@ -1105,7 +1113,8 @@ a {
       display: inline-block;
       height: 100%;
       width: 100%;
-      overflow: auto; }
+      /* overflow: auto; */
+      /*Wokrs in webkit but in firefox windows starts "growing"*/ }
     .desk-window .desk-window-content iframe {
       display: block;
       height: 100%;
@@ -1176,7 +1185,7 @@ a {
       position: relative;
       text-align: center;
       text-decoration: none;
-      text-shadow: 1px 1px 3px #222;
+      text-shadow: 1px 1px 1px #222;
       width: 75px; }
     .win-icons.grid-icons .win-icon a.selected, .win-icons.grid-icons .win-icon.ui-selected, .win-icons.grid-icons .win-icon.ui-selecting {
       z-index: 1; }
@@ -1216,6 +1225,7 @@ a {
       left: 0;
       margin: 4px 0 0 0;
       overflow: hidden;
+      padding: 0 0 5px 0;
       position: absolute;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -1225,6 +1235,10 @@ a {
 .desk-window .win-icons.grid-icons .win-icon a {
   color: #000;
   text-shadow: none; }
+.desk-window .win-icons.grid-icons .win-icon a.selected, .desk-window .win-icons.grid-icons .win-icon.ui-selected a, .desk-window .win-icons.grid-icons .win-icon.ui-selecting a {
+  color: #FFF; }
+  .desk-window .win-icons.grid-icons .win-icon a.selected .win-icon-name, .desk-window .win-icons.grid-icons .win-icon.ui-selected a .win-icon-name, .desk-window .win-icons.grid-icons .win-icon.ui-selecting a .win-icon-name {
+    word-break: normal; }
 
 /* Set fallback image for bookmarks without favicon */
 [data-has-icon="false"] {

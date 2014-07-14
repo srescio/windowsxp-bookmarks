@@ -41,7 +41,7 @@ define(['backbone'],function(Backbone){
                         href :'https://twitter.com/srescio',
                         src  :'img/twitter.png',
                         name :'Tweets',
-                        desc :'twitter.com/srescio',
+                        desc :'@srescio',
                         target : '_blank'
                     },
                     {
@@ -55,25 +55,25 @@ define(['backbone'],function(Backbone){
                 
                 right: [
                     {
-                        //href :'http://simonerescio.it',
+                        href :'',
                         src  :'img/mydocs.png',
                         name :'My Documents'
                     },
                     {
-                        href :'http://simonerescio.it',
+                        href :'http://www.istockphoto.com/stock-photos',
                         src  :'img/mypics.png',
                         name :'My Pictures'
                     },
                     {
-                        href :'http://simonerescio.it',
+                        href :'http://grooveshark.com/',
                         src  :'img/mymusic.png',
                         name :'My Music'
                     },
-                    {
-                        href :'http://simonerescio.it',
-                        src  :'img/mynet.png',
-                        name :'My Network Places'
-                    }
+//                    {
+//                        href :'http://simonerescio.it',
+//                        src  :'img/mynet.png',
+//                        name :'My Network Places'
+//                    }
                 ]
                     
         },

@@ -12,12 +12,16 @@ define(['backbone',
         template: Handlebars.compile(IconTpl),
         missing: [],
         isGrid: null,
+        isDoc: null,
         
-        initialize: function(args) {            
+        initialize: function(args) {
+            var _this = this;
+            
             this.options = args;
             this.xid = this.options.xid;
             this.el = this.options.el;
             this.isGrid = this.options.isGrid;
+            this.isDoc = this.options.isDoc;
                         
             new xMarks();
                         
@@ -29,28 +33,25 @@ define(['backbone',
                 "hide_description" : true,
                 "iconsObj":this
             });
-                        
+            
+            window.xp.on('renderIcons', function(icons){ _this.render(icons); } );
+            
             //Render will be called by the xMarks callback and call bind
-        },
-        
-        programID : function() {
-            var string = Math.random().toString(36).substring(2);
-            return string;
         },
 
         render: function(bookmarks) {            
             for(var fav in bookmarks) {   
                 if(typeof bookmarks[fav].url!=='undefined') {
                     //Url is defined, check if can be loaded in iFrame
-                    this.testIframe(bookmarks[fav].url,bookmarks[fav].name);
+                    this.testIframe(bookmarks[fav].url,bookmarks[fav].name,bookmarks[fav].nid);
                 }
             };                                    
         },
         
         bind: function(programID) {
             var iconEl = (this.isGrid)?
-                         this.$el.find('[data-program-id="'+programID+'"]'):
-                         this.$el.find('[data-program-id="'+programID+'"]').parent();
+                         $(this.el).find('[data-program-id="'+programID+'"]'):
+                         $(this.el).find('[data-program-id="'+programID+'"]').parent();
             (this.isGrid)?this.gridEvents(iconEl):this.listEvents(iconEl);
         },
 
@@ -67,14 +68,14 @@ define(['backbone',
             img.onerror = function() {
                 _this.missing.push(id);
                 
-                var missingEl = _this.$el.find('[data-program-id="'+id+'"] .win-icon-image')
+                var missingEl = $(_this.el).find('[data-program-id="'+id+'"] .win-icon-image')
                 missingEl.attr('data-has-icon','false');
             };
 
             img.src = url;
         },
         
-        testIframe: function(siteUrl,favName) {
+        testIframe: function(siteUrl,favName,nid) {
             var _this = this;
             
             $.ajax({
@@ -86,7 +87,7 @@ define(['backbone',
                     var response = JSON.parse(data);
                     
                     if(response['error']===false) {
-                        _this.renderIcon(siteUrl,favName);
+                        _this.renderIcon(siteUrl,favName,nid);
                     } else {
                         console.error('Url cannot be included in frame due to Cross Domain settings',response.url);
                     }
@@ -94,12 +95,12 @@ define(['backbone',
             }); 
         },
         
-        renderIcon: function(siteUrl,favName) {
-            var programID = this.programID();
+        renderIcon: function(siteUrl,favName,nid) {
+            var programID = nid;
 
             var icon = {
                 id   : programID,
-                name : this.programName(siteUrl),
+                name : (this.isDoc)?favName:this.programName(siteUrl),
                 icon : this.favIcon(siteUrl),
                 desc : favName,
                 url  : siteUrl
@@ -107,8 +108,9 @@ define(['backbone',
 
             var model = new IconModel({icon:icon});
 
-            this.$el.append( this.template( model.toJSON() ) );
-
+            // $el works only first time
+            $(this.el).append( this.template( model.toJSON() ) );
+            
             this.checkImg( this.favIcon(siteUrl) , programID );
             
             this.bind(programID);
@@ -117,12 +119,12 @@ define(['backbone',
         gridEvents: function(iconEl) {
             var _this = this;
             
-            this.theIcons = this.$el.find('.win-icon a');
+            this.theIcons = $(this.el).find('.win-icon a');
             
             iconEl.on('click',function(e){
                 e.preventDefault();
                 _this.theIcons.removeClass('selected');
-                _this.$el.find('.win-icon').removeClass('ui-selected');
+                $(_this.el).find('.win-icon').removeClass('ui-selected');
                 $(this).addClass('selected');
             }).on('dblclick', function(){
                 var prgID = $(this).data('program-id');
@@ -134,13 +136,13 @@ define(['backbone',
                 }
             });
             
-            this.$el.selectable({cancel:'a',distance: 5});
+            $(this.el).selectable({cancel:'a',distance: 5});
         },
         
         listEvents: function(iconEl) {
             var _this = this;
             
-            this.theIcons = this.$el.find('.win-icon');
+            this.theIcons = $(this.el).find('.win-icon');
             
             iconEl.on('click',function(e){
                 e.preventDefault();

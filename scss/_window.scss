@@ -118,7 +118,7 @@
             display: inline-block;
             height: 100%;
             width: 100%;
-            overflow: auto;
+            /* overflow: auto; */ /*Wokrs in webkit but in firefox windows starts "growing"*/
         }
         
         iframe {
