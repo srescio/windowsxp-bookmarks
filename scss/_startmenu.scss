@@ -237,7 +237,11 @@
         }
         
         button {
+            float: left;
             margin: 0 4px 0 0;
+        }
+        span {
+            line-height: 24px;
         }
     }
     

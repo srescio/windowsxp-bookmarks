@@ -957,7 +957,10 @@ a {
     #stm-bottom p:hover {
       background: #316ac5; }
     #stm-bottom p button {
+      float: left;
       margin: 0 4px 0 0; }
+    #stm-bottom p span {
+      line-height: 24px; }
   #stm-bottom .win-btn {
     height: 24px;
     width: 24px; }
