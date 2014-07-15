@@ -320,9 +320,9 @@ $stmAnimation: opacity .3s linear;
     }
 }
 
-#logoff:before {
+#logoff button:before {
     background-image: url(../img/logkey.png);
 }
-#poweroff:before {
+#poweroff button:before {
     background-image: url(../img/powerkey.png);
 }

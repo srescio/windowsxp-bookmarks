@@ -1015,10 +1015,10 @@ a {
   opacity: 1;
   pointer-events: initial; }
 
-#logoff:before {
+#logoff button:before {
   background-image: url(../img/logkey.png); }
 
-#poweroff:before {
+#poweroff button:before {
   background-image: url(../img/powerkey.png); }
 
 .desk-window {
@@ -1246,3 +1246,88 @@ a {
 /* Set fallback image for bookmarks without favicon */
 [data-has-icon="false"] {
   background-image: url(../img/program.png) !important; }
+
+#desktop {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  filter: grayscale(0%);
+  /* Avoid flickering at color transition end on svg background */
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-attachment: scroll !important; }
+  .end-session-show #desktop {
+    -webkit-transition: -webkit-filter 5s ease, background-color 5s ease;
+    -moz-transition: -moz-filter 5s ease, background-color 5s ease;
+    -o-transition: -o-filter 5s ease, background-color 5s ease;
+    -ms-transition: -ms-filter 5s ease, background-color 5s ease;
+    transition: filter 5s ease, background-color 5s ease;
+    transition: -webkit-filter 5s ease, background-color 5s ease;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+    pointer-events: none; }
+
+.end-session {
+  background-color: #003399;
+  border: 1px solid #000;
+  height: 200px;
+  margin: -100px 0 0 -157px;
+  left: 50%;
+  top: 50%;
+  width: 314px;
+  position: absolute;
+  z-index: 10; }
+
+.es-title {
+  background: url(../img/endSessionLogo.png) scroll right center no-repeat transparent;
+  display: block;
+  font-size: 17px;
+  font-weight: 600;
+  height: 43px;
+  padding: 15px 60px 15px 13px; }
+
+.blu-rows {
+  display: table; }
+  .blu-rows .blu-rows-top {
+    display: table-header-group;
+    height: 1px; }
+  .blu-rows .blu-rows-middle {
+    display: table;
+    height: 100%;
+    width: 100%; }
+    .blu-rows .blu-rows-middle .es-button {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center; }
+      .blu-rows .blu-rows-middle .es-button .esb-content {
+        display: inline-block; }
+        .blu-rows .blu-rows-middle .es-button .esb-content button {
+          display: block;
+          margin: 0 auto; }
+        .blu-rows .blu-rows-middle .es-button .esb-content span {
+          font-size: 11px;
+          font-weight: 100; }
+  .blu-rows .blu-rows-bottom {
+    display: table-footer-group;
+    height: 1px; }
+    .blu-rows .blu-rows-bottom div {
+      height: 43px;
+      padding: 13px;
+      text-align: right; }
+
+.blu-rows-middle {
+  background: #9bb9f7;
+  background: -moz-radial-gradient(center, circle cover, #9bb9f7 0%, #5a7dde 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #9bb9f7), color-stop(100%, #5a7dde));
+  background: -webkit-radial-gradient(center, circle cover, #9bb9f7 0%, #5a7dde 100%);
+  background: -o-radial-gradient(center, circle cover, #9bb9f7 0%, #5a7dde 100%);
+  background: -ms-radial-gradient(center, circle cover, #9bb9f7 0%, #5a7dde 100%);
+  background: radial-gradient(circle at center, #9bb9f7 0%, #5a7dde 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9bb9f7', endColorstr='#5a7dde',GradientType=1 ); }

@@ -3,8 +3,9 @@ define(['backbone',
         'modules/model/startmenu',
         'text!../tpl/startmenu.html',
         'modules/view/icons',
-        'modules/view/program'],
-        function(Backbone,Handlebars,StartmenuModel,Template,Icons,Program){
+        'modules/view/program',
+        'modules/view/endSession'],
+        function(Backbone,Handlebars,StartmenuModel,Template,Icons,Program,EndSession){
     
     var Startmenu = Backbone.View.extend({
         
@@ -76,6 +77,14 @@ define(['backbone',
                     
                 }                
                 
+            });
+            
+            //manage end of session buttons
+            this.$el.find('#logoff').on('click',function(){
+                new EndSession({action:'logoff'});
+            });
+            this.$el.find('#poweroff').on('click',function(){
+                new EndSession({action:'poweroff'});
             });
         },
         

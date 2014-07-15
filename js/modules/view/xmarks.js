@@ -32,7 +32,6 @@ define([],function(){
         };
 
         Widget.render = function(data) {
-            console.info(data.data.nodes)
             var widget = Widget.find(data["share_id"]);
             widget.iconsObj.render(data.data.nodes);
         };

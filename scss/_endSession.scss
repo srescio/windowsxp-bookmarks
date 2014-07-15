@@ -1,0 +1,119 @@
+$postColorTransition :  5s ease;
+$postColorStart : grayscale(0%);
+$postColorEnd : grayscale(100%);
+
+#desktop {
+    //keep the picture greyscaled via css to match background pattern until color is applied
+    -webkit-filter: $postColorStart;
+    -moz-filter: $postColorStart;
+    -o-filter: $postColorStart;
+    -ms-filter: $postColorStart;
+    filter: $postColorStart;
+
+    /* Avoid flickering at color transition end on svg background */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-attachment: scroll !important;
+
+    //when color is applied fade to color
+    .end-session-show & {
+        //fade background color to handle the luminance difference between greyscaled colors         
+        //Fade color when js executes and applyes inline match
+        -webkit-transition: -webkit-filter $postColorTransition, background-color $postColorTransition;
+        -moz-transition: -moz-filter $postColorTransition, background-color $postColorTransition;
+        -o-transition: -o-filter $postColorTransition, background-color $postColorTransition;
+        -ms-transition: -ms-filter $postColorTransition, background-color $postColorTransition;
+        transition: filter $postColorTransition, background-color $postColorTransition;
+        transition: -webkit-filter $postColorTransition, background-color $postColorTransition;    
+
+        -webkit-filter: $postColorEnd;
+        -moz-filter: $postColorEnd;
+        -o-filter: $postColorEnd;
+        -ms-filter: $postColorEnd;
+        filter: $postColorEnd;
+        
+        pointer-events: none;
+    }
+}
+
+
+$esH: 200px;
+$esW: 314px;
+.end-session {
+    background-color: #003399;
+    border: 1px solid #000;
+    height: $esH;
+    margin: -($esH/2) 0 0 (-($esW/2));
+    left: 50%;
+    top: 50%;
+    width: $esW;
+    position: absolute;
+    z-index: 10;
+}
+.es-title {
+    background: url(../img/endSessionLogo.png) scroll right center no-repeat transparent;
+    display: block;
+    font-size: 17px;
+    font-weight: 600;
+    height: 43px;
+    padding: 15px 60px 15px 13px;
+}
+
+.blu-rows {
+    display: table;
+    
+    .blu-rows-top {
+        display: table-header-group;
+        height: 1px;
+    }
+    .blu-rows-middle {
+        display: table;
+        height: 100%;
+        width: 100%;
+
+        .es-button {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            
+            .esb-content {
+                display: inline-block;
+                
+                button {
+                    display: block;
+                    margin: 0 auto;
+                }
+                
+                span {
+                    font-size: 11px;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+    .blu-rows-bottom {
+        display: table-footer-group;
+        height: 1px;
+        
+        div {
+            height: 43px;
+            padding: 13px;
+            text-align: right;
+        }
+    }
+}
+
+.blu-rows-middle {
+    background: #9bb9f7;
+    background: -moz-radial-gradient(center, circle cover,  #9bb9f7 0%, #5a7dde 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#9bb9f7), color-stop(100%,#5a7dde));
+    background: -webkit-radial-gradient(center, circle cover,  #9bb9f7 0%,#5a7dde 100%);
+    background: -o-radial-gradient(center, circle cover,  #9bb9f7 0%,#5a7dde 100%);
+    background: -ms-radial-gradient(center, circle cover,  #9bb9f7 0%,#5a7dde 100%);
+    background: radial-gradient(circle at center,  #9bb9f7 0%,#5a7dde 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bb9f7', endColorstr='#5a7dde',GradientType=1 );
+}
+
