@@ -2,24 +2,20 @@
 
     <header class="blu-rows-top">
         <div>
-            <h1 class="es-title">Disconessione da Windows</h1>
+            <h1 class="es-title">{{title}}</h1>
             <p id="top-gr"></p>
         </div>
     </header>
     
     <div class="blu-rows-middle">
-        <div class="es-button">
+        {{#buttons}}
+        <div id="es-{{action}}" class="es-button {{status}}">
             <p class="esb-content">
-                <button type="button">x</button>
-                <span>close</span>
+                <button type="button" class="el-reset win-btn {{color}}"></button>
+                <span>{{text}}</span>
             </p>
         </div>
-        <div class="es-button">
-            <p class="esb-content">
-                <button type="button">x</button>
-                <span>close</span>
-            </p>        
-        </div>
+        {{/buttons}}
     </div>
     
     <footer class="blu-rows-bottom">

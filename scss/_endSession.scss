@@ -59,7 +59,7 @@ $esW: 314px;
     font-size: 17px;
     font-weight: 600;
     height: 43px;
-    padding: 15px 60px 15px 13px;
+    padding: 15px 50px 15px 13px;
 }
 
 .blu-rows {
@@ -83,13 +83,16 @@ $esW: 314px;
                 display: inline-block;
                 
                 button {
+                    $esBtnSize:33px;
                     display: block;
+                    height: $esBtnSize;
                     margin: 0 auto;
+                    width: $esBtnSize;
                 }
                 
                 span {
                     font-size: 11px;
-                    font-weight: 100;
+                    font-weight: bold;
                 }
             }
         }
@@ -117,3 +120,24 @@ $esW: 314px;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bb9f7', endColorstr='#5a7dde',GradientType=1 );
 }
 
+.es-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+#es-logoff button:before {
+    background-image: url(../img/logkey.png);
+}
+#es-switch button:before {
+    background-image: url(../img/switchUser.png);
+}
+
+#es-standby button:before {
+    background-image: url(../img/standby.png);
+}
+#es-off button:before {
+    background-image: url(../img/poweroff.png);
+}
+#es-restart button:before {
+    background-image: url(../img/reset.png);
+}
