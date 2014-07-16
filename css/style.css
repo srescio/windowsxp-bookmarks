@@ -1313,6 +1313,7 @@ a {
 
 .es-title {
   background: url(../img/endSessionLogo.png) scroll right center no-repeat transparent;
+  cursor: default;
   display: block;
   font-size: 17px;
   font-weight: 600;
@@ -1340,6 +1341,7 @@ a {
           margin: 0 auto;
           width: 33px; }
         .blu-rows .blu-rows-middle .es-button .esb-content span {
+          cursor: default;
           font-size: 11px;
           font-weight: bold; }
   .blu-rows .blu-rows-bottom {
