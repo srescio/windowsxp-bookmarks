@@ -10,20 +10,32 @@ define(['backbone',
     var Desktop = Backbone.View.extend({
         el : '#system',
         deskTpl: Handlebars.compile(deskTpl),
+        options: {},
+        desktop: {},
         
-        initialize: function() {
+        initialize: function(options) {
+            this.options = options;
+            
+            //Update page Title with user name
+            var titleTxt = $('title').text();
+            $('title').text( titleTxt+' - Logged as '+this.options.user.name );
+            
             this.render();
             this.bind();
         },
         
         render: function() {
-            this.$el.html( this.deskTpl() );
-            new Startmenu();
+            this.$el.html( this.deskTpl( {username:this.options.user.name}) );
+            
+            //Save current desktop
+            this.desktop = this.$el.find('[data-user="'+this.options.user.name+'"]');
+            
+            new Startmenu(this.options);
             new Clock();
             
             new Icons({
                 el     :'#win-desktop-icons',
-                xid    :'u3d5tgcANe',
+                xid    : this.options.bookmarks.desktop,
                 isGrid : true
             });
         },

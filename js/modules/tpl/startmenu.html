@@ -4,10 +4,10 @@
         <div id="stm-top">
             {{#user}}
             <figure>
-                <img id="stm-user-logo" src="{{avatar}}">
+                <img id="stm-user-logo" src="{{avatarUrl}}">
             </figure>
             <div>
-                <h1 id="stm-user-name">{{username}}</h1>
+                <h1 id="stm-user-name">{{name}}</h1>
             </div>
             {{/user}}
             <div id="tp-gradient"></div>
@@ -18,25 +18,38 @@
             <div id="stm-left" class="col">
                 <div class="tbFill">
                     <ul id="stm-fav-programs" class="tbRow stm-my-links">
-                        {{#left}}
+                        {{#user.website}}
                         <li>
-                            <a href="{{href}}" target="{{target}}">
+                            <a href="{{.}}" target="_blank">
                                 <figure>
-                                    <img src="{{src}}" />
+                                    <img src="{{.}}/favicon.ico" />
                                 </figure>
                                 <p>
-                                    <span class="stm-prg-name">{{name}}</span>
-                                    <span class="stm-prg-desc">{{desc}}</span>
+                                    <span class="stm-prg-name">Internet</span>
+                                    <span class="stm-prg-desc">{{.}}</span>
                                 </p>
                             </a>
                         </li>
-                        {{/left}}
+                        {{/user.website}}
+                        {{#user.email}}
+                        <li>
+                            <a href="mailto:{{.}}" target="_self">
+                                <figure>
+                                    <img src="img/outlook.png" />
+                                </figure>
+                                <p>
+                                    <span class="stm-prg-name">E-mail</span>
+                                    <span class="stm-prg-desc">{{.}}</span>
+                                </p>
+                            </a>
+                        </li>
+                        {{/user.email}}
                     </ul>
 
                     <ul id="stm-recent-programs" class="tbRow stm-my-links">
-                        {{#recent}}
+                        {{#social}}
                         <li>
-                            <a href="{{href}}" target="{{target}}">
+                            <a href="{{href}}" target="_blank">
                                 <figure>
                                     <img src="{{src}}" />
                                 </figure>
@@ -46,7 +59,7 @@
                                 </p>
                             </a>
                         </li>
-                        {{/recent}}
+                        {{/social}}
                     </ul>                
 
                     <ul id="all-programs" class="tbFooter">

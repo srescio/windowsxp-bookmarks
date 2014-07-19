@@ -10,11 +10,14 @@ define(['backbone',
     var Startmenu = Backbone.View.extend({
         
         el : '#win-desktop',
-        model : new StartmenuModel(),
+        options: {},
+        model : {},
         template: Handlebars.compile(Template),
         rightlinks : {},
         
-        initialize: function() {
+        initialize: function(options) {
+            this.options = options;
+            
             this.render();
             this.bind();
             
@@ -24,16 +27,46 @@ define(['backbone',
         render: function() {
             var _this = this;
             
+            var social = [];
+            
+            for(var network in this.options.social) {
+                var name;
+                
+                switch(network) {
+                    case 'github'   : name = 'Source'; break;
+                    case 'codepen'  : name = 'Demos'; break;
+                    case 'twitter'  : name = 'Tweets'; break;
+                    case 'linkedin' : name = 'Curriculum Vitae'; break;
+                }
+                
+                var link = {
+                    href : this.options.social[network],
+                    src  : 'img/'+network+'.png',
+                    name : name,
+                    desc : this.hostName(this.options.social[network])
+                };
+                social.push(link);
+            }
+            
+            //Populate model with given data and add hostnames
+            this.model = new StartmenuModel({
+                user    : this.options.user,
+                social  : social
+            });
+                        
+            //Render startmenu
             this.$el.prepend( this.template( this.model.toJSON() ) );
+            
+            //Save reference to render elements and bind events
             this.rightlinks = this.$el.find('#stm-right a');
             this.rightlinks.each(function(e){
                 $(this).attr('data-program-id',_this.programID() );
             });
             
             new Icons({
-                el:'#stm-programs-list',
-                xid:'u3d5tgcANe',
-                isGrid: false
+                el      :'#stm-programs-list',
+                xid     : this.options.bookmarks.startmenu,
+                isGrid  : false
             });
         },
         
@@ -66,17 +99,13 @@ define(['backbone',
                         window.html('<ul class="win-icons grid-icons"></ul>');
 
                         new Icons({
-                            el:'.desk-window[data-program-id="'+programID+'"] .win-icons',
-                            xid:'JKgHG6drYg',
-                            isGrid: true,
-                            isDoc: true
-                        });                    
-                        
+                            el      :'.desk-window[data-program-id="'+programID+'"] .win-icons',
+                            xid     :_this.options.bookmarks.documents,
+                            isGrid  : true,
+                            isDoc   : true
+                        });
                     }
-                    
-                    
-                }                
-                
+                }
             });
             
             //manage end of session buttons
@@ -109,6 +138,11 @@ define(['backbone',
             setTimeout(function(){
                 window.xp.trigger('selectProgram',programID);
             },5);  
+        },
+        
+        hostName: function(url) {
+            var    protocol = new RegExp("http(s|)://");
+            return url.replace(protocol,'').replace('www.','');
         }
         
     });

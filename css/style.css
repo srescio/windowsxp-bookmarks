@@ -2477,7 +2477,8 @@ a {
 #stm-recent-programs .stm-prg-desc,
 #stm-fav-programs .stm-prg-desc,
 .stm-my-links .stm-prg-desc {
-  color: #808080; }
+  color: #808080;
+  word-break: break-all; }
 
 #stm-fav-programs:after,
 #all-programs:before {
