@@ -1,0 +1,40 @@
+#dos {
+    background: #000;
+    color: #aaa;
+    cursor: default;
+    display: table;
+    font: 600 14px "Courier New", Courier, monospace;
+    height: 100%;
+    padding: 13px;
+    width: 100%;
+    
+    p {
+        margin: 21px 0;
+    }
+    
+    a,
+    a:link,
+    a:visited {
+        color: #aaa;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+.blink {
+    opacity: 1;
+    -webkit-animation: blink 2s linear infinite;
+    animation: blink 2s linear infinite;
+}
+@-webkit-keyframes blink {
+    0%   { opacity:1; }
+    49%  { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:0; }
+}
+@keyframes blink {
+    0%   { opacity:1; }
+    49%  { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:0; }
+}

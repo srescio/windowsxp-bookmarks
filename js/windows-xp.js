@@ -47,7 +47,7 @@ require(['modules/view/startup',
 
     window.xp = _.extend({}, Backbone.Events);
 
-//    new Startup();
+    new Startup();
 //    
 //    setTimeout(function(){
 //        new Welcome();
@@ -58,5 +58,25 @@ require(['modules/view/startup',
 //        
 //    },10000);
     
-    new Desktop();
+    new Desktop({
+        user : {
+            name        :'Simone Rescio',
+            avatarUrl   :'url',
+            email       :'info@simonerescio.it',
+            website     :'http://simonerescio.it'
+        },
+        
+        social : {
+            github      : '',
+            codepen     : '',
+            tiwtter     : '',
+            linkedin    : ''
+        },
+        
+        bookmarks : {
+            desktop     :'xmarks',
+            startmenu   :'xmarks',
+            documents   :'xmarks'            
+        }
+    });
 });

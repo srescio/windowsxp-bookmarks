@@ -11,6 +11,7 @@
         display: table-cell;
         vertical-align: middle;
         text-align: center;
+        font-size: 1em;
     }
     
     footer {
@@ -39,48 +40,52 @@
 }
 
 
-#win-fl {
-    text-indent: -23px;
+.microsoft-flag {
+    text-indent: -1.42em;
+    
+    img {
+        width: 7.62em;
+    }
 }
 
 .mcsft-head {
     display: inline-block;
-    font-size: 20px;
+    font-size: 1.25em;
     
     sup {
-        font-size: 8px;
+        font-size: 0.4em;
         vertical-align: top;
     }
 }
 
 .flag-tm {
     display: inline-block;
-    font-size: 10px;
-    margin: 0 0 0 -26px;
+    font-size: 0.6em;
+    margin: 0 0 0 -2.7em;
     text-indent: 0;
 }
 
-#win-lg {
+.windowsxp {
     display: inline-block;
     font-size: 3.1em;
     font-weight: lighter;
     
     sup {
-        font-size: 10px;
-        line-height: 36px;
+        font-size: 0.2em;
+        line-height: 3.8em;
         vertical-align: top;
     }
     
     span {
         color: #eb651c;
-        font-size: 38px;
+        font-size: 0.77em;
         vertical-align: top;
         position: relative;
-        top: -5px;
+        top: -0.12em;
     }
 }
 
-#win-ed {
+#win-edition {
     font-size: 1.95em;
     font-weight: lighter;
     margin-bottom: 55px;

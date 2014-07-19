@@ -1,20 +1,14 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 20-giu-2014, 14.11.43
-    Author     : simonerescio
-*/
-
 @import 'reset';
+@import 'jquery-ui';
 @import 'common';
 @import 'table';
 @import 'startup';
+@import 'preSystem';
 @import 'welcome';
 @import 'desktop';
 @import 'startmenu';
 @import 'window';
 @import 'gridIcons';
 @import 'endSession';
+@import 'shutdown';
+@import 'poweroff';

@@ -1,0 +1,28 @@
+#shutdown-windows {
+    display: table-cell;
+    vertical-align: middle;
+    
+    .ms-windows-logo {
+        display: block;
+        float: right;
+        font-size: 10px;
+        
+        .microsoft-flag {
+            text-indent: 0;
+        }
+    }
+}
+
+#shutdown-center {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 21px;
+}
+
+#shutdown-messagge {
+    text-align: right;
+    float: right;
+    clear: both;
+    font-size: 1.2em;
+    margin: 2em;
+}

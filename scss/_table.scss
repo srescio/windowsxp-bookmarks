@@ -82,3 +82,72 @@
         height: 1px;
     }
 }
+
+// Three rows with elastic middle content
+.Layout-container {
+    display: table;
+    
+    .layout-top {
+        background-color: orange;
+        display: table-header-group;
+        height: 1%;
+    }
+
+    .layout-middle {
+        background-color: azure;
+        display: inherit;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        
+        .outWrap {
+            display: block;
+            height: 100%;
+            position : absolute;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            width:100%;
+            
+            .inWrap {
+                height: 100%;
+            }
+        }
+    }
+
+    .layout-bottom {
+        background-color: grey;
+        display: table-footer-group;
+        height: 1%;
+    }
+}
+
+.ie8 {
+    .Layout-container {
+        .layout-middle {
+            display: table-cell;
+            height : auto;
+        }
+    }
+}
+
+.ie9 {
+    .Layout-container {
+       
+        .layout-middle {
+            display: table-cell;
+        }
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .Layout-container {
+
+        .layout-middle {
+            
+            .outWrap {
+                position: static;
+            }
+        }
+    }
+}
+

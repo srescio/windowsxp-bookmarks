@@ -21,6 +21,7 @@ define(['backbone',
             this.bind();
             
             window.xp.on('selectProgram',function(id){_this.checkCurrent(id);});
+            window.xp.on('shutdown',function(){_this.closeProgram();});
         },
         
         render: function() {
