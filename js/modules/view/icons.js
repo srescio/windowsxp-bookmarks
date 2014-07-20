@@ -89,7 +89,7 @@ define(['backbone',
                     if(response['error']===false) {
                         _this.renderIcon(siteUrl,favName,nid);
                     } else {
-                        console.error('Url cannot be included in frame due to Cross Domain settings',response.url);
+                        console.warn('Url cannot be included in frame due to Cross Domain settings, Icon will not be rendered',response.url);
                     }
                 }
             }); 
