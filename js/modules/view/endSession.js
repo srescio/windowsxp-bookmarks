@@ -1,8 +1,9 @@
 define(['backbone',
         'handlebars',
         'modules/view/shutdown',
+        'modules/view/logoff',
         'text!../tpl/endSession.html'],
-        function(Backbone,Handlebars,Shutdown,Template){
+        function(Backbone,Handlebars,Shutdown,Logoff,Template){
     
     var EndSession = Backbone.View.extend({
         
@@ -23,23 +24,23 @@ define(['backbone',
         
         render: function() {
             this.logoff = {
-                title:'Disconnessione da Windows',
+                title:'Log off Windows',
                 buttons:[
                     {
                         action:'switch',
                         color:'btn-green',
-                        text:'Switch user',
+                        text:'Switch User',
                         status:'es-disabled'
                     },
                     {
                         action:'logoff',
                         color:'btn-yellow',
-                        text:'Disconnect'
+                        text:'Log Off'
                     }
                 ]
             };
             this.poweroff = {
-                title:'Spegni il computer',
+                title:'Turn off computer',
                 buttons:[
                     {
                         action:'standby',
@@ -50,12 +51,12 @@ define(['backbone',
                     {
                         action:'off',
                         color:'btn-red',
-                        text:'Spegni'
+                        text:'Turn Off'
                     },
                     {
                         action:'restart',
                         color:'btn-green',
-                        text:'Riavvia'
+                        text:'Restart'
                     }
                 ]                
             };
@@ -83,7 +84,12 @@ define(['backbone',
         },
         
         bindLogoff: function() {
-            
+            this.modal.find('#es-switch').on('click',function(){
+                new Logoff({action:'switch'});
+            });
+            this.modal.find('#es-logoff').on('click',function(){
+                new Logoff({action:'logoff'});
+            });              
         },
 
         bindPoweroff: function() {

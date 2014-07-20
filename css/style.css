@@ -1617,7 +1617,8 @@ body {
   color: #FFF;
   height: 100%;
   font-family: Tahoma, Verdana, Segoe, sans-serif;
-  -webkit-font-smoothing: none; }
+  -webkit-font-smoothing: none;
+  overflow: hidden; }
 
 * {
   box-sizing: border-box; }
@@ -1962,8 +1963,10 @@ a {
 #win-edition {
   font-size: 1.95em;
   font-weight: lighter;
-  margin-bottom: 55px;
-  text-indent: -70px; }
+  margin: 0 auto 1.75em auto;
+  text-align: left;
+  text-indent: 2.25em;
+  width: 12em; }
 
 #stup-loader {
   border: 1px solid #FFF;

@@ -49,54 +49,33 @@ require(['modules/view/startup',
 
     new Startup();
     
-//    setTimeout(function(){
-//        new Welcome();
-//        
-//        setTimeout(function(){
-//            new Desktop({
-//                user : {
-//                    name        :'Simone Rescio',
-//                    avatarUrl   :'url',
-//                    email       :'info@simonerescio.it',
-//                    website     :'http://simonerescio.it'
-//                },
-//
-//                social : {
-//                    github      : '',
-//                    codepen     : '',
-//                    tiwtter     : '',
-//                    linkedin    : ''
-//                },
-//
-//                bookmarks : {
-//                    desktop     :'xmarks',
-//                    startmenu   :'xmarks',
-//                    documents   :'xmarks'            
-//                }
-//            });
-//        },6000);
-//        
-//    },10000);
+    setTimeout(function(){
+        new Welcome();
+        
+        setTimeout(function(){
+            new Desktop({
+                user : {
+                    name        :'Simone Rescio',
+                    avatarUrl   :'http://1.gravatar.com/avatar/5c355fca7ea345a83e30cdc129df4aae?s=48&amp;d=retro&amp;r=G',
+                    email       :'info@simonerescio.it',
+                    website     :'http://simonerescio.it'
+                },
+
+                social : {
+                    github      :'https://github.com/srescio/',
+                    codepen     :'http://codepen.io/srescio/',
+                    twitter     :'https://twitter.com/srescio/',
+                    linkedin    :'https://www.linkedin.com/pub/simone-rescio/30/732/929/en'
+                },
+
+                bookmarks : {
+                    desktop     :'u3d5tgcANe',
+                    startmenu   :'u3d5tgcANe',
+                    documents   :'JKgHG6drYg'            
+                }
+            });
+        },6000);
+        
+    },10000);
     
-    new Desktop({
-        user : {
-            name        :'Simone Rescio',
-            avatarUrl   :'http://1.gravatar.com/avatar/5c355fca7ea345a83e30cdc129df4aae?s=48&amp;d=retro&amp;r=G',
-            email       :'info@simonerescio.it',
-            website     :'http://simonerescio.it'
-        },
-        
-        social : {
-            github      :'https://github.com/srescio/',
-            codepen     :'http://codepen.io/srescio/',
-            twitter     :'https://twitter.com/srescio/',
-            linkedin    :'https://www.linkedin.com/pub/simone-rescio/30/732/929/en'
-        },
-        
-        bookmarks : {
-            desktop     :'u3d5tgcANe',
-            startmenu   :'u3d5tgcANe',
-            documents   :'JKgHG6drYg'            
-        }
-    });
 });

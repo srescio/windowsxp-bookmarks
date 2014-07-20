@@ -55,7 +55,7 @@ define(['backbone',
                     $('.desk-window,.win-bar-program').removeClass('current');
                 }
             }).on('keydown',function(e){
-                console.log(e.keyCode)
+                
                 if(e.keyCode===13) {
                     
                     $('.win-icon.ui-selected').each(function(){
@@ -110,23 +110,6 @@ define(['backbone',
             var program = $('.desk-window[data-program-id="'+prgID+'"],.win-bar-program[data-program-id="'+prgID+'"]');
                         
             return program.length;
-        },
-        
-        getSurroundings: function() {
-            
-        },
-        
-        goTop: function() {
-            
-        },
-        goRight: function() {
-            
-        },
-        goBottom: function() {
-            
-        },
-        goLeft: function() {
-            
         }
         
     });
