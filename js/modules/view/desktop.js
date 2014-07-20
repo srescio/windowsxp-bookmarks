@@ -93,7 +93,7 @@ define(['backbone',
         
         hasIcon : function(scope) {
             var hasIcon = $(scope).find('.win-icon-image').data('has-icon');
-            hasIcon = (hasIcon)?'true':'false';
+            hasIcon = (hasIcon===true || typeof hasIcon==='undefined')?'true':'false';
             return hasIcon;
         },
         
