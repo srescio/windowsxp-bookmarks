@@ -18,7 +18,7 @@ define(['backbone',
             
             //Update page Title with user name
             var titleTxt = $('title').text();
-            $('title').text( titleTxt+' - Logged as '+this.options.user.name );
+            $('title').text( titleTxt+' Logged as '+this.options.user.name );
             
             this.render();
             this.bind();
