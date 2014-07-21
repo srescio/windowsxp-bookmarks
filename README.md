@@ -21,7 +21,7 @@ In such case a default class will be added to the icon to display a default imag
 ## iFrame inclusion restrictions ##
 
 Each bookmark is first checked against a PHP script that reads the website's HTTP response header looking for iFrame inclusion restrictions. If none is found the link will be rendered.
-Notice that a website may still restrict loading contents in an iFrame but not block the inclusion choosing to display a specific page instead, like Flikr does.
+Notice that a website may still restrict loading contents in an iFrame but not block the inclusion choosing to display a specific page instead, like Flickr does.
 
 The most popular social networks like facebook and twitter, and social coding platforms as well, do restrict webpages from being loaded in iFrames but it's not really an option to opt-out such links.
 For this reason I've included them in the `startmenu` where they'll be opened in new browser's windows unlike the other links that will not show up at all if it's impossible to load them in a 'window'.
