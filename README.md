@@ -9,12 +9,12 @@ This webapp revives the Windows XP graphic shell as an HTML5 showcase for bookma
 
 ## The icons ##
 
-Each `Icon` responds to selection and double-click on the desktop, when double-clicked it will open a new `Program` which consist of a 'window' showing the link in an iFrame and a 'program-bar element' below to handle multiple `Programs`.
-Windows can then be moved around, resized, magnified, hidden or closed as you was used to with programs on the dear old XP.
+Each `Icon` responds to mouse grid-selection and double-click on the desktop, when double-clicked it will open a new `Program` which consist of a 'window' showing the link in an iFrame and a 'program-bar element' below to handle multiple `Programs`.
+Windows can then be moved around, resized, magnified, hidden or closed as you was used with programs on dear old XP.
 
-The icons images are the website's favicons, they're obtained from the website's root link with appended the `favicon.ico` path to fetch the file from the root folder, which should be the standard location for such files.
+The icon's images are the website's favicons, they're obtained from the website's root link plus the `favicon.ico` path appended to fetch the file from the root folder, which should be the standard location for such files.
 
-Unfortunately not all websites honor this path convetion and an image might give a 404 error if located in a different path.
+Unfortunately not all websites honor this path convention and an image might give a 404 error if located in a different path.
 In such case a default class will be added to the icon to display a default image.
 
 
