@@ -79,7 +79,7 @@ define(['backbone',
             var _this = this;
             
             $.ajax({
-                url: 'http://localhost/windowsxp/checkIframe.php',
+                url: 'checkIframe.php',
                 type: 'GET',
                 data: { url: siteUrl} ,
                 contentType: 'application/json; charset=utf-8',
