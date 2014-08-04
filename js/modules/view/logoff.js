@@ -59,7 +59,7 @@ define(['backbone',
             },6300);             
         },
         
-        switch: function() {
+        switchUser: function() {
             this.$el.html( this.poweroffTpl );
         },
         
