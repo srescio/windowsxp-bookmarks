@@ -3,9 +3,9 @@ define(['backbone'],function(Backbone){
         defaults : {
                 user: {
                     name        :'Simone Rescio',
-                    avatarUrl   :'http://1.gravatar.com/avatar/5c355fca7ea345a83e30cdc129df4aae?s=48&amp;d=retro&amp;r=G',
+                    avatarUrl   :'https://1.gravatar.com/avatar/5c355fca7ea345a83e30cdc129df4aae?s=48&amp;d=retro&amp;r=G',
                     email       :'info@simonerescio.it',
-                    website     :'http://simonerescio.it'
+                    website     :'https://simonerescio.it'
                 },
                 
                 social : [
