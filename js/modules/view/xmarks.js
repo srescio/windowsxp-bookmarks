@@ -40,7 +40,7 @@ define([],function(){
         // Constructor
 
         Widget.widget = function(args) {
-            this.base_url       = args["base"] || "http://share.foxmarks.com/";
+            this.base_url       = args["base"] || "http://share.xmarks.com/";
             this.share_id       = args["id"];
             this.version        = args["v"];
             this.hide_description = args["hide_description"] || false;
