@@ -37,7 +37,8 @@ require.config({
         handlebars: {
           exports: 'Handlebars'
         }
-      }
+      },
+      waitSeconds: 0 //disable timeout
 });
 
 require(['modules/view/startup',
@@ -69,9 +70,9 @@ require(['modules/view/startup',
                 },
 
                 bookmarks : {
-                    desktop     :'u3d5tgcANe',
-                    startmenu   :'u3d5tgcANe',
-                    documents   :'JKgHG6drYg'            
+                    desktop     :'flBxqNRXWr',
+                    startmenu   :'flBxqNRXWr',
+                    documents   :'dey0PVdtzf'            
                 }
             });
         },6000);
