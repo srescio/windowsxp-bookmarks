@@ -1,13 +1,12 @@
-![enter image description here][1]
+# Windows XP Bookmarks ★ #
 
-## Windows XP Bookmarks ★ ##
+![enter image description here][1]
 
 End of support has come for Windows XP, on [8th of April 2014][2] Microsoft officially discontinued critical security updates for the platform thus declaring its death, and now that it is gone...it has become *vintage*!
 
 It was the most loved (not much maybe) and hated (**a lot**) OS worldwide for 12 long years, so paying a memory tribute to it is a given.
 
 This webapp revives the Windows XP graphic shell as an HTML5 showcase for bookmarks published with [Xmarks][3] extensions.
-
 
 ## The icons ##
 
@@ -18,7 +17,6 @@ The icon's images are the website's favicons, they're obtained from the website'
 
 Unfortunately not all websites honor this path convention and an image might give a 404 error if located in a different path.
 In such case a default class will be added to the icon to display a default image.
-
 
 ## iFrame inclusion restrictions ##
 
@@ -65,7 +63,6 @@ You can see it in action at [https://windowsxp.simonerescio.it][4]
 License : [CC BY 3.0 IT][5]
 
 > Written with [StackEdit](https://stackedit.io/).
-
 
   [1]: https://raw.githubusercontent.com/srescio/windowsxp-bookmarks/master/img/windowsxp-bookmarks.jpg
   [2]: http://www.microsoft.com/en-us/windows/business/retiring-xp.aspx
