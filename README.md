@@ -33,6 +33,10 @@ The only JS size manipulation is handled by the `jquery-ui resizable` plugin whi
 
 ## Usage ##
 
+First install the npm packages, it will also execute automatically the copy task that will take the minified assets into the js directory that will be uploaded:
+
+    npm i
+
 The user is required to init the app from the main js file by providing arguments to the `Dekstop` function, which are :
 
         user : {
@@ -56,7 +60,7 @@ The user is required to init the app from the main js file by providing argument
         }
 
 Startup and shutdown sounds included.
-You can see it in action at [http://windowsxp.simonerescio.it][4]
+You can see it in action at [https://windowsxp.simonerescio.it][4]
 
 License : [CC BY 3.0 IT][5]
 

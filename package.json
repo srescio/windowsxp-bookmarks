@@ -4,8 +4,10 @@
   "description": "Windows XP Bookmarks",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm run copy",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "copy": "sh copy.sh"
   },
   "repository": {
     "type": "git",

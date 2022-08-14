@@ -1,14 +1,17 @@
+//const require = require('requirejs');
+
 require.config({
     paths: {
-        jquery        : 'libs/node/jquery.min',
-        jqueryui      : 'libs/node/jquery-ui.min',
-        jqueryhotkeys : 'libs/node/jquery-hotkeys',
-        jqueryiframetracker : 'libs/jquery.iframetracker', // no npm package
-        underscore    : 'libs/node/underscore-min',
-        backbone      : 'libs/node/backbone-min',
-        handlebars    : 'libs/node/handlebars.min',
-        text          : 'libs/node/text',
-        tpl           : '../tpl'
+        jquery        : 'libs/jquery/jquery.min',
+        jqueryui      : 'libs/jqueryui/jquery-ui.min',
+        jqueryhotkeys : 'libs/jquery.hotkeys',
+        jqueryiframetracker : 'libs/jquery.iframetracker', // no npm pkj
+        underscore    : 'libs/underscore.js/underscore-min',
+        backbone      : 'libs/backbone.js/backbone-min',
+        handlebars    : 'libs/handlebars.js/handlebars.min',
+        text          : 'libs/require-text/text.min',
+        tpl           : '../tpl',
+        out           : '../dist/main.js'
     },
     shim: {
         jquery: {
