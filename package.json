@@ -1,0 +1,40 @@
+{
+  "name": "windowsxp-bookmarks",
+  "version": "1.0.0",
+  "description": "Windows XP Bookmarks",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm run copy",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "copy": "sh copy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srescio/windowsxp-bookmarks.git"
+  },
+  "keywords": [
+    "backbone",
+    "css",
+    "table",
+    "layout",
+    "windows"
+  ],
+  "author": "Simone Rescio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srescio/windowsxp-bookmarks/issues"
+  },
+  "homepage": "https://github.com/srescio/windowsxp-bookmarks#readme",
+  "dependencies": {
+    "backbone": "^1.4.1",
+    "express": "^4.18.1",
+    "handlebars": "^4.7.7",
+    "jquery": "^3.6.0",
+    "jquery-hotkeys": "^0.2.2",
+    "jqueryui": "^1.11.1",
+    "requirejs": "^2.3.6",
+    "text": "github:requirejs/text",
+    "underscore": "^1.13.4"
+  }
+}
