@@ -6,7 +6,7 @@ End of support has come for Windows XP, on [8th of April 2014][2] Microsoft offi
 
 It was the most loved (not much maybe) and hated (**a lot**) OS worldwide for 12 long years, so paying a memory tribute to it is a given.
 
-This webapp revives the Windows XP graphic shell as an HTML5 showcase for bookmarks published with [Xmarks][3] extensions.
+This webapp revives the Windows XP graphic shell as an HTML5 showcase for your bookmarks.
 
 ## The icons ##
 
@@ -28,6 +28,20 @@ For this reason I've included them in the `startmenu` where they'll be opened in
 
 The main framework is **BackBone** with **requirejs** AMD modules pattern, and the styles rely mostly on **CSS tables** to achieve an OS-like behavior of the various elements such as the bottom program bar, the window elements and their inner components such as titles and buttons.
 The only JS size manipulation is handled by the `jquery-ui resizable` plugin which modifies the outer most container of the 'window' and then all the inner contents adpat accordingly.
+
+## Import bookmarks from Chrome ##
+
+First export your Chrome bookmarks to your *desktop* directory, you will obtain a file named `bookmarks_DATE_OF_EXPORT.html`, now run the package script:
+
+    npm run copy-bookmarks
+
+this will make a copy in the project's `data` directory, it is ignored by git so no danger to commit that.
+
+Next run the package script:
+
+    npm run generate-data
+
+this will create the file `data/data.json` which will contains a subset of your choice using a link as indentifier for a directory that will be looped for bookmarks.
 
 ## Usage ##
 
@@ -58,14 +72,11 @@ The user is required to init the app from the main js file by providing argument
         }
 
 Startup and shutdown sounds included.
-You can see it in action at [https://windowsxp.simonerescio.it][4]
+You can see it in action at [https://windowsxp.simonerescio.it][3]
 
-License : [CC BY 3.0 IT][5]
-
-> Written with [StackEdit](https://stackedit.io/).
+License : [CC BY 3.0 IT][4]
 
   [1]: https://raw.githubusercontent.com/srescio/windowsxp-bookmarks/master/img/windowsxp-bookmarks.jpg
   [2]: http://www.microsoft.com/en-us/windows/business/retiring-xp.aspx
-  [3]: http://www.xmarks.com/
-  [4]: http://windowsxp.simonerescio.it
-  [5]: http://creativecommons.org/licenses/by/3.0/it/deed.en
+  [3]: http://windowsxp.simonerescio.it
+  [4]: http://creativecommons.org/licenses/by/3.0/it/deed.en
