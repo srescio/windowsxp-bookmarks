@@ -54,27 +54,32 @@ require(['modules/view/startup',
         new Welcome();
         
         setTimeout(function(){
-            new Desktop({
-                user : {
-                    name        :'Simone Rescio',
-                    avatarUrl   :'https://1.gravatar.com/avatar/5c355fca7ea345a83e30cdc129df4aae?s=48&amp;d=retro&amp;r=G',
-                    email       :'info@simonerescio.it',
-                    website     :'https://simonerescio.it'
-                },
-
-                social : {
-                    github      :'https://github.com/srescio/windowsxp-bookmarks',
-                    codepen     :'http://codepen.io/srescio/',
-                    twitter     :'https://twitter.com/srescio/',
-                    linkedin    :'https://www.linkedin.com/pub/simone-rescio/30/732/929/en'
-                },
-
-                bookmarks : {
-                    desktop     :'flBxqNRXWr',
-                    startmenu   :'flBxqNRXWr',
-                    documents   :'dey0PVdtzf'            
-                }
-            });
+            fetch('/data/data.json')
+              .then((response) => response.json())
+              .then((data) => {
+                console.log(data)
+                new Desktop({
+                  user : {
+                      name        :'Simone Rescio',
+                      avatarUrl   :'https://1.gravatar.com/avatar/5c355fca7ea345a83e30cdc129df4aae?s=48&amp;d=retro&amp;r=G',
+                      email       :'info@simonerescio.it',
+                      website     :'https://simonerescio.it'
+                  },
+  
+                  social : {
+                      github      :'https://github.com/srescio/windowsxp-bookmarks',
+                      codepen     :'http://codepen.io/srescio/',
+                      twitter     :'https://twitter.com/srescio/',
+                      linkedin    :'https://www.linkedin.com/pub/simone-rescio/30/732/929/en'
+                  },
+  
+                  bookmarks : {
+                      desktop     : data.find(el => el.directory == 'BugFix'),
+                      startmenu   : data.find(el => el.directory == 'Tools'),
+                      documents   : data.find(el => el.directory == 'Docs')
+                  }
+                });
+              });
         },6000);
         
     },10000);

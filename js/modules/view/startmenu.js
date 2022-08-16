@@ -65,7 +65,7 @@ define(['backbone',
             
             new Icons({
                 el      :'#stm-programs-list',
-                xid     : this.options.bookmarks.startmenu,
+                data    : this.options.bookmarks.startmenu,
                 isGrid  : false
             });
         },
@@ -100,7 +100,7 @@ define(['backbone',
 
                         new Icons({
                             el      :'.desk-window[data-program-id="'+programID+'"] .win-icons',
-                            xid     :_this.options.bookmarks.documents,
+                            data    :_this.options.bookmarks.documents,
                             isGrid  : true,
                             isDoc   : true
                         });

@@ -1,10 +1,9 @@
 define(['backbone',
         'handlebars',
         'modules/model/icon',
-        'modules/view/xmarks',
         'text!../tpl/icon.html',
         'modules/view/program'],
-        function(Backbone,Handlebars,IconModel,xMarks,IconTpl,Program){
+        function(Backbone,Handlebars,IconModel,IconTpl,Program){
     
     var Icons = Backbone.View.extend({
         
@@ -14,36 +13,21 @@ define(['backbone',
         isGrid: null,
         isDoc: null,
         
-        initialize: function(args) {
-            var _this = this;
-            
+        initialize: function(args) {            
             this.options = args;
-            this.xid = this.options.xid;
+            this.data = this.options.data;
             this.el = this.options.el;
             this.isGrid = this.options.isGrid;
             this.isDoc = this.options.isDoc;
-                        
-            new xMarks();
-                        
-            Xmarks.Widget.create({
-                "id":this.xid,
-                "v":1,
-                "limit":900,
-                "truncate":100,
-                "hide_description" : true,
-                "iconsObj":this
-            });
-            
-            window.xp.on('renderIcons', function(icons){ _this.render(icons); } );
-            
-            //Render will be called by the xMarks callback and call bind
+                                                
+            this.render(this.data.links)            
         },
 
         render: function(bookmarks) {            
             for(var fav in bookmarks) {   
                 if(typeof bookmarks[fav].url!=='undefined') {
                     //Url is defined, check if can be loaded in iFrame
-                    this.testIframe(bookmarks[fav].url,bookmarks[fav].name,bookmarks[fav].nid);
+                    this.testIframe(bookmarks[fav].url,bookmarks[fav].title, Math.random());
                 }
             };                                    
         },
