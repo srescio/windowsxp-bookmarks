@@ -72,7 +72,7 @@ The user is required to init the app from the main js file by providing argument
         }
 
 Startup and shutdown sounds included, which require initial user interaction as per latest Audio APIs.
-You can see it in action at [https://windowsxp.simonerescio.it][3]
+You can see it in action at [http://windowsxp.simonerescio.it][3]
 
 License : [CC BY 3.0 IT][4]
 
