@@ -1,0 +1,325 @@
+[
+    {
+        "directory": "BugFix",
+        "links": [
+            {
+                "title": "Things I learned creating a jQuery Plugin (Part II) | ACuriousAnimal",
+                "url": "http://acuriousanimal.com/blog/2013/02/25/things-i-learned-creating-a-jquery-plugin-part-ii/#main"
+            },
+            {
+                "title": "onscroll Event Issues on Mobile Browsers - TJ VanToll - Tutorials, Thoughts, and Ramblings on Front-End Development",
+                "url": "http://tjvantoll.com/2012/08/19/onscroll-event-issues-on-mobile-browsers/#pg"
+            },
+            {
+                "title": "Absolute Horizontal And Vertical Centering In CSS | Smashing Magazine",
+                "url": "http://www.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/"
+            },
+            {
+                "title": "CSS Font Shorthand Property Cheat Sheet | Impressive Webs",
+                "url": "http://www.impressivewebs.com/css-font-shorthand-property-cheat-sheet/"
+            },
+            {
+                "title": "A Primer on the CSS Font Shorthand Property | Impressive Webs",
+                "url": "http://www.impressivewebs.com/a-primer-on-the-css-font-shorthand-property/"
+            },
+            {
+                "title": "javascript - handlebars in requirejs load not successfully - Stack Overflow",
+                "url": "http://stackoverflow.com/questions/11863351/handlebars-in-requirejs-load-not-successfully"
+            },
+            {
+                "title": "html5 - Playing audio with Javascript? - Stack Overflow",
+                "url": "http://stackoverflow.com/questions/9419263/playing-audio-with-javascript"
+            },
+            {
+                "title": "javascript - Extract root domain name from string - Stack Overflow",
+                "url": "http://stackoverflow.com/questions/8498592/extract-root-domain-name-from-string"
+            },
+            {
+                "title": "Support for Windows XP for Enterprise Business is ending",
+                "url": "http://www.microsoft.com/en-us/windows/enterprise/end-of-support.aspx"
+            },
+            {
+                "title": "javascript - exlude item from handle on jquery draggable - Stack Overflow",
+                "url": "http://stackoverflow.com/questions/1462774/exlude-item-from-handle-on-jquery-draggable"
+            }
+        ]
+    },
+    {
+        "directory": "Tools",
+        "links": [
+            {
+                "title": "localFont - Implement localStorage web font caching in seconds",
+                "url": "http://jaicab.com/localFont/"
+            },
+            {
+                "title": "Internet Explorer 6",
+                "url": "http://mrdoob.com/lab/javascript/effects/ie6/"
+            },
+            {
+                "title": "Colour Contrast Check - snook.ca",
+                "url": "http://snook.ca/technical/colour_contrast/colour.html#fg=33FF33,bg=333333"
+            },
+            {
+                "title": "CSS Ruler • Explore CSS lengths.",
+                "url": "http://katydecorah.com/css-ruler/"
+            },
+            {
+                "title": "GEEKtyper.com",
+                "url": "http://geektyper.com/"
+            },
+            {
+                "title": "Cursors",
+                "url": "http://chrisnager.github.io/cursors/"
+            },
+            {
+                "title": "Photo editor online / free image editing direct in your browser - Pixlr.com",
+                "url": "https://pixlr.com/editor/"
+            },
+            {
+                "title": "CSS3 Generator",
+                "url": "http://css3generator.com/"
+            },
+            {
+                "title": "X-Icon Editor",
+                "url": "http://www.xiconeditor.com/"
+            },
+            {
+                "title": "Ultimate CSS Gradient Generator - ColorZilla.com",
+                "url": "http://www.colorzilla.com/gradient-editor/"
+            },
+            {
+                "title": "Fontello - icon fonts generator",
+                "url": "http://fontello.com/"
+            },
+            {
+                "title": "CodePen",
+                "url": "http://codepen.io/pen/"
+            },
+            {
+                "title": "Can I use... Support tables for HTML5, CSS3, etc",
+                "url": "http://caniuse.com/"
+            },
+            {
+                "title": "txt2re: headache relief for programmers :: regular expression generator",
+                "url": "http://txt2re.com/"
+            },
+            {
+                "title": "Internet Archive: Digital Library of Free Books, Movies, Music & Wayback Machine",
+                "url": "https://archive.org/"
+            },
+            {
+                "title": "mailto: builder/encoder",
+                "url": "http://mikemustaine.com/mmtools/files/mailTo.html"
+            },
+            {
+                "title": "srescio/hellosplash",
+                "url": "https://github.com/srescio/hellosplash"
+            },
+            {
+                "title": "wavepot",
+                "url": "http://wavepot.com/"
+            },
+            {
+                "title": "Create a new fiddle - JSFiddle",
+                "url": "http://jsfiddle.net/"
+            },
+            {
+                "title": "Lorem Ipsum - All the facts - Lipsum generator",
+                "url": "http://www.lipsum.com/"
+            },
+            {
+                "title": "JSONLint - The JSON Validator.",
+                "url": "http://jsonlint.com/"
+            },
+            {
+                "title": "Remove Line Breaks Online Tool",
+                "url": "http://www.textfixer.com/tools/remove-line-breaks.php"
+            },
+            {
+                "title": "Strong Password Generator",
+                "url": "http://strongpasswordgenerator.com/"
+            },
+            {
+                "title": "CSS triangle generator",
+                "url": "http://apps.eky.hk/css-triangle-generator/"
+            },
+            {
+                "title": "Codenvy | AngularJS test IDE",
+                "url": "https://codenvy.com/factory?v=1.0&pname=Sample-AngularJS&wname=codenvy-factories&vcs=git&vcsurl=http%3A%2F%2Fcodenvy.com%2Fgit%2F04%2F0f%2F7f%2Fworkspacegcpv6cdxy1q34n1i%2FSample-AngularJS&idcommit=37a21ef422e7995cbab615431f0f63991a9b314a&action=openproject&ptype=JavaScript"
+            },
+            {
+                "title": "Online regex tester and debugger: JavaScript, Python, PHP, and PCRE",
+                "url": "http://regex101.com/"
+            },
+            {
+                "title": "StackEdit – Welcome document",
+                "url": "https://stackedit.io/"
+            },
+            {
+                "title": "One Tap Quest",
+                "url": "http://shimage.net/one-tap-quest/"
+            },
+            {
+                "title": "Minefield, HTML5 Massively Multiplayer Online Minesweeper",
+                "url": "http://mienfield.com/"
+            },
+            {
+                "title": "CSS Triggers...",
+                "url": "http://csstriggers.com/"
+            },
+            {
+                "title": "SEO Tools, Software and Articles | SeoSiteCheckup.com",
+                "url": "http://seositecheckup.com/"
+            },
+            {
+                "title": "StartSSL™ Certificates & Public Key Infrastructure - StartSSL™ Home",
+                "url": "https://www.startssl.com/"
+            },
+            {
+                "title": "Untitled Document | Tridiv",
+                "url": "http://tridiv.com/app/index.html?dmlldz1lZGl0b3ImZG9jPXsic2V0dGluZ3MiOnsibmFtZSI6IlVudGl0bGVkIERvY3VtZW50IiwibGlnaHQiOiJzdGF0aWMiLCJzaGFkZSI6Ii4zIiwidGludCI6Ii4xNSIsImJvcmRlciI6IjAuNCIsImJnIjoidHJhbnNwYXJlbnQiLCJzbmFwIjoib2ZmIiwibWF0Y2giOjAuNSwiem9vbSI6MTAwfSwic2hhcGVzIjpbXX0="
+            },
+            {
+                "title": "Text to ASCII Art Generator (TAAG)",
+                "url": "http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20"
+            },
+            {
+                "title": "Free Music Archive",
+                "url": "http://freemusicarchive.org/"
+            },
+            {
+                "title": "Bookmarklet Creator with Script Includer - Peter Coles",
+                "url": "http://mrcoles.com/bookmarklet/"
+            },
+            {
+                "title": "Resemble.js : Image analysis",
+                "url": "https://huddle.github.io/Resemble.js/"
+            },
+            {
+                "title": "BugMeNot: share logins",
+                "url": "http://bugmenot.com/"
+            },
+            {
+                "title": "Have I been pwned? Check if your email has been compromised in a data breach",
+                "url": "https://haveibeenpwned.com/"
+            },
+            {
+                "title": "PlantText",
+                "url": "https://www.planttext.com/"
+            },
+            {
+                "title": "Arraify",
+                "url": "http://unjavascripter.github.io/arraify/"
+            },
+            {
+                "title": "DiffNow - Compare files online. Powered by ExamDiff Pro.",
+                "url": "https://www.diffnow.com/"
+            }
+        ]
+    },
+    {
+        "directory": "Docs",
+        "links": [
+            {
+                "title": "A JS framework on every table - Allen Pike",
+                "url": "http://www.allenpike.com/2015/javascript-framework-fatigue/"
+            },
+            {
+                "title": "Expedia — Responsive Web Design",
+                "url": "http://responsivewebdesign.com/podcast/expedia.html"
+            },
+            {
+                "title": "Windows XP end of support - Microsoft Windows",
+                "url": "http://www.microsoft.com/windows/en-us/xp/default.aspx"
+            },
+            {
+                "title": "Codenvy | SAAS Developer Environments",
+                "url": "https://codenvy.com/"
+            },
+            {
+                "title": "weinre - Home",
+                "url": "http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html"
+            },
+            {
+                "title": "Character Entity Reference Chart",
+                "url": "http://dev.w3.org/html5/html-author/charref"
+            },
+            {
+                "title": "The Cat API",
+                "url": "http://thecatapi.com/"
+            },
+            {
+                "title": "Must-Have Social Meta Tags for Twitter, Google+, Facebook and More. Learn How Open Graph, FB OG and Social Media Metadata Help Website Sharing on Google+ for SEO - Moz",
+                "url": "http://moz.com/blog/meta-data-templates-123"
+            },
+            {
+                "title": "NFC Ring - Safe, Simple, Secure. || One smart ring, unlimited possibilities",
+                "url": "http://nfcring.com/"
+            },
+            {
+                "title": "Welcome to NetBeans",
+                "url": "https://netbeans.org/"
+            },
+            {
+                "title": "HTML5games.com | games powered by HTML5",
+                "url": "http://html5games.com/"
+            },
+            {
+                "title": "Automating Front-end Workflow // Speaker Deck",
+                "url": "https://speakerdeck.com/addyosmani/automating-front-end-workflow"
+            },
+            {
+                "title": "Home - Saverio Ferrara",
+                "url": "http://www.fsferrara.com/"
+            },
+            {
+                "title": "Spring-cleaning Unused CSS With Grunt, Gulp, Broccoli or Brunch",
+                "url": "http://addyosmani.com/blog/removing-unused-css/"
+            },
+            {
+                "title": "Why we don't hire programmers based on puzzles, API quizzes, math riddles, or other parlor tricks by David of Basecamp",
+                "url": "https://signalvnoise.com/posts/3071-why-we-dont-hire-programmers-based-on-puzzles-api-quizzes-math-riddles-or-other-parlor-tricks?174#comments"
+            },
+            {
+                "title": "JS Comparison Table",
+                "url": "http://dorey.github.io/JavaScript-Equality-Table/?utm_content=buffer9571f&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer"
+            },
+            {
+                "title": "Le persone non comprano ciò che fai, comprano il perché lo fai. | Codeido",
+                "url": "http://www.codeido.com/2014/12/simon-sinek-le-persone-comprano-il-perche-lo-fai/?utm_content=buffere3098&utm_medium=social&utm_source=linkedin.com&utm_campaign=buffer"
+            },
+            {
+                "title": "Centering in the Unknown | CSS-Tricks",
+                "url": "https://css-tricks.com/centering-in-the-unknown/"
+            },
+            {
+                "title": "jQuery: click function exclude children. - Stack Overflow",
+                "url": "http://stackoverflow.com/questions/2457246/jquery-click-function-exclude-children"
+            },
+            {
+                "title": "unicode - Character for up/down triangle (arrow) to display in HTML - Stack Overflow",
+                "url": "http://stackoverflow.com/questions/2701192/character-for-up-down-triangle-arrow-to-display-in-html"
+            },
+            {
+                "title": "Sorting objects in an array by a field value in JavaScript - Stack Overflow",
+                "url": "http://stackoverflow.com/questions/1129216/sorting-objects-in-an-array-by-a-field-value-in-javascript"
+            },
+            {
+                "title": "Clean Up Your Mess - A Guide to Visual Design for Everyone",
+                "url": "http://www.visualmess.com/index.html?utm_content=buffer92e66&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer"
+            },
+            {
+                "title": "How to Convincingly Fake Confidence, Happiness and Other Necessary Feelings in the Workplace",
+                "url": "http://www.entrepreneur.com/article/251514?"
+            },
+            {
+                "title": "Ten Rules for Negotiating a Job Offer — Free Code Camp",
+                "url": "https://medium.freecodecamp.com/ten-rules-for-negotiating-a-job-offer-ee17cccbdab6#.7q2di6z3d"
+            },
+            {
+                "title": "Async function vs. a function that returns a Promise - DEV Community 👩‍💻👨‍💻",
+                "url": "https://dev.to/mywebstuff_hq/async-function-vs-a-function-that-returns-a-promise-3lpo"
+            }
+        ]
+    }
+]

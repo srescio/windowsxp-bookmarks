@@ -35,7 +35,7 @@ define(['backbone',
             
             new Icons({
                 el     :'#win-desktop-icons',
-                xid    : this.options.bookmarks.desktop,
+                data   : this.options.bookmarks.desktop,
                 isGrid : true
             });
         },
