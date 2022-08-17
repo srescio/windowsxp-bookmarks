@@ -66,12 +66,12 @@ The user is required to init the app from the main js file by providing argument
         },
 
         bookmarks : {
-            desktop     :'xmarksPublicFolderID',
-            startmenu   :'xmarksPublicFolderID',
-            documents   :'xmarksPublicFolderID'
+            desktop     : data.find(el => el.directory == 'Name of subdir 1'),
+            startmenu   : data.find(el => el.directory == 'Name of subdir 2'),
+            documents   : data.find(el => el.directory == 'Name of subdir 3')
         }
 
-Startup and shutdown sounds included.
+Startup and shutdown sounds included, which require initial user interaction as per latest Audio APIs.
 You can see it in action at [https://windowsxp.simonerescio.it][3]
 
 License : [CC BY 3.0 IT][4]
@@ -80,3 +80,4 @@ License : [CC BY 3.0 IT][4]
   [2]: http://www.microsoft.com/en-us/windows/business/retiring-xp.aspx
   [3]: http://windowsxp.simonerescio.it
   [4]: http://creativecommons.org/licenses/by/3.0/it/deed.en
+  

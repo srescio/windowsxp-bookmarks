@@ -70,7 +70,7 @@ require(['modules/view/startup',
                       github      :'https://github.com/srescio/windowsxp-bookmarks',
                       codepen     :'http://codepen.io/srescio/',
                       twitter     :'https://twitter.com/srescio/',
-                      linkedin    :'https://www.linkedin.com/pub/simone-rescio/30/732/929/en'
+                      linkedin    :'https://it.linkedin.com/in/simone-rescio/en'
                   },
   
                   bookmarks : {
