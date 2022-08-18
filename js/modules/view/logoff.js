@@ -44,7 +44,7 @@ define(['backbone',
             }
             
             this.doShutdown = function(){
-                (_this.options.action==='poweroff')?_this.poweroff():_this.restart();
+                (_this.action==='poweroff')?_this.poweroff():_this.restart();
             };
             
             //Animate shutdown message

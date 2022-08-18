@@ -8,6 +8,7 @@ require.config({
         backbone      : 'libs/node/backbone-min',
         handlebars    : 'libs/node/handlebars.min',
         text          : 'libs/node/text',
+        howler        : 'libs/node/howler.min',
         tpl           : '../tpl'
     },
     shim: {
