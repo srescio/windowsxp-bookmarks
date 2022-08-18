@@ -6,6 +6,11 @@
     overflow:hidden;
     -webkit-animation: startFade 2s linear;
     animation: startFade 2s linear;
+
+    aside {
+        display: table-header-group;
+        text-align: center;
+    }
     
     header {
         display: table-cell;

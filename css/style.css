@@ -2302,6 +2302,10 @@ a {
   -webkit-animation: startFade 2s linear;
   animation: startFade 2s linear;
 }
+#startup aside {
+  display: table-header-group;
+  text-align: center;
+}
 #startup header {
   display: table-cell;
   vertical-align: middle;
