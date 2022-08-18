@@ -1,4 +1,4 @@
-define(['backbone','handlebars','text!../tpl/startup.html'],function(Backbone,Handlebars,Template){
+define(['backbone','handlebars', 'howler', 'text!../tpl/startup.html'],function(Backbone,Handlebars,Howler,Template){
     
     var Startup = Backbone.View.extend({
         
@@ -17,8 +17,8 @@ define(['backbone','handlebars','text!../tpl/startup.html'],function(Backbone,Ha
         preload: function(){
             //IE8 will throw JS error and stop here otherwise
             if(typeof Audio!=='undefined') {
-                window.xp.startupSound = new Audio('res/startup.mp3');
-                window.xp.shutdownSound = new Audio('res/shutdown.mp3');                                
+                window.xp.startupSound = new Howl({ src: ['res/startup.mp3'] });
+                window.xp.shutdownSound = new Howl({ src: ['res/shutdown.mp3'] })
             }
         }
         

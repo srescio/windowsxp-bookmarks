@@ -7,3 +7,4 @@ cp node_modules/backbone/backbone-min.js js/libs/node/backbone-min.js
 cp node_modules/backbone/backbone-min.js.map js/libs/node/backbone-min.js.map
 cp node_modules/handlebars/dist/handlebars.min.js js/libs/node/handlebars.min.js
 cp node_modules/text/text.js js/libs/node/text.js
+cp node_modules/howler/dist/howler.min.js js/libs/node/howler.min.js
